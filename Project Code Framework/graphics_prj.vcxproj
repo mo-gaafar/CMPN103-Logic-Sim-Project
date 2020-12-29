@@ -127,6 +127,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions\AddANDgate2.cpp" />
+    <ClCompile Include="AddNANDgate2.cpp" />
+    <ClCompile Include="AddNORgate2.cpp" />
+    <ClCompile Include="AddORgate2.cpp" />
+    <ClCompile Include="AddXNORgate2.cpp" />
+    <ClCompile Include="AddXORgate2.cpp" />
     <ClCompile Include="Actions\AddBuff.cpp" />
     <ClCompile Include="Actions\AddINV.cpp" />
     <ClCompile Include="Actions\AddLED.cpp" />
@@ -180,11 +185,22 @@
     <ClCompile Include="Components\INV.cpp" />
     <ClCompile Include="Components\LED.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NAND2.cpp" />
+    <ClCompile Include="NOR2.cpp" />
+    <ClCompile Include="OR2.cpp" />
+    <ClCompile Include="XNOR2.cpp" />
+    <ClCompile Include="XOR2.cpp" />
     <ClCompile Include="Components\Switch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\AddANDgate2.h" />
+    <ClInclude Include="AddNANDgate2.h" />
+    <ClInclude Include="AddNORgate2.h" />
+    <ClInclude Include="AddORgate2.h" />
+    <ClInclude Include="AddXNORgate2.h" />
+    <ClInclude Include="AddXORgate2.h" />
+
     <ClInclude Include="Actions\AddBuff.h" />
     <ClInclude Include="Actions\AddINV.h" />
     <ClInclude Include="Actions\AddLED.h" />
@@ -222,6 +238,11 @@
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />
+    <ClInclude Include="NAND2.h" />
+    <ClInclude Include="NOR2.h" />
+    <ClInclude Include="OR2.h" />
+    <ClInclude Include="XNOR2.h" />
+    <ClInclude Include="XOR2.h" />
     <ClInclude Include="Components\INV.h" />
     <ClInclude Include="Components\LED.h" />
     <ClInclude Include="Components\Switch.h" />
