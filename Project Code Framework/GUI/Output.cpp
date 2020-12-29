@@ -336,14 +336,14 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 	//TODO: Add code to draw connection
 	if (selected)
 	{
-		pWind->SetPen(BLACK, 1);
+		pWind->SetPen(RED, 2);
 
 	}
 	else {
-		pWind->SetPen(RED, 1);
+		pWind->SetPen(BLACK, 2);
 	}
 	//Draw Connection
-	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y1);
+	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
 	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
 
 
