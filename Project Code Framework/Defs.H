@@ -128,6 +128,15 @@ enum FANOUT
 	AND3_FANOUT = 5,
 	NOR3_FANOUT = 5,
 	XOR3_FANOUT = 5,
+	OR2_FANOUT = 5,
+	NAND2_FANOUT = 5,
+	NOR2_FANOUT = 5,
+	XOR2_FANOUT = 5,
+	XNOR2_FANOUT = 5,
+	Buff_FANOUT = 5,
+	INV_FANOUT = 5,
+	LED_FANOUT = 0,
+	Switch_FANOUT = 5,
 };
 
 //A structure to contain drawing parameters for each component
