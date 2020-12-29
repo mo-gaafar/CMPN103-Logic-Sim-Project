@@ -81,6 +81,7 @@ enum DsgnMenuItem //The items of the design menu (you should add more items)
 	ITM_XOR3,		//XOR3 gate item in menu
 	ITM_SWITCH,		//SWITCH item in menu
 	ITM_LED,		//LED item in menu
+	ITM_ADDCONNECTION,
 	ITM_SIM_MODE, //Simulation mode button?
 	ITM_EXIT,		//Exit item
 	//TODO: Add more items names here (MISSING CONNECTIONS)
