@@ -1,11 +1,11 @@
 #ifndef _ADD_CONNECTION_COMPONENT_H
 #define _ADD_CONNECTION_COMPONENT_H
 
-#include "Actions/Action.h"
-#include "Components/Connection.h"
-#include "ApplicationManager.h"
-#include "Defs.H"
-#include "Components/Pin.h"
+#include "../Actions/Action.h"
+#include "../Components/Connection.h"
+#include "../ApplicationManager.h"
+#include "../Defs.H"
+#include "../Components/Pin.h"
 
 class AddConnection : public Action
 {
@@ -25,4 +25,4 @@ public:
 };
 
 
-
+#endif

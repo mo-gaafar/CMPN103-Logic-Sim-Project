@@ -1,5 +1,5 @@
-#include "AddConnection.h"
-#include "ApplicationManager.h"
+#include "../Actions/AddConnection.h"
+#include "../ApplicationManager.h"
 
 AddConnection::AddConnection(ApplicationManager* pApp) :Action(pApp)
 {
