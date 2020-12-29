@@ -12,6 +12,7 @@
 #include "Actions\AddINV.h"
 #include "Actions\AddLED.h"
 #include "Actions\AddSwitch.h"
+#include "Actions\AddConnection.h"
 
 
 ApplicationManager::ApplicationManager()
@@ -92,6 +93,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case ADD_CONNECTION:
 			//TODO: Create AddConection Action here
+			pAct = new AddConnection(this);
 			break;
 	
 
