@@ -1,8 +1,8 @@
 #ifndef _ADD_AND3_GATE_H
 #define _ADD_AND3_GATE_H
 
-#include "actions\action.h"
-#include "AND3.h"
+#include "action.h"
+#include "..\Components\AND3.h"
 
 class AddANDgate3 : public Action
 {

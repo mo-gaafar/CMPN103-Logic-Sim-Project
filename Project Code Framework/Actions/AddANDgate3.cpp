@@ -1,22 +1,22 @@
-#include "AddNANDgate3.h"
-#include "ApplicationManager.h"
+#include "AddANDgate3.h"
+#include "..\ApplicationManager.h"
 
-AddNANDgate3::AddNANDgate3(ApplicationManager* pApp) :Action(pApp)
+AddANDgate3::AddANDgate3(ApplicationManager* pApp) :Action(pApp)
 {
 }
 
-AddNANDgate3::~AddNANDgate3(void)
+AddANDgate3::~AddANDgate3(void)
 {
 }
 
-void AddNANDgate3::ReadActionParameters()
+void AddANDgate3::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("2-Input NAND Gate: Click to add the gate");
+	pOut->PrintMsg("2-Input AND Gate: Click to add the gate");
 
 	//Wait for User Input
 	pIn->GetPointClicked(Cx, Cy);
@@ -26,7 +26,7 @@ void AddNANDgate3::ReadActionParameters()
 
 }
 
-void AddNANDgate3::Execute()
+void AddANDgate3::Execute()
 {
 	//Get Center point of the Gate
 	ReadActionParameters();
@@ -41,13 +41,13 @@ void AddNANDgate3::Execute()
 	GInfo.x2 = Cx + Len / 2;
 	GInfo.y1 = Cy - Wdth / 2;
 	GInfo.y2 = Cy + Wdth / 2;
-	NAND3* pA = new NAND3(GInfo, NAND3_FANOUT);
+	AND3* pA = new AND3(GInfo, AND3_FANOUT);
 	pManager->AddComponent(pA);
 }
 
-void AddNANDgate3::Undo()
+void AddANDgate3::Undo()
 {}
 
-void AddNANDgate3::Redo()
+void AddANDgate3::Redo()
 {}
 

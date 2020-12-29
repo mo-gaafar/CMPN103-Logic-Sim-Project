@@ -1,8 +1,8 @@
 #ifndef _ADD_XOR3_GATE_H
 #define _ADD_XOR3_GATE_H
 
-#include "actions\action.h"
-#include "XOR3.h"
+#include "action.h"
+#include "..\Components\XOR3.h"
 
 class AddXORgate3 : public Action
 {
