@@ -127,6 +127,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions\AddANDgate2.cpp" />
+    <ClCompile Include="AddANDgate3.cpp" />
+    <ClCompile Include="AddNORgate3.cpp" />
+    <ClCompile Include="AddXORgate3.cpp" />
+    <ClCompile Include="AND3.cpp" />
     <ClCompile Include="Actions\AddNANDgate2.cpp" />
     <ClCompile Include="Actions\AddNORgate2.cpp" />
     <ClCompile Include="Actions\AddORgate2.cpp" />
@@ -185,16 +189,27 @@
     <ClCompile Include="Components\INV.cpp" />
     <ClCompile Include="Components\LED.cpp" />
     <ClCompile Include="main.cpp" />
+
+    <ClCompile Include="NOR3.cpp" />
+    <ClCompile Include="XOR3.cpp" />
+
     <ClCompile Include="Components\NAND2.cpp" />
     <ClCompile Include="Components\NOR2.cpp" />
     <ClCompile Include="Components\OR2.cpp" />
     <ClCompile Include="Components\XNOR2.cpp" />
     <ClCompile Include="Components\XOR2.cpp" />
     <ClCompile Include="Components\Switch.cpp" />
+
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\AddANDgate2.h" />
+
+    <ClInclude Include="AddANDgate3.h" />
+    <ClInclude Include="AddNORgate3.h" />
+    <ClInclude Include="AddXORgate3.h" />
+    <ClInclude Include="AND3.h" />
+
     <ClInclude Include="Actions\AddNANDgate2.h" />
     <ClInclude Include="Actions\AddNORgate2.h" />
     <ClInclude Include="Actions\AddORgate2.h" />
@@ -205,6 +220,7 @@
     <ClInclude Include="Actions\AddLED.h" />
     <ClInclude Include="Actions\AddSwitch.h" />
     <ClInclude Include="Components\Buff.h" />
+
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />
@@ -237,6 +253,10 @@
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />
+
+    <ClInclude Include="NOR3.h" />
+    <ClInclude Include="XOR3.h" />
+
     <ClInclude Include="Components\NAND2.h" />
     <ClInclude Include="Components\NOR2.h" />
     <ClInclude Include="Components\OR2.h" />

@@ -125,6 +125,9 @@ enum SimMenuItem //The items of the simulation menu (you should add more items)
 enum FANOUT
 {
 	AND2_FANOUT = 5,	//Default fan out of 2-input AND gate
+	AND3_FANOUT = 5,
+	NOR3_FANOUT = 5,
+	XOR3_FANOUT = 5,
 	OR2_FANOUT = 5,
 	NAND2_FANOUT = 5,
 	NOR2_FANOUT = 5,

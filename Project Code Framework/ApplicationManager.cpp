@@ -1,5 +1,8 @@
 #include "ApplicationManager.h"
 #include "Actions\AddANDgate2.h"
+#include "AddANDgate3.h"
+#include "AddNORgate3.h"
+#include "AddXORgate3.h"
 #include "Actions\AddORgate2.h"
 #include "Actions\AddNANDgate2.h"
 #include "Actions\AddNORgate2.h"
@@ -45,6 +48,17 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct= new AddANDgate2(this);
 			break;
 
+		case ADD_AND_GATE_3:
+			pAct = new AddANDgate3(this);
+			break;
+
+		case ADD_NOR_GATE_3:
+			pAct = new AddNORgate3(this);
+			break;
+
+		case ADD_XOR_GATE_3:
+			pAct = new AddXORgate3(this);
+			break;
 		case ADD_OR_GATE_2:
 			pAct = new AddORgate2(this);
 			break;
