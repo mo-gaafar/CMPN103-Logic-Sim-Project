@@ -170,6 +170,14 @@
     <ClCompile Include="XNOR2.cpp">
       <Filter>Components</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\AddBuff.cpp" />
+    <ClCompile Include="Actions\AddINV.cpp" />
+    <ClCompile Include="Actions\AddLED.cpp" />
+    <ClCompile Include="Actions\AddSwitch.cpp" />
+    <ClCompile Include="Components\Buff.cpp" />
+    <ClCompile Include="Components\INV.cpp" />
+    <ClCompile Include="Components\LED.cpp" />
+    <ClCompile Include="Components\Switch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defs.H" />
@@ -302,6 +310,14 @@
     <ClInclude Include="XNOR2.h">
       <Filter>Components</Filter>
     </ClInclude>
+    <ClInclude Include="Actions\AddBuff.h" />
+    <ClInclude Include="Actions\AddINV.h" />
+    <ClInclude Include="Actions\AddLED.h" />
+    <ClInclude Include="Actions\AddSwitch.h" />
+    <ClInclude Include="Components\Buff.h" />
+    <ClInclude Include="Components\INV.h" />
+    <ClInclude Include="Components\LED.h" />
+    <ClInclude Include="Components\Switch.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

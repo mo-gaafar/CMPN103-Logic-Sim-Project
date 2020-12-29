@@ -5,6 +5,10 @@
 #include "AddNORgate2.h"
 #include "AddXORgate2.h"
 #include "AddXNORgate2.h"
+#include "Actions\AddBuff.h"
+#include "Actions\AddINV.h"
+#include "Actions\AddLED.h"
+#include "Actions\AddSwitch.h"
 
 
 ApplicationManager::ApplicationManager()
@@ -60,7 +64,18 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case ADD_XNOR_GATE_2:
 			pAct = new AddXNORgate2(this);
 			break;
-
+		case ADD_Buff:
+			pAct = new AddBuff(this);
+			break;
+		case ADD_INV:
+			pAct = new AddINV(this);
+			break;
+		case ADD_LED:
+			pAct = new AddLED(this);
+			break;
+		case ADD_Switch:
+			pAct = new AddSwitch(this);
+			break;
 		case ADD_CONNECTION:
 			//TODO: Create AddConection Action here
 			break;
