@@ -87,6 +87,7 @@ ActionType Input::GetUserAction() const
 			case ITM_XOR3: return	ADD_XOR_GATE_3;
 			case ITM_SWITCH: return	ADD_Switch;
 			case ITM_LED: return	ADD_LED;
+			case ITM_ADDCONNECTION: return ADD_CONNECTION;
 			case ITM_SIM_MODE:	return SIM_MODE;
 
 				//case ITM_CONNECTION: return	ADD_CONNECTION;
