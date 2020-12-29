@@ -43,9 +43,16 @@ void AddConnection::Execute()
 
 	ReadActionParameters();
 
- Connection* m_Connection = new Connection(m_GfxInfo, pSrcPin, pDstPin);
+  m_Connection = new Connection(m_GfxInfo, pSrcPin, pDstPin);
 	m_Connection->setSourcePin(pSrcPin);
 	m_Connection->setDestPin(pDstPin);
 	pManager->AddComponent(m_Connection);
 
 }
+
+void AddConnection::Undo()
+{}
+
+void  AddConnection::Redo()
+{}
+
