@@ -127,6 +127,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions\AddANDgate2.cpp" />
+    <ClCompile Include="AddNANDgate2.cpp" />
+    <ClCompile Include="AddNORgate2.cpp" />
+    <ClCompile Include="AddORgate2.cpp" />
+    <ClCompile Include="AddXNORgate2.cpp" />
+    <ClCompile Include="AddXORgate2.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
@@ -173,10 +178,20 @@
     <ClCompile Include="GUI\Input.cpp" />
     <ClCompile Include="GUI\Output.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NAND2.cpp" />
+    <ClCompile Include="NOR2.cpp" />
+    <ClCompile Include="OR2.cpp" />
+    <ClCompile Include="XNOR2.cpp" />
+    <ClCompile Include="XOR2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\AddANDgate2.h" />
+    <ClInclude Include="AddNANDgate2.h" />
+    <ClInclude Include="AddNORgate2.h" />
+    <ClInclude Include="AddORgate2.h" />
+    <ClInclude Include="AddXNORgate2.h" />
+    <ClInclude Include="AddXORgate2.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />
@@ -209,6 +224,11 @@
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />
+    <ClInclude Include="NAND2.h" />
+    <ClInclude Include="NOR2.h" />
+    <ClInclude Include="OR2.h" />
+    <ClInclude Include="XNOR2.h" />
+    <ClInclude Include="XOR2.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

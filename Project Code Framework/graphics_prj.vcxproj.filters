@@ -140,6 +140,36 @@
     <ClCompile Include="CMUgraphicsLib\windowinput.cpp">
       <Filter>CMUgraphics Library</Filter>
     </ClCompile>
+    <ClCompile Include="AddORgate2.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddNANDgate2.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddNORgate2.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddXORgate2.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AddXNORgate2.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="OR2.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="NAND2.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="NOR2.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="XOR2.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="XNOR2.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defs.H" />
@@ -241,6 +271,36 @@
     </ClInclude>
     <ClInclude Include="CMUgraphicsLib\windowinput.h">
       <Filter>CMUgraphics Library</Filter>
+    </ClInclude>
+    <ClInclude Include="AddORgate2.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddNANDgate2.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddNORgate2.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddXORgate2.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AddXNORgate2.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="OR2.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NAND2.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NOR2.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="XOR2.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="XNOR2.h">
+      <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
