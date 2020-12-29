@@ -1,5 +1,5 @@
-#include "AddXORgate2.h"
-#include "ApplicationManager.h"
+#include "..\actions\AddXORgate2.h"
+#include "..\ApplicationManager.h"
 
 AddXORgate2::AddXORgate2(ApplicationManager* pApp) :Action(pApp)
 {

@@ -1,5 +1,5 @@
-#ifndef _XOR2_H
-#define _XOR2_H
+#ifndef _NAND2_H
+#define _NAND2_H
 
 /*
   Class AND2
@@ -7,12 +7,12 @@
   represent the 2-input AND gate
 */
 
-#include "Components\Gate.h"
+#include "Gate.h"
 
-class XOR2 :public Gate
+class NAND2 :public Gate
 {
 public:
-	XOR2(const GraphicsInfo& r_GfxInfo, int r_FanOut);
+	NAND2(const GraphicsInfo& r_GfxInfo, int r_FanOut);
 	virtual void Operate();	//Calculates the output of the AND gate
 	virtual void Draw(Output* pOut);	//Draws 2-input gate
 

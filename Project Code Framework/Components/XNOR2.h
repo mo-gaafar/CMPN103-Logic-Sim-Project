@@ -7,7 +7,7 @@
   represent the 2-input AND gate
 */
 
-#include "Components\Gate.h"
+#include "Gate.h"
 
 class XNOR2 :public Gate
 {

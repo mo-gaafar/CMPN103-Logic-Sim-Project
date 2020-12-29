@@ -1,22 +1,22 @@
-#include "AddXNORgate2.h"
-#include "ApplicationManager.h"
+#include "..\actions\AddNANDgate2.h"
+#include "..\ApplicationManager.h"
 
-AddXNORgate2::AddXNORgate2(ApplicationManager* pApp) :Action(pApp)
+AddNANDgate2::AddNANDgate2(ApplicationManager* pApp) :Action(pApp)
 {
 }
 
-AddXNORgate2::~AddXNORgate2(void)
+AddNANDgate2::~AddNANDgate2(void)
 {
 }
 
-void AddXNORgate2::ReadActionParameters()
+void AddNANDgate2::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("2-Input XNOR Gate: Click to add the gate");
+	pOut->PrintMsg("2-Input NAND Gate: Click to add the gate");
 
 	//Wait for User Input
 	pIn->GetPointClicked(Cx, Cy);
@@ -26,7 +26,7 @@ void AddXNORgate2::ReadActionParameters()
 
 }
 
-void AddXNORgate2::Execute()
+void AddNANDgate2::Execute()
 {
 	//Get Center point of the Gate
 	ReadActionParameters();
@@ -41,13 +41,13 @@ void AddXNORgate2::Execute()
 	GInfo.x2 = Cx + Len / 2;
 	GInfo.y1 = Cy - Wdth / 2;
 	GInfo.y2 = Cy + Wdth / 2;
-	XNOR2* pA = new XNOR2(GInfo, NOR2_FANOUT);
+	NAND2* pA = new NAND2(GInfo, NAND2_FANOUT);
 	pManager->AddComponent(pA);
 }
 
-void AddXNORgate2::Undo()
+void AddNANDgate2::Undo()
 {}
 
-void AddXNORgate2::Redo()
+void AddNANDgate2::Redo()
 {}
 

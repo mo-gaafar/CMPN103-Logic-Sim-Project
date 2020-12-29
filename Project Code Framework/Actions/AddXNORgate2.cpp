@@ -1,22 +1,22 @@
-#include "AddORgate2.h"
-#include "ApplicationManager.h"
+#include "..\actions\AddXNORgate2.h"
+#include "..\ApplicationManager.h"
 
-AddORgate2::AddORgate2(ApplicationManager* pApp) :Action(pApp)
+AddXNORgate2::AddXNORgate2(ApplicationManager* pApp) :Action(pApp)
 {
 }
 
-AddORgate2::~AddORgate2(void)
+AddXNORgate2::~AddXNORgate2(void)
 {
 }
 
-void AddORgate2::ReadActionParameters()
+void AddXNORgate2::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("2-Input OR Gate: Click to add the gate");
+	pOut->PrintMsg("2-Input XNOR Gate: Click to add the gate");
 
 	//Wait for User Input
 	pIn->GetPointClicked(Cx, Cy);
@@ -26,7 +26,7 @@ void AddORgate2::ReadActionParameters()
 
 }
 
-void AddORgate2::Execute()
+void AddXNORgate2::Execute()
 {
 	//Get Center point of the Gate
 	ReadActionParameters();
@@ -41,13 +41,13 @@ void AddORgate2::Execute()
 	GInfo.x2 = Cx + Len / 2;
 	GInfo.y1 = Cy - Wdth / 2;
 	GInfo.y2 = Cy + Wdth / 2;
-	OR2* pA = new OR2(GInfo, OR2_FANOUT);
+	XNOR2* pA = new XNOR2(GInfo, NOR2_FANOUT);
 	pManager->AddComponent(pA);
 }
 
-void AddORgate2::Undo()
+void AddXNORgate2::Undo()
 {}
 
-void AddORgate2::Redo()
+void AddXNORgate2::Redo()
 {}
 
