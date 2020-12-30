@@ -31,7 +31,7 @@ void XNOR2::Operate()
 void XNOR2::Draw(Output* pOut)
 {
 	//Call output class and pass gate drawing info to it.
-	pOut->DrawXOR2(m_GfxInfo);
+	pOut->DrawXOR2(m_GfxInfo, Selected);
 }
 
 //returns status of outputpin
