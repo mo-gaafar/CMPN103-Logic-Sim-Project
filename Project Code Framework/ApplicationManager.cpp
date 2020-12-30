@@ -13,7 +13,7 @@
 #include "Actions\AddLED.h"
 #include "Actions\AddSwitch.h"
 #include "Actions\AddConnection.h"
-#include "Select.h"
+#include "Actions\Select.h"
 
 
 ApplicationManager::ApplicationManager()
