@@ -13,7 +13,6 @@
 #include "Actions\AddLED.h"
 #include "Actions\AddSwitch.h"
 #include "Actions\AddConnection.h"
-#include "Actions\AddLabel.h"
 
 
 ApplicationManager::ApplicationManager()

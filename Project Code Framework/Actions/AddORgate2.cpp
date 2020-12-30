@@ -43,6 +43,16 @@ void AddORgate2::Execute()
 	GInfo.y2 = Cy + Wdth / 2;
 	OR2* pA = new OR2(GInfo, OR2_FANOUT);
 	pManager->AddComponent(pA);
+
+	Output* pOut = pManager->GetOutput();
+	Input* pIn = pManager->GetInput();
+	pOut->PrintMsg("Enter component label: ");
+	GraphicsInfo LInfo;
+	LInfo.x1 = GInfo.x1;
+	LInfo.y1 = GInfo.y1 - 20;
+	string tempst = pIn->GetSrting(pOut);
+	pOut->DrawString(LInfo, tempst);
+	pOut->ClearStatusBar();
 }
 
 void AddORgate2::Undo()
