@@ -211,6 +211,7 @@
     <ClCompile Include="Components\NOR3.cpp" />
     <ClCompile Include="Components\XOR3.cpp" />
     <ClCompile Include="Components\AND3.cpp" />
+    <ClCompile Include="Actions\AddLabel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -290,9 +291,6 @@
     <ClInclude Include="CMUgraphicsLib\image.h">
       <Filter>CMUgraphics Library</Filter>
     </ClInclude>
-    <ClInclude Include="GUI\Input.h">
-      <Filter>GUI</Filter>
-    </ClInclude>
     <ClInclude Include="Components\InputPin.h">
       <Filter>Pins</Filter>
     </ClInclude>
@@ -332,17 +330,11 @@
     <ClInclude Include="CMUgraphicsLib\keyqueue.h">
       <Filter>CMUgraphics Library</Filter>
     </ClInclude>
-    <ClInclude Include="GUI\Output.h">
-      <Filter>GUI</Filter>
-    </ClInclude>
     <ClInclude Include="Components\OutputPin.h">
       <Filter>Pins</Filter>
     </ClInclude>
     <ClInclude Include="Components\Pin.h">
       <Filter>Pins</Filter>
-    </ClInclude>
-    <ClInclude Include="GUI\UI_Info.h">
-      <Filter>GUI</Filter>
     </ClInclude>
     <ClInclude Include="CMUgraphicsLib\mousequeue.h">
       <Filter>CMUgraphics Library</Filter>
@@ -371,6 +363,10 @@
     <ClInclude Include="Components\NOR3.h" />
     <ClInclude Include="Components\XOR3.h" />
     <ClInclude Include="Components\AND3.h" />
+    <ClInclude Include="GUI\Input.h" />
+    <ClInclude Include="GUI\Output.h" />
+    <ClInclude Include="GUI\UI_Info.h" />
+    <ClInclude Include="Actions\AddLabel.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

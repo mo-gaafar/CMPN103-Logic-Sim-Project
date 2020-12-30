@@ -13,6 +13,7 @@
 #include "Actions\AddLED.h"
 #include "Actions\AddSwitch.h"
 #include "Actions\AddConnection.h"
+#include "Actions\AddLabel.h"
 
 
 ApplicationManager::ApplicationManager()
@@ -112,8 +113,11 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 void ApplicationManager::UpdateInterface()
 {
-		for(int i=0; i<CompCount; i++)
-			CompList[i]->Draw(OutputInterface);
+	for (int i = 0; i < CompCount; i++)
+	{
+		CompList[i]->Draw(OutputInterface);
+		
+	}
 
 }
 
