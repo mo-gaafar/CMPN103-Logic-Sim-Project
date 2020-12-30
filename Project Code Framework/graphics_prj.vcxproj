@@ -198,6 +198,7 @@
     <ClCompile Include="Components\XNOR2.cpp" />
     <ClCompile Include="Components\XOR2.cpp" />
     <ClCompile Include="Components\Switch.cpp" />
+    <ClCompile Include="Select.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -259,6 +260,7 @@
     <ClInclude Include="Components\INV.h" />
     <ClInclude Include="Components\LED.h" />
     <ClInclude Include="Components\Switch.h" />
+    <ClInclude Include="Select.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
