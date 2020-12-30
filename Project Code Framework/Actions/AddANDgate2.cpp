@@ -26,8 +26,11 @@ void AddANDgate2::ReadActionParameters()
 	
 }
 
+
 void AddANDgate2::Execute()
 {
+	Output* pOut = pManager->GetOutput();
+	Input* pIn = pManager->GetInput();
 	//Get Center point of the Gate
 	ReadActionParameters();
 	
@@ -36,13 +39,29 @@ void AddANDgate2::Execute()
 	int Wdth = UI.AND2_Height;
 	
 	GraphicsInfo GInfo; //Gfx info to be used to construct the AND2 gate
+
+
 	
 	GInfo.x1 = Cx - Len/2;
 	GInfo.x2 = Cx + Len/2;
 	GInfo.y1 = Cy - Wdth/2;
 	GInfo.y2 = Cy + Wdth/2;
+
+
 	AND2 *pA=new AND2(GInfo, AND2_FANOUT); 
 	pManager->AddComponent(pA);
+
+
+	pOut->PrintMsg("Enter component label: ");
+	GraphicsInfo LInfo;
+	LInfo.x1 = GInfo.x1;
+	LInfo.y1 = GInfo.y1 - 20;
+	//string tempst = "Label";
+	//pOut->DrawString(LInfo, tempst);
+
+	string tempst = pIn->GetSrting(pOut);
+	pOut->DrawString(LInfo, tempst);
+	pOut->ClearStatusBar();
 }
 
 void AddANDgate2::Undo()
