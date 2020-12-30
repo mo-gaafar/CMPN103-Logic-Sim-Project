@@ -211,8 +211,8 @@
     <ClCompile Include="Components\NOR3.cpp" />
     <ClCompile Include="Components\XOR3.cpp" />
     <ClCompile Include="Components\AND3.cpp" />
-    <ClCompile Include="Select.cpp" />
     <ClCompile Include="Actions\AddLabel.cpp" />
+    <ClCompile Include="Actions\Select.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -367,8 +367,8 @@
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />
-    <ClInclude Include="Select.h" />
     <ClInclude Include="Actions\AddLabel.h" />
+    <ClInclude Include="Actions\Select.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
