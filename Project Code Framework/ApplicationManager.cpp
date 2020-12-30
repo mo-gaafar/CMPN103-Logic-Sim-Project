@@ -13,6 +13,7 @@
 #include "Actions\AddLED.h"
 #include "Actions\AddSwitch.h"
 #include "Actions\AddConnection.h"
+#include "Select.h"
 
 
 ApplicationManager::ApplicationManager()
@@ -32,6 +33,18 @@ void ApplicationManager::AddComponent(Component* pComp)
 	CompList[CompCount++] = pComp;		
 }
 ////////////////////////////////////////////////////////////////////
+int ApplicationManager::GetCompCount()
+{
+	return CompCount;
+}
+void ApplicationManager::SetCompList(Component** l)
+{
+	*CompList = *l;
+}
+Component** ApplicationManager::GetCompList()
+{
+	return CompList;
+}
 
 ActionType ApplicationManager::GetUserAction()
 {
@@ -95,7 +108,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			//TODO: Create AddConection Action here
 			pAct = new AddConnection(this);
 			break;
-	
+
+		case SELECT_AREA:
+			pAct = new Select(this);
+			break;
 
 		case EXIT:
 			///TODO: create ExitAction here
