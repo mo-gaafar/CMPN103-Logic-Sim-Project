@@ -12,13 +12,13 @@ __declspec(selectany) //This line to prevent "redefinition error"
 
 struct UI_Info	//User Interface Info.
 {
-	MODE AppMode;		//Application Mode (design or simulation)
+	MODE AppMode;		//Application Mode (design or simulation or gateadd)
 
-	static const int	width = 960, height = 700,	//Window width and height
+	static const int	width = 1215, height = 800,	//Window width and height
 		wx = 15, wy = 15,			//Window starting coordinates
 		StatusBarHeight = 50,	//Status Bar Height
-		ToolBarHeight = 60,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
-		ToolItemWidth = 60;		//Width of each item in toolbar menu
+		ToolBarHeight = 80,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
+		ToolItemWidth = 80;		//Width of each item in toolbar menu
 
 	color DrawColor;		//Drawing color
 	color SelectColor;		//Highlighting color

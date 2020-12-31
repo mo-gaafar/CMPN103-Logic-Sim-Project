@@ -186,6 +186,8 @@
     <ClCompile Include="Components\OutputPin.cpp" />
     <ClCompile Include="Components\Pin.cpp" />
     <ClCompile Include="ApplicationManager.cpp" />
+    <ClCompile Include="Actions\DesignToolBar.cpp" />
+    <ClCompile Include="Actions\GateToolBar.cpp" />
     <ClCompile Include="GUI\Input.cpp" />
     <ClCompile Include="GUI\Output.cpp" />
     <ClCompile Include="Components\INV.cpp" />
@@ -200,6 +202,7 @@
     <ClCompile Include="Components\XOR2.cpp" />
     <ClCompile Include="Components\Switch.cpp" />
     <ClCompile Include="Actions\Select.cpp" />
+    <ClCompile Include="Actions\SimulateToolBar.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -249,6 +252,8 @@
     <ClInclude Include="Components\Pin.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="Defs.H" />
+    <ClInclude Include="Actions\DesignToolBar.h" />
+    <ClInclude Include="Actions\GateToolBar.h" />
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />
@@ -263,9 +268,47 @@
     <ClInclude Include="Components\LED.h" />
     <ClInclude Include="Components\Switch.h" />
     <ClInclude Include="Actions\Select.h" />
+    <ClInclude Include="Actions\SimulateToolBar.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Images\Menu\blank.jpg" />
+    <Image Include="Images\Menu\Menu_ADDCONNECTION.jpg" />
+    <Image Include="Images\Menu\Menu_ADDGATE.jpg" />
+    <Image Include="Images\Menu\Menu_ADDLABEL.jpg" />
+    <Image Include="Images\Menu\Menu_AND2.jpg" />
+    <Image Include="Images\Menu\Menu_AND3.jpg" />
+    <Image Include="Images\Menu\Menu_BUFFER.jpg" />
+    <Image Include="Images\Menu\Menu_CHANGESWITCH.jpg" />
+    <Image Include="Images\Menu\Menu_COPY.jpg" />
+    <Image Include="Images\Menu\Menu_CUT.jpg" />
+    <Image Include="Images\Menu\Menu_DEL.jpg" />
+    <Image Include="Images\Menu\Menu_DSN_MODE.jpg" />
+    <Image Include="Images\Menu\Menu_EDITLABEL.jpg" />
+    <Image Include="Images\Menu\Menu_Exit.jpg" />
+    <Image Include="Images\Menu\Menu_LED.jpg" />
+    <Image Include="Images\Menu\Menu_LOAD.jpg" />
+    <Image Include="Images\Menu\Menu_MOVE.jpg" />
+    <Image Include="Images\Menu\Menu_NAND2.jpg" />
+    <Image Include="Images\Menu\Menu_NOR2.jpg" />
+    <Image Include="Images\Menu\Menu_NOR3.jpg" />
+    <Image Include="Images\Menu\Menu_NOT.jpg" />
+    <Image Include="Images\Menu\Menu_OR2.jpg" />
+    <Image Include="Images\Menu\Menu_PASTE.jpg" />
+    <Image Include="Images\Menu\Menu_PROBE.jpg" />
+    <Image Include="Images\Menu\Menu_REDO.jpg" />
+    <Image Include="Images\Menu\Menu_SAVE.jpg" />
+    <Image Include="Images\Menu\Menu_SELECT.jpg" />
+    <Image Include="Images\Menu\Menu_SIM_MODE.jpg" />
+    <Image Include="Images\Menu\Menu_SWITCH.jpg" />
+    <Image Include="Images\Menu\Menu_TRUTHTABLE.jpg" />
+    <Image Include="Images\Menu\Menu_UNDO.jpg" />
+    <Image Include="Images\Menu\Menu_VALIDATE.jpg" />
+    <Image Include="Images\Menu\Menu_XNOR2.jpg" />
+    <Image Include="Images\Menu\Menu_XOR2.jpg" />
+    <Image Include="Images\Menu\Menu_XOR3.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
