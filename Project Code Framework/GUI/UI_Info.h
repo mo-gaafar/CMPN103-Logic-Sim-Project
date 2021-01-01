@@ -12,13 +12,13 @@ __declspec(selectany) //This line to prevent "redefinition error"
 
 struct UI_Info	//User Interface Info.
 {
-	MODE AppMode;		//Application Mode (design or simulation or gateadd)
+	MODE AppMode;		//Application Mode (design or simulation)
 
-	static const int	width = 1215, height = 800,	//Window width and height
-		wx = 50, wy = 50,			//Window starting coordinates
+	static const int	width = 960, height = 700,	//Window width and height
+		wx = 15, wy = 15,			//Window starting coordinates
 		StatusBarHeight = 50,	//Status Bar Height
-		ToolBarHeight = 80,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
-		ToolItemWidth = 80;		//Width of each item in toolbar menu
+		ToolBarHeight = 60,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
+		ToolItemWidth = 60;		//Width of each item in toolbar menu
 
 	color DrawColor;		//Drawing color
 	color SelectColor;		//Highlighting color
@@ -29,8 +29,8 @@ struct UI_Info	//User Interface Info.
 
 	//This should be calculated accurately because it will be used later to create connections between gates
 	//For now, we will assume that rect width = 50 and height = 50
-	static const int	AND2_Width = 60,		//AND2 Gate Image default width
-		AND2_Height = 60;		//AND2 Gate Image default height
+	static const int	AND2_Width = 50,		//AND2 Gate Image default width
+		AND2_Height = 50;		//AND2 Gate Image default height
 
 }UI;	//create a single global object UI
 

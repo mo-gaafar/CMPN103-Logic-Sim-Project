@@ -213,10 +213,6 @@
     <ClCompile Include="Components\AND3.cpp" />
     <ClCompile Include="Actions\AddLabel.cpp" />
     <ClCompile Include="Actions\Select.cpp" />
-    <ClCompile Include="Actions\SimulateToolBar.cpp" />
-    <ClCompile Include="Actions\DesignToolBar.cpp" />
-    <ClCompile Include="Actions\GateToolBar.cpp" />
-    <ClCompile Include="Actions\ExitProgram.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -373,49 +369,8 @@
     <ClInclude Include="GUI\UI_Info.h" />
     <ClInclude Include="Actions\AddLabel.h" />
     <ClInclude Include="Actions\Select.h" />
-    <ClInclude Include="Actions\SimulateToolBar.h" />
-    <ClInclude Include="Actions\DesignToolBar.h" />
-    <ClInclude Include="Actions\GateToolBar.h" />
-    <ClInclude Include="Actions\ExitProgram.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Images\Menu\blank.jpg" />
-    <Image Include="Images\Menu\Menu_ADDCONNECTION.jpg" />
-    <Image Include="Images\Menu\Menu_ADDGATE.jpg" />
-    <Image Include="Images\Menu\Menu_ADDLABEL.jpg" />
-    <Image Include="Images\Menu\Menu_AND2.jpg" />
-    <Image Include="Images\Menu\Menu_AND3.jpg" />
-    <Image Include="Images\Menu\Menu_BUFFER.jpg" />
-    <Image Include="Images\Menu\Menu_CHANGESWITCH.jpg" />
-    <Image Include="Images\Menu\Menu_DEL.jpg" />
-    <Image Include="Images\Menu\Menu_DSN_MODE.jpg" />
-    <Image Include="Images\Menu\Menu_EDITLABEL.jpg" />
-    <Image Include="Images\Menu\Menu_Exit.jpg" />
-    <Image Include="Images\Menu\Menu_LED.jpg" />
-    <Image Include="Images\Menu\Menu_LOAD.jpg" />
-    <Image Include="Images\Menu\Menu_MOVE.jpg" />
-    <Image Include="Images\Menu\Menu_NAND2.jpg" />
-    <Image Include="Images\Menu\Menu_NOR2.jpg" />
-    <Image Include="Images\Menu\Menu_NOR3.jpg" />
-    <Image Include="Images\Menu\Menu_NOT.jpg" />
-    <Image Include="Images\Menu\Menu_OR2.jpg" />
-    <Image Include="Images\Menu\Menu_REDO.jpg" />
-    <Image Include="Images\Menu\Menu_SAVE.jpg" />
-    <Image Include="Images\Menu\Menu_SELECT.jpg" />
-    <Image Include="Images\Menu\Menu_SIM_MODE.jpg" />
-    <Image Include="Images\Menu\Menu_SWITCH.jpg" />
-    <Image Include="Images\Menu\Menu_TRUTHTABLE.jpg" />
-    <Image Include="Images\Menu\Menu_UNDO.jpg" />
-    <Image Include="Images\Menu\Menu_XNOR2.jpg" />
-    <Image Include="Images\Menu\Menu_XOR2.jpg" />
-    <Image Include="Images\Menu\Menu_XOR3.jpg" />
-    <Image Include="Images\Menu\Menu_COPY.jpg" />
-    <Image Include="Images\Menu\Menu_CUT.jpg" />
-    <Image Include="Images\Menu\Menu_VALIDATE.jpg" />
-    <Image Include="Images\Menu\Menu_PASTE.jpg" />
-    <Image Include="Images\Menu\Menu_PROBE.jpg" />
   </ItemGroup>
 </Project>

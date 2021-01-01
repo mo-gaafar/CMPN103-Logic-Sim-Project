@@ -13,12 +13,11 @@ public:
 
 	void CreateDesignToolBar() const;	//Tool bar of the design mode
 	void CreateSimulationToolBar() const;//Tool bar of the simulation mode
-	void CreateGateToolBar() const;//tool bar for adding gates
 	void CreateStatusBar() const;	//Create Status bar
 
 	void ClearStatusBar() const;		//Clears the status bar
 	void ClearDrawingArea() const;	//Clears the drawing area
-	void ClearToolBar() const;
+
 	window* CreateWind(int wd, int h, int x, int y) const; //Creates user interface window
 
 
