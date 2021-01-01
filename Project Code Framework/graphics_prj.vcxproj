@@ -188,6 +188,7 @@
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="Actions\DesignToolBar.cpp" />
     <ClCompile Include="Actions\GateToolBar.cpp" />
+    <ClCompile Include="Actions\ExitProgram.cpp" />
     <ClCompile Include="GUI\Input.cpp" />
     <ClCompile Include="GUI\Output.cpp" />
     <ClCompile Include="Components\INV.cpp" />
@@ -254,6 +255,7 @@
     <ClInclude Include="Defs.H" />
     <ClInclude Include="Actions\DesignToolBar.h" />
     <ClInclude Include="Actions\GateToolBar.h" />
+    <ClInclude Include="Actions\ExitProgram.h" />
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />

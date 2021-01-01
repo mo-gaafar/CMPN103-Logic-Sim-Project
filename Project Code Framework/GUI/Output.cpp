@@ -1,4 +1,5 @@
 #include "Output.h"
+#include "Output.h"
 
 Output::Output()
 {
@@ -9,8 +10,8 @@ Output::Output()
 	//Initilaize interface colors
 	UI.DrawColor = BLACK;
 	UI.SelectColor = BLUE;
-	UI.ConnColor = RED;
-	UI.MsgColor = BLUE;
+	UI.ConnColor = BLACK;
+	UI.MsgColor = DARKDARKGREY;
 	UI.BkGrndColor = WHITE;
 
 	//Create the drawing window
@@ -58,7 +59,7 @@ void Output::PrintMsg(string msg) const
 	int MsgY = UI.StatusBarHeight - 10;
 
 	// Print the Message
-	pWind->SetFont(20, BOLD | ITALICIZED, BY_NAME, "Arial");
+	pWind->SetFont(20, BOLD , BY_NAME, "Helvetic Neue");
 	pWind->SetPen(UI.MsgColor);
 	pWind->DrawString(MsgX, UI.height - MsgY, msg);
 }
@@ -117,7 +118,7 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_EXIT_DSN] = "images\\Menu\\Menu_Exit.jpg";
 
 	//Draw menu item one image at a time
-	ClearToolBar();//clear toolbar
+	//ClearToolBar();//clear toolbar
 	for (int i = 0; i < ITM_DSN_CNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i * UI.ToolItemWidth, 0, UI.ToolItemWidth, UI.ToolBarHeight);
 
@@ -150,7 +151,7 @@ void Output::CreateSimulationToolBar() const
 	SimItemImages[BLANK8] = "images\\Menu\\blank.jpg";
 
 	SimItemImages[ITM_EXIT_SIM] = "images\\Menu\\Menu_Exit.jpg";
-	ClearToolBar();//clear toolbar
+	//ClearToolBar();//clear toolbar
 
 	for (int i = 0; i < ITM_SIM_CNT; i++)
 		pWind->DrawImage(SimItemImages[i], i * UI.ToolItemWidth, 0, UI.ToolItemWidth, UI.ToolBarHeight);
@@ -180,7 +181,7 @@ void Output::CreateGateToolBar()const
 
 	GateItemImages[ITM_DSN_MODE_GATE] = "images\\Menu\\Menu_DSN_MODE.jpg";
 
-	ClearToolBar();//clear toolbar
+	//ClearToolBar();//clear toolbar
 	for (int i = 0; i < ITM_GATE_CNT; i++)
 		pWind->DrawImage(GateItemImages[i], i * UI.ToolItemWidth, 0, UI.ToolItemWidth, UI.ToolBarHeight);
 

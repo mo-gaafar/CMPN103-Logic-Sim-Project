@@ -17,6 +17,7 @@
 #include "Actions\SimulateToolBar.h"
 #include "Actions\DesignToolBar.h"
 #include "Actions\GateToolBar.h"
+#include "Actions\ExitProgram.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -107,7 +108,6 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new AddSwitch(this);
 			break;
 		case ADD_CONNECTION:
-			//TODO: Create AddConection Action here
 			pAct = new AddConnection(this);
 			break;
 		case SIM_MODE:
@@ -123,7 +123,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new GateToolBar(this);
 			break;
 		case EXIT:
-			///TODO: create ExitAction here
+			pAct = new ExitProgram(this);
 			break;
 	}
 	if(pAct)

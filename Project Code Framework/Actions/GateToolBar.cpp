@@ -12,6 +12,9 @@ void GateToolBar::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
+	//Prints action message
+	pOut->PrintMsg("View add gate toolbar");
+
 	//Wait for User Input
 	pIn->GetPointClicked(Cx, Cy);
 

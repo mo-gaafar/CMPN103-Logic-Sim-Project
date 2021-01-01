@@ -12,6 +12,9 @@ void DesignToolBar::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
+	//Prints action message
+	pOut->PrintMsg("View design toolbar");
+
 	//Wait for User Input
 	pIn->GetPointClicked(Cx, Cy);
 

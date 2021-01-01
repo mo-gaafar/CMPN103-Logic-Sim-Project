@@ -216,6 +216,7 @@
     <ClCompile Include="Actions\SimulateToolBar.cpp" />
     <ClCompile Include="Actions\DesignToolBar.cpp" />
     <ClCompile Include="Actions\GateToolBar.cpp" />
+    <ClCompile Include="Actions\ExitProgram.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -375,6 +376,7 @@
     <ClInclude Include="Actions\SimulateToolBar.h" />
     <ClInclude Include="Actions\DesignToolBar.h" />
     <ClInclude Include="Actions\GateToolBar.h" />
+    <ClInclude Include="Actions\ExitProgram.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

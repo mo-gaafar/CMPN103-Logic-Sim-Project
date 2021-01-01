@@ -11,6 +11,9 @@ void SimulateToolBar::ReadActionParameters()
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
+	
+	//Prints action message
+	pOut->PrintMsg("View simulation toolbar");
 
 	//Wait for User Input
 	pIn->GetPointClicked(Cx, Cy);
