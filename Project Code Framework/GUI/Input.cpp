@@ -73,24 +73,22 @@ ActionType Input::GetUserAction() const
 
 			switch (ClickedItemOrder)
 			{
-			case ITM_UNDO: return UNDO;
-			case ITM_REDO: return REDO;
-			case ITM_CUT: return CUT;
-			case ITM_COPY:return COPY;
-			case ITM_PASTE:return PASTE;
-			case ITM_MOVE:	return MOVE;
-			case ITM_ADDLABEL:return ADD_Label;
-			case ITM_EDITLABEL: return EDIT_Label;
+			case ITM_AND2: return ADD_AND_GATE_2;
+			case ITM_OR2: return ADD_OR_GATE_2;
+			case ITM_EXIT: return EXIT;
+			case ITM_Buff:return ADD_Buff;
+			case ITM_INV: return ADD_INV;
+			case ITM_NAND2:return ADD_NAND_GATE_2;
+			case ITM_NOR2:return ADD_NOR_GATE_2;
+			case ITM_XOR2:return ADD_XOR_GATE_2;
+			case ITM_XNOR2: return	ADD_XNOR_GATE_2;
+			case ITM_AND3: return ADD_AND_GATE_3;
+			case ITM_NOR3: return ADD_NOR_GATE_3;
+			case ITM_XOR3: return	ADD_XOR_GATE_3;
+			case ITM_SWITCH: return	ADD_Switch;
+			case ITM_LED: return	ADD_LED;
 			case ITM_ADDCONNECTION: return ADD_CONNECTION;
-
-			case ITM_ADDGATE: return GATE_MODE;
-
-			case ITM_DEL: return DEL;
-			case ITM_SAVE: 	return SAVE;
-			case ITM_LOAD:	return LOAD;
-			case ITM_EXIT_DSN: return EXIT;
-			case ITM_SIM_MODE_DSN:	return SIM_MODE;
-			//case ITM_SELECT: return SELECT_BUTTON;
+			case ITM_SIM_MODE:	return SIM_MODE;
 
 				//case ITM_CONNECTION: return	ADD_CONNECTION;
 
@@ -109,31 +107,27 @@ ActionType Input::GetUserAction() const
 		//[3] User clicks on the status bar
 		return STATUS_BAR;
 	}
-	else if(UI.AppMode == GATE)	//Application is in Simulation mode
+	else	//Application is in Simulation mode
 	{
 		if (y >= 0 && y < UI.ToolBarHeight)
 		{
 			int ClickedItemOrder = (x / UI.ToolItemWidth);
 			switch (ClickedItemOrder)
 			{
-			case ITM_AND2: return ADD_AND_GATE_2;
-			case ITM_OR2: return ADD_OR_GATE_2;
-			case ITM_Buff:return ADD_Buff;
-			case ITM_INV: return ADD_INV;
-			case ITM_NAND2:return ADD_NAND_GATE_2;
-			case ITM_NOR2:return ADD_NOR_GATE_2;
-			case ITM_XOR2:return ADD_XOR_GATE_2;
-			case ITM_XNOR2: return	ADD_XNOR_GATE_2;
-			case ITM_AND3: return ADD_AND_GATE_3;
-			case ITM_NOR3: return ADD_NOR_GATE_3;
-			case ITM_XOR3: return	ADD_XOR_GATE_3;
-			case ITM_SWITCH: return	ADD_Switch;
-			case ITM_LED: return	ADD_LED;
+			case ITM_ADDLABEL:return ADD_Label;
+			case ITM_EDITLABEL: return EDIT_Label;
+			case ITM_TRUTH: return Create_TruthTable;
+			case ITM_CHANGESWITCH: return Change_Switch;
+			case ITM_DEL: return DEL;
+			case ITM_SELECT: return SELECT_BUTTON;
+			case ITM_MOVE:	return MOVE;
+			case ITM_SAVE: 	return SAVE;
+			case ITM_LOAD:	return LOAD;
+			case ITM_UNDO: return UNDO;
+			case ITM_REDO: return REDO;
+			case ITM_DSN_MODE: return DSN_MODE;
 
-			case ITM_EXIT_GATE: return EXIT;
-			case ITM_DSN_MODE_GATE: return DSN_MODE;
-
-			default: return GATE_TOOL;
+			default: return SIM_TOOL;
 			}
 		}
 		//[4] User clicks on the Simulation area
@@ -142,31 +136,6 @@ ActionType Input::GetUserAction() const
 			return SELECT_AREA;	//user want to select/unselect a component
 		}
 		//This should be changed after creating the compelete simulation bar 
-	}
-	else if (UI.AppMode == SIMULATION)
-	{
-		
-		if (y >= 0 && y < UI.ToolBarHeight) {
-			int ClickedItemOrder = (x / UI.ToolItemWidth);
-			switch (ClickedItemOrder)
-			{
-			case ITM_TRUTH: return Create_TruthTable;
-			case ITM_CHANGESWITCH: return Change_Switch;
-			case ITM_PROBE: return PROBE;
-			case ITM_DSN_MODE_SIM: return DSN_MODE;
-			case ITM_SIM: return SIMULATE;
-			case ITM_VALID:return VALIDATE;
-			case ITM_EXIT_SIM: return EXIT;
-
-			default:return SIM_TOOL;
-
-			}
-		}
-		
-		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
-		{
-			return SELECT_AREA;	//user want to select/unselect a component
-		}
 	}
 
 }

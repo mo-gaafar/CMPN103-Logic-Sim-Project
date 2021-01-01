@@ -14,10 +14,7 @@
 #include "Actions\AddSwitch.h"
 #include "Actions\AddConnection.h"
 #include "Actions\Select.h"
-#include "Actions\SimulateToolBar.h"
-#include "Actions\DesignToolBar.h"
-#include "Actions\GateToolBar.h"
-#include "Actions\ExitProgram.h"
+
 
 ApplicationManager::ApplicationManager()
 {
@@ -108,22 +105,16 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new AddSwitch(this);
 			break;
 		case ADD_CONNECTION:
+			//TODO: Create AddConection Action here
 			pAct = new AddConnection(this);
 			break;
-		case SIM_MODE:
-			pAct = new SimulateToolBar(this);
-			break;
-		case DSN_MODE:
-			pAct = new DesignToolBar(this);
-			break;
+
 		case SELECT_AREA:
 			pAct = new Select(this);
 			break;
-		case GATE_MODE:
-			pAct = new GateToolBar(this);
-			break;
+
 		case EXIT:
-			pAct = new ExitProgram(this);
+			///TODO: create ExitAction here
 			break;
 	}
 	if(pAct)
