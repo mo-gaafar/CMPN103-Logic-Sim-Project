@@ -26,6 +26,8 @@ public:
 
 	/* Returns the label of the component */
 	string GetLabel() const;
+	virtual OutputPin* GetOutputpinCoorinates(int& x, int& y) = 0;
+	virtual InputPin* GetInputpinCoorinates(int& x, int& y, int& i) = 0;
 
 
 	virtual int GetOutPinStatus() = 0;	//returns status of outputpin if LED, return -1

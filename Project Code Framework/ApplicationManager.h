@@ -38,7 +38,8 @@ public:
 	//Gets a pointer to Input / Output Object
 	Output* GetOutput();
 	Input* GetInput();
-
+	OutputPin* getoutputpin(int& x, int& y);
+	InputPin* getinputpin(int& x, int& y);
 	//Adds a new component to the list of components
 	void AddComponent(Component* pComp);
 	int GetCompCount();
