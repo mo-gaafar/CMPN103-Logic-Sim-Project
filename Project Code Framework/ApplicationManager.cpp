@@ -159,7 +159,7 @@ Output* ApplicationManager::GetOutput()
 
 ////////////////////////////////////////////////////////////////////
 
-OutputPin* ApplicationManager::getoutputpin(int& x, int& y)
+OutputPin* ApplicationManager::GetOutputPin(int& x, int& y)
 {
 	OutputPin* pin = NULL;
 
@@ -174,7 +174,7 @@ OutputPin* ApplicationManager::getoutputpin(int& x, int& y)
 	}
 	return NULL;
 }
-nputPin* ApplicationManager::getinputpin(int& x, int& y)
+InputPin* ApplicationManager::GetInputPin(int& x, int& y)
 {
 	int index;
 	InputPin* pin = NULL;
