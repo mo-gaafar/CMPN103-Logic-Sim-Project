@@ -9,15 +9,11 @@
 //Base class for classes Gate, Switch, and LED.
 class Component
 {
-private:
-	//string m_Label;
-
-
 
 protected:
 	bool Selected;
 	GraphicsInfo m_GfxInfo;	//The parameters required to draw a component
-	string m_Label;
+	string m_Label; //text in label
 public:
 	Component(const GraphicsInfo& r_GfxInfo);
 	virtual void Operate() = 0;	//Calculates the output according to the inputs
@@ -28,8 +24,6 @@ public:
 
 	/* Returns the label of the component */
 	string GetLabel() const;
-	virtual OutputPin* GetOutputpinCoorinates(int& x, int& y) = 0;
-	virtual InputPin* GetInputpinCoorinates(int& x, int& y, int& i) = 0;
 
 
 	virtual int GetOutPinStatus() = 0;	//returns status of outputpin if LED, return -1
@@ -37,8 +31,9 @@ public:
 
 	virtual void setInputPinStatus(int n, STATUS s) = 0;	//set status of Inputpin # n, to be used by connection class.
 
+	virtual OutputPin* GetOutputpinCoordinates(int& X_Out, int& Y_Out) = 0; //gets rectangular range of output pin given click coordinates, returns pointer to the selected gate's output pin element
+	virtual InputPin* GetInputpinCoordinates(int& X_In, int& Y_In, int& n_Input)=0;//gets rectangular range of input pin (changes depending on gate location) returns Index and InputPin array pointer
 
-	Component();
 	GraphicsInfo GetCompInfo();
 	//Sets the selection of the component 
 	virtual void SelectComponent(bool s);

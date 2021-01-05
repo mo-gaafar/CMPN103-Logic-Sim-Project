@@ -1,5 +1,5 @@
 #include "Gate.h"
-
+#include "Connection.h"
 //Gate Constructor
 //Parameters:
 //r_Inputs: no. of gate's input pins
@@ -16,3 +16,18 @@ Gate::Gate(int r_Inputs, int r_FanOut):m_OutputPin(r_FanOut)
 			m_InputPins[i].setComponent(this);
 	}
 }
+OutputPin* Gate:: GetOutputpinCoordinates(int& X_Out, int& Y_Out)
+{
+	
+		int HeightCenter = UI.AND2_Height / 2;
+		if (X_Out<(m_GfxInfo.x2 + 18) && X_Out >(m_GfxInfo.x2 - 18) && Y_Out< (m_GfxInfo.y2 - HeightCenter + 18) && Y_Out >(m_GfxInfo.y2 - HeightCenter - 18))
+		{
+			//Return Connection location and pointer to outputpin array of objects
+			Y_Out = m_GfxInfo.y2-HeightCenter; 
+			X_Out = m_GfxInfo.x2;
+			return &this->m_OutputPin; //address of output pin object of this gate
+		}
+		return NULL;
+
+}
+

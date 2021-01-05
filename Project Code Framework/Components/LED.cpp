@@ -39,3 +39,8 @@ void LED::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
 }
+
+//PLACEHOLDER FOR NOW
+InputPin* LED::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index) {
+	return NULL;
+}

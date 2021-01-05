@@ -80,13 +80,13 @@ void Output::ClearStatusBar()const
 void Output::ClearDrawingArea() const
 {
 	pWind->SetPen(RED, 1);
-	pWind->SetBrush(WHITE);
+	pWind->SetBrush(UI.BkGrndColor);
 	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
 
 }
 void Output::ClearToolBar() const
 {
-	pWind->SetBrush(WHITE);
+	pWind->SetBrush(UI.BkGrndColor);
 	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 	pWind->SetPen(RED, 2);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
