@@ -58,14 +58,14 @@ InputPin* OR2::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in < (m_GfxInfo.y1 + UI.AND2_Height / 2)))
 	{
 		X_in = m_GfxInfo.x1;
-		Y_in = m_GfxInfo.y1 + UI.AND2_Height / 4;
+		Y_in = m_GfxInfo.y1 + UI.AND2_Height / 3;
 		Index = 0;
 		return &this->m_InputPins[Index];
 	}
 	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in > (m_GfxInfo.y1 + UI.AND2_Height / 2)))
 	{
 		X_in = m_GfxInfo.x1;
-		Y_in = m_GfxInfo.y1 + UI.AND2_Height * 3 / 4;
+		Y_in = m_GfxInfo.y1 + UI.AND2_Height * 2 / 3;
 		Index = 1;
 		return &this->m_InputPins[Index];
 

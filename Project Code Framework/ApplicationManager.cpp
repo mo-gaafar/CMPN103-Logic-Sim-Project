@@ -175,6 +175,7 @@ OutputPin* ApplicationManager::GetOutputPin(int& x, int& y)
 	}
 	return NULL;
 }
+
 InputPin* ApplicationManager::GetInputPin(int& x, int& y)
 {
 	int index;

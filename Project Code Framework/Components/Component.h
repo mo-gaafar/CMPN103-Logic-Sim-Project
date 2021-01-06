@@ -16,13 +16,14 @@ protected:
 	string m_Label; //text in label
 public:
 	Component(const GraphicsInfo& r_GfxInfo);
+	Component();
 	virtual void Operate() = 0;	//Calculates the output according to the inputs
 	virtual void Draw(Output* pOut) = 0;	//for each component to Draw itself
 
-	/* Sets the label of the component */
+	// Sets the label of the component
 	void SetLabel(const string& label);
 
-	/* Returns the label of the component */
+	// Returns the label of the component
 	string GetLabel() const;
 
 

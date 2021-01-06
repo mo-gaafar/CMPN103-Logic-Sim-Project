@@ -45,7 +45,17 @@ void INV::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
 }
-//PLACEHOLDER FOR NOW
-InputPin* INV::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index) {
+  
+InputPin* INV::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
+{
+	int HeightCenter = UI.AND2_Height / 2;
+
+	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && Y_in< (m_GfxInfo.y2 - HeightCenter + 18) && Y_in >(m_GfxInfo.y2 - HeightCenter - 18))
+	{
+		X_in = m_GfxInfo.x1;
+		Y_in = m_GfxInfo.y1 + UI.AND2_Height / 2;
+		Index = 0;
+		return &this->m_InputPins[Index];
+	}
 	return NULL;
 }
