@@ -50,3 +50,38 @@ void NOR3::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
 }
+
+InputPin* NOR3::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
+{
+	int Pin1, Pin2, Pin3; //Y Locations of pins
+	Pin1 = m_GfxInfo.y1 + UI.AND2_Height / 3;
+
+	Pin2 = m_GfxInfo.y1 + UI.AND2_Height / 2;
+
+	Pin3 = m_GfxInfo.y1 + UI.AND2_Height * 2 / 3;
+
+	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in < Pin1 + UI.AND2_Height / 10) && (Y_in > Y_in < Pin1 - UI.AND2_Height / 10))
+	{
+		X_in = m_GfxInfo.x1;
+		Y_in = Pin1;
+		Index = 0;
+		return &this->m_InputPins[Index];
+	}
+	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in < Pin2 + UI.AND2_Height / 10) && (Y_in > Y_in < Pin2 - UI.AND2_Height / 10))
+	{
+		X_in = m_GfxInfo.x1;
+		Y_in = Pin2;
+		Index = 1;
+		return &this->m_InputPins[Index];
+
+	}
+	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in < Pin3 + UI.AND2_Height / 10) && (Y_in > Y_in < Pin3 - UI.AND2_Height / 10))
+	{
+		X_in = m_GfxInfo.x1;
+		Y_in = Pin3;
+		Index = 2;
+		return &this->m_InputPins[Index];
+
+	}
+	return NULL;
+}

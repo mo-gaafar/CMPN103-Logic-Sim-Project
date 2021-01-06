@@ -1,7 +1,6 @@
 #include "Connection.h"
 
 Connection::Connection(const GraphicsInfo &r_GfxInfo, OutputPin *pSrcPin,InputPin *pDstPin):Component(r_GfxInfo)	
-	
 {
 	SrcPin = pSrcPin;
 	DstPin = pDstPin;
@@ -45,4 +44,13 @@ int Connection::GetInputPinStatus(int n)	//returns status of Inputpin # n if SWI
 void Connection::setInputPinStatus(int n, STATUS s)
 {
 	SrcPin->setStatus(s);
+}
+
+
+//PLACEHOLDER FOR NOW
+InputPin* Connection::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index) {
+	return NULL;
+}
+OutputPin* Connection::GetOutputpinCoordinates(int& X_in, int& Y_in) {
+	return NULL;
 }

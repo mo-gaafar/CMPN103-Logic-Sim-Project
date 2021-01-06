@@ -41,3 +41,8 @@ void Switch::setInputPinStatus(int n, STATUS s)
 {
 	return;
 }
+
+//PLACEHOLDER FOR NOW
+InputPin* Switch::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index) {
+	return NULL;
+}

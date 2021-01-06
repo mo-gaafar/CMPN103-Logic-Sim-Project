@@ -159,6 +159,38 @@ Output* ApplicationManager::GetOutput()
 
 ////////////////////////////////////////////////////////////////////
 
+//Returns outputpin pointer
+OutputPin* ApplicationManager::GetOutputPin(int& x, int& y)
+{
+	OutputPin* pin = NULL;
+
+	for (int i = 0; i < CompCount; i++)
+	{
+		pin = CompList[i]->GetOutputpinCoordinates(x, y);
+		if (pin != NULL)
+		{
+			return pin;
+		}
+
+	}
+	return NULL;
+}
+
+InputPin* ApplicationManager::GetInputPin(int& x, int& y)
+{
+	int index;
+	InputPin* pin = NULL;
+	for (int i = 0; i < CompCount; i++)
+	{
+		pin = CompList[i]->GetInputpinCoordinates(x, y, index);
+		if (pin != NULL)
+		{
+			return pin;
+		}
+	}
+	return NULL;
+}
+
 ApplicationManager::~ApplicationManager()
 {
 	for(int i=0; i<CompCount; i++)

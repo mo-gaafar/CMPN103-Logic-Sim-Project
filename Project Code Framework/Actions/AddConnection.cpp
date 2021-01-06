@@ -23,6 +23,7 @@ void AddConnection::ReadActionParameters()
 
 	//Wait for User Input
 	pIn->GetPointClicked(m_GfxInfo.x1, m_GfxInfo.y1);
+	pSrcPin = pManager->GetOutputPin(m_GfxInfo.x1, m_GfxInfo.y1);
 
 	//Clear Status Bar
 	pOut->ClearStatusBar();
@@ -32,6 +33,9 @@ void AddConnection::ReadActionParameters()
 
 	//Wait for User Input
 	pIn->GetPointClicked(m_GfxInfo.x2, m_GfxInfo.y2);
+	pDstPin = pManager->GetInputPin(m_GfxInfo.x2, m_GfxInfo.y2);
+
+	
 
 	//Clear Status Bar
 	pOut->ClearStatusBar();

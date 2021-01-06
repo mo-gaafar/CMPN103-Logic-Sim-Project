@@ -21,8 +21,6 @@ private:
 	Input* InputInterface; //pointer to the Input Clase Interface
 
 
-public:
-
 
 public:	
 	ApplicationManager(); //constructor
@@ -38,7 +36,8 @@ public:
 	//Gets a pointer to Input / Output Object
 	Output* GetOutput();
 	Input* GetInput();
-
+	OutputPin* GetOutputPin(int& x, int& y);
+	InputPin* GetInputPin(int& x, int& y);
 	//Adds a new component to the list of components
 	void AddComponent(Component* pComp);
 	int GetCompCount();

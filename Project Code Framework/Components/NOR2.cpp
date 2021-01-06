@@ -52,3 +52,23 @@ void NOR2::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
 }
+
+InputPin* NOR2::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
+{
+	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in < (m_GfxInfo.y1 + UI.AND2_Height / 2)))
+	{
+		X_in = m_GfxInfo.x1;
+		Y_in = m_GfxInfo.y1 + UI.AND2_Height / 3;
+		Index = 0;
+		return &this->m_InputPins[Index];
+	}
+	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in > (m_GfxInfo.y1 + UI.AND2_Height / 2)))
+	{
+		X_in = m_GfxInfo.x1;
+		Y_in = m_GfxInfo.y1 + UI.AND2_Height * 2 / 3;
+		Index = 1;
+		return &this->m_InputPins[Index];
+
+	}
+	return NULL;
+}
