@@ -132,6 +132,7 @@
     <ClCompile Include="Actions\AddNORgate3.cpp" />
     <ClCompile Include="Actions\AddXORgate3.cpp" />
     <ClCompile Include="Actions\AddLabel.cpp" />
+    <ClCompile Include="Actions\Copy.cpp" />
     <ClCompile Include="Components\AND3.cpp" />
     <ClCompile Include="Actions\AddNANDgate2.cpp" />
     <ClCompile Include="Actions\AddNORgate2.cpp" />
@@ -213,6 +214,7 @@
     <ClInclude Include="Actions\AddNORgate3.h" />
     <ClInclude Include="Actions\AddXORgate3.h" />
     <ClInclude Include="Actions\AddLabel.h" />
+    <ClInclude Include="Actions\Copy.h" />
     <ClInclude Include="Components\AND3.h" />
     <ClInclude Include="Actions\AddNANDgate2.h" />
     <ClInclude Include="Actions\AddNORgate2.h" />

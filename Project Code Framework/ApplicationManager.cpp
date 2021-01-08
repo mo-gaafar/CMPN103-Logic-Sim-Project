@@ -18,6 +18,7 @@
 #include "Actions\DesignToolBar.h"
 #include "Actions\GateToolBar.h"
 #include "Actions\ExitProgram.h"
+#include "Actions\Copy.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -121,6 +122,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case GATE_MODE:
 			pAct = new GateToolBar(this);
+			break;
+		case COPY:
+			pAct = new Copy(this);
 			break;
 		case EXIT:
 			pAct = new ExitProgram(this);

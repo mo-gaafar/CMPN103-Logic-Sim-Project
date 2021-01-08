@@ -15,6 +15,14 @@ void Copy::ReadActionParameters() /// SELECT IS OPERATION CANCELLED
 {
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
+	//Print Action Message
+	pOut->PrintMsg("Copy selected component");
+
+	//Wait for User Input
+	//pIn->GetPointClicked(Cx, Cy);
+
+	//Clear Status Bar
+	pOut->ClearStatusBar();
 	/*int nSelected = pManager->GetSelectedSize();
 	if (nSelected > 1)
 	{
@@ -34,6 +42,7 @@ void Copy::ReadActionParameters() /// SELECT IS OPERATION CANCELLED
 
 void Copy::Execute()
 {
+	Input* pIn = pManager->GetInput();
 	Output* pOut = pManager->GetOutput();
 	ReadActionParameters();
 
