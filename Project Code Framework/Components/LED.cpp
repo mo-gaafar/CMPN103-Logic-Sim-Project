@@ -61,3 +61,14 @@ InputPin* LED::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	}
 	return NULL;
 }
+Component* LED::MakeCopy(Component* c)
+{
+	GraphicsInfo temp;
+	temp.x1 = (c->GetGraphicsInfo())->x1;
+	temp.x2 = (c->GetGraphicsInfo())->x2;
+	temp.y1 = (c->GetGraphicsInfo())->y1;
+	temp.y2 = (c->GetGraphicsInfo())->y2;
+	LED* ptr = new LED(temp, LED_FANOUT);
+	//ptr->setLabel(c->GetLabel());
+	return ptr;
+}

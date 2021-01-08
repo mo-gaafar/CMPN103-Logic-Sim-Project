@@ -40,6 +40,8 @@ public:
 	virtual void SelectComponent(bool s);
 	//Checks if component is selected or not
 	bool GetSelectedComponent();
+	virtual Component* MakeCopy(Component*) = 0;
+	GraphicsInfo* GetGraphicsInfo();
 	//Destructor must be virtual
 	virtual ~Component();
 };

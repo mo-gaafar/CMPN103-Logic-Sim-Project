@@ -236,6 +236,48 @@ InputPin* ApplicationManager::GetInputPin(int& x, int& y)
 	}
 	return NULL;
 }
+Component* ApplicationManager::GetCopied()
+{
+	return CopiedComponent;
+}
+void ApplicationManager::SetCopied(Component* c)
+{
+	// I only have one component to be copied or cut ...If I set copied Object then any other objects in the clipboard should be automatically deleted 
+	if (CutComponent != NULL)
+	{
+		CutComponent = NULL;
+	}
+	if (CopiedComponent != NULL) // so as not to delete an object then assign copied component to it 
+	{
+		CopiedComponent = NULL;
+	}
+
+	CopiedComponent = c->MakeCopy(c);
+
+}
+Component* ApplicationManager::GetCut()
+{
+	return CutComponent;
+}
+void ApplicationManager::SetCut(Component* c)
+{
+	if (c == NULL) // If paste calls this fn to indicate that the cut-paste operation has been performed 
+	{
+		CutComponent = NULL;
+		return;
+	} // I only have one component to be copied or cut ...If I set Cut Object then any other objects in the clipboard should be automatically deleted 
+	if (CopiedComponent != NULL)
+	{
+
+		CopiedComponent = NULL;
+	}
+	if (CutComponent != NULL)
+	{
+
+		CutComponent = NULL;
+	}
+	CutComponent = c->MakeCopy(c);
+}
 
 ApplicationManager::~ApplicationManager()
 {
