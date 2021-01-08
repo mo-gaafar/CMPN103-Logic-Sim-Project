@@ -1,10 +1,10 @@
 #include "Select.h"
-/* Constructor */
+//constructor
 Select::Select(ApplicationManager* pAppMan) : Action(pAppMan) {
 
 }
 
-/* Reads parameters required for action to execute */
+//reads required parameters for action execution
 void Select::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
@@ -19,7 +19,7 @@ void Select::ReadActionParameters()
 
 }
 
-/* Executes action */
+//executes the action
 void Select::Execute() {
 	//Get Center point of the Component
 	ReadActionParameters();
@@ -49,17 +49,15 @@ void Select::Execute() {
 	}*/
 }
 
-/* Undo action */
 void Select::Undo() {
 	return;
 }
 
-/* Redo action */
 void Select::Redo() {
 	return;
 }
 
-/* Destructor */
+//destructor
 Select::~Select() {
 
 }

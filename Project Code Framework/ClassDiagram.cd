@@ -7,7 +7,7 @@
     <Position X="1.5" Y="0.75" Height="0.469" Width="1.7" />
   </Comment>
   <Comment CommentText="The name on each association arrow is a pointer member">
-    <Position X="1.44" Y="2.422" Height="0.75" Width="1.7" />
+    <Position X="0.697" Y="2.686" Height="0.75" Width="1.7" />
   </Comment>
   <Class Name="Action">
     <Position X="10.5" Y="1" Width="1.5" />
@@ -40,22 +40,23 @@
       <FileName>Actions\AddANDgate2.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ApplicationManager" Collapsed="true">
-    <Position X="2.5" Y="1.25" Width="1.75" />
+  <Class Name="ApplicationManager">
+    <Position X="3.25" Y="3" Width="1.75" />
     <AssociationLine Name="CompList" Type="Component" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="4.004" Y="1.812" />
-        <Point X="4.004" Y="3.812" />
-        <Point X="7.5" Y="3.812" />
+        <Point X="5" Y="4.312" />
+        <Point X="5.375" Y="4.312" />
+        <Point X="5.375" Y="4.312" />
+        <Point X="8" Y="4.312" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="OutputInterface" Type="Output" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2.5" Y="1.5" />
-        <Point X="2.125" Y="1.5" />
-        <Point X="2.125" Y="2.093" />
-        <Point X="3.92" Y="2.093" Type="JumpStart" />
-        <Point X="4.087" Y="2.093" Type="JumpEnd" />
+        <Point X="3.25" Y="4.719" />
+        <Point X="2.875" Y="4.719" />
+        <Point X="2.875" Y="2.093" />
+        <Point X="3.807" Y="2.093" Type="JumpStart" />
+        <Point X="3.974" Y="2.093" Type="JumpEnd" />
         <Point X="5.25" Y="2.093" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
@@ -75,12 +76,14 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="AND2" Collapsed="true">
-    <Position X="4" Y="8.25" Width="1.5" />
+    <Position X="3.75" Y="10" Width="1.5" />
     <InheritanceLine Type="Gate" ManuallyRouted="true" FixedToPoint="true">
       <Path>
-        <Point X="5.75" Y="7.941" />
-        <Point X="5.75" Y="8.596" />
-        <Point X="5.5" Y="8.596" />
+        <Point X="6.25" Y="8.441" />
+        <Point X="6.25" Y="10.346" />
+        <Point X="5.593" Y="10.346" Type="JumpStart" />
+        <Point X="5.407" Y="10.346" Type="JumpEnd" />
+        <Point X="5.25" Y="10.346" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -89,17 +92,17 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Component">
-    <Position X="7.5" Y="3.25" Width="1.5" />
+    <Position X="8" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QBAgAAABAAAAAgAgAAAAAIAQABABCAAAAQBAgAAAAAI=</HashCode>
       <FileName>Components\Component.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Connection">
-    <Position X="1.75" Y="3.5" Width="1.5" />
+    <Position X="1.5" Y="5.25" Width="1.5" />
     <AssociationLine Name="SrcPin" Type="OutputPin">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.02" Y="0.164" />
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.116" Y="0.104" Height="0.182" Width="0.66" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="DstPin" Type="InputPin">
@@ -117,27 +120,29 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Gate" Collapsed="true">
-    <Position X="5" Y="7.25" Width="1.5" />
-    <AssociationLine Name="m_OutputPin" Type="OutputPin" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="5" Y="7.468" />
-        <Point X="2.75" Y="7.468" />
-        <Point X="2.75" Y="7.75" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-1.119" Y="0.324" />
-      </MemberNameLabel>
-    </AssociationLine>
+    <Position X="5.5" Y="7.75" Width="1.5" />
     <AssociationLine Name="m_InputPins" Type="InputPin" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5" Y="7.749" />
-        <Point X="3.625" Y="7.749" />
-        <Point X="3.625" Y="11.066" />
-        <Point X="2.5" Y="11.066" />
-        <Point X="2.5" Y="10.691" />
+        <Point X="5.5" Y="8.249" />
+        <Point X="3.583" Y="8.249" />
+        <Point X="3.583" Y="12.316" />
+        <Point X="2.25" Y="12.316" />
+        <Point X="2.25" Y="11.941" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-1.101" Y="0.178" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="m_OutputPin" Type="OutputPin" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.5" Y="7.968" />
+        <Point X="3.375" Y="7.968" />
+        <Point X="3.375" Y="8.848" />
+        <Point X="2.5" Y="8.848" />
+        <Point X="2.5" Y="9" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.951" Y="0.228" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
@@ -150,21 +155,21 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="InputPin" Collapsed="true">
-    <Position X="1.75" Y="10" Width="1.5" />
+    <Position X="1.5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAABAAAAAAAAAAIQAAAAAAAAAA=</HashCode>
       <FileName>Components\InputPin.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OutputPin" Collapsed="true">
-    <Position X="1.75" Y="7.75" Width="1.5" />
+    <Position X="1.5" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAIAAAAAAAAAAAAAAAACAAAAEAAAAABAAAAAA=</HashCode>
       <FileName>Components\OutputPin.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pin" Collapsed="true">
-    <Position X="1.75" Y="9" Width="1.5" />
+    <Position X="1.5" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAAAAACAAAAAAAABEAAAAAAAAAAAAA=</HashCode>
       <FileName>Components\Pin.h</FileName>
@@ -226,26 +231,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="XNOR2" Collapsed="true">
-    <Position X="4" Y="11.25" Width="1.5" />
+    <Position X="3.75" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAgAAAAAAAAAQAAAACAAAAQAAgAAAAAA=</HashCode>
       <FileName>Components\XNOR2.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="XOR2" Collapsed="true">
-    <Position X="4" Y="10.5" Width="1.5" />
+    <Position X="3.75" Y="12.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AhAAAAAAAAAAAgAAAAAAAAAQAAAACAAAAQAAgAAAAAA=</HashCode>
       <FileName>Components\XOR2.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="XOR3" Collapsed="true">
-    <Position X="6" Y="8.5" Width="1.5" />
+    <Position X="5.75" Y="10.25" Width="1.5" />
     <InheritanceLine Type="Gate" FixedToPoint="true">
       <Path>
-        <Point X="5.75" Y="7.941" />
-        <Point X="5.75" Y="8.846" />
-        <Point X="6" Y="8.846" />
+        <Point X="6.25" Y="8.441" />
+        <Point X="6.25" Y="8.681" />
+        <Point X="5.51" Y="8.681" />
+        <Point X="5.51" Y="10.596" />
+        <Point X="5.75" Y="10.596" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -254,7 +261,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Switch" Collapsed="true">
-    <Position X="5" Y="4.75" Width="1.5" />
+    <Position X="5.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAoAAAAAAAAAQAAAACAAAAQAAgAAAAAA=</HashCode>
       <FileName>Components\Switch.h</FileName>
@@ -275,42 +282,42 @@
     </TypeIdentifier>
   </Class>
   <Class Name="OR2" Collapsed="true">
-    <Position X="4" Y="9.75" Width="1.5" />
+    <Position X="3.75" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAgAAAAAAAAAQAAAICAAAAQAAgAAAAAA=</HashCode>
       <FileName>Components\OR2.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NOR3" Collapsed="true">
-    <Position X="6" Y="9.25" Width="1.5" />
+    <Position X="5.75" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAgAAAAAAAAAQAAAACAAAAQQAgAAAAAA=</HashCode>
       <FileName>Components\NOR3.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NOR2" Collapsed="true">
-    <Position X="4" Y="9" Width="1.5" />
+    <Position X="3.75" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAgAAAAAAAAAQAAAACAAAAQgAgAAAAAA=</HashCode>
       <FileName>Components\NOR2.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NAND2" Collapsed="true">
-    <Position X="4" Y="12" Width="1.5" />
+    <Position X="3.75" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAgAAAAAAAAAQAAAACAAAAQAAgAAAACA=</HashCode>
       <FileName>Components\NAND2.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LED" Collapsed="true">
-    <Position X="5" Y="6" Width="1.5" />
+    <Position X="5.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAgAAAAAAAAAQAAAACAAAAQAAgAAAAAA=</HashCode>
       <FileName>Components\LED.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="INV" Collapsed="true">
-    <Position X="6" Y="11.5" Width="1.5" />
+    <Position X="5.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAgAAAAAAAAAQAAAICAAAAQAAgAAAAAA=</HashCode>
       <FileName>Components\INV.h</FileName>
@@ -338,14 +345,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Buff" Collapsed="true">
-    <Position X="6" Y="10.75" Width="1.5" />
+    <Position X="5.75" Y="12.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAggAAAAAAAAAQAAAACAAAAQAAgAAAAAA=</HashCode>
       <FileName>Components\Buff.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AND3" Collapsed="true">
-    <Position X="6" Y="10" Width="1.5" />
+    <Position X="5.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AFAAAAAAAAAAAgAAAAAAAAAQAAAACAAAAQAAgAAAAAA=</HashCode>
       <FileName>Components\AND3.h</FileName>
