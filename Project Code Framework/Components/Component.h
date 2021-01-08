@@ -39,6 +39,8 @@ public:
 	//Sets the selection of the component 
 	virtual void SelectComponent(bool s);
 	bool GetSelectedComponent();
+	virtual Component* MakeCopy(Component*) = 0;
+	GraphicsInfo* GetGraphicsInfo();
 	//Destructor must be virtual
 	virtual ~Component();
 };

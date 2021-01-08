@@ -72,3 +72,14 @@ InputPin* OR2::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	}
 	return NULL;
 }
+Component* OR2::MakeCopy(Component* c)
+{
+	GraphicsInfo temp;
+	temp.x1 = (c->GetGraphicsInfo())->x1;
+	temp.x2 = (c->GetGraphicsInfo())->x2;
+	temp.y1 = (c->GetGraphicsInfo())->y1;
+	temp.y2 = (c->GetGraphicsInfo())->y2;
+	OR2* ptr = new OR2(temp, OR2_FANOUT);
+	//ptr->setLabel(c->GetLabel());
+	return ptr;
+}

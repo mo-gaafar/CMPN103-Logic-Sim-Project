@@ -85,3 +85,14 @@ InputPin* AND3::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	}
 	return NULL;
 }
+Component* AND3::MakeCopy(Component* c)
+{
+	GraphicsInfo temp;
+	temp.x1 = (c->GetGraphicsInfo())->x1;
+	temp.x2 = (c->GetGraphicsInfo())->x2;
+	temp.y1 = (c->GetGraphicsInfo())->y1;
+	temp.y2 = (c->GetGraphicsInfo())->y2;
+	AND3* ptr = new AND3(temp, AND3_FANOUT);
+	//ptr->setLabel(c->GetLabel());
+	return ptr;
+}
