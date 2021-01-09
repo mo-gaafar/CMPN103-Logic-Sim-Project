@@ -1,18 +1,18 @@
-#ifndef _ADD_LABEL_H
-#define _ADD_LABEL_H
+#ifndef _EDIT_H
+#define _EDIT_H
 
 #include "action.h"
 #include "..\Components\AND2.h"
 
-class AddLabel : public Action
+class Edit : public Action
 {
 private:
     //Parameters for rectangular area to be occupied by the gate
     int Cx, Cy;    //Center point of the gate
     int x1, y1, x2, y2;    //Two corners of the rectangluar area
 public:
-    AddLabel(ApplicationManager* pApp);
-    virtual ~AddLabel(void);
+    Edit(ApplicationManager* pApp);
+    virtual ~Edit(void);
 
     //Reads parameters required for action to execute
     virtual void ReadActionParameters();

@@ -54,19 +54,6 @@ void AddANDgate2::Execute()
 		pOut->PrintMsg("Error, you have to draw within the drawing area");
 	}
 	else {
-		
-
-
-		pOut->PrintMsg("Enter component label: ");
-		GraphicsInfo LInfo;
-		LInfo.x1 = GInfo.x1;
-		LInfo.y1 = GInfo.y1 - 20;
-		//string tempst = "Label";
-		//pOut->DrawString(LInfo, tempst);
-
-		string tempst = pIn->GetSrting(pOut);
-		pOut->DrawString(LInfo, tempst); // this should be in the constructor instead?
-		pOut->ClearStatusBar();
 
 		pOut->ClearStatusBar();
 		//Adds the component to the complist

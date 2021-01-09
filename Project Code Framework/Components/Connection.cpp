@@ -28,6 +28,13 @@ void Connection::Operate()
 void Connection::Draw(Output* pOut)
 {
 	pOut->DrawConnection(m_GfxInfo, Selected);
+
+
+	GraphicsInfo GInfo = GetCompInfo();
+	GraphicsInfo LInfo;
+	LInfo.x1 = ((GInfo.x2 + GInfo.x1) / 2);
+	LInfo.y1 = ((GInfo.y1 + GInfo.y2) / 2) - 20;
+	pOut->DrawString(LInfo, m_Label);
 }
 
 int Connection::GetOutPinStatus()	//returns status of outputpin if LED, return -1
