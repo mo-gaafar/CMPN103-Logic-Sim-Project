@@ -1,11 +1,11 @@
 #include "GateToolBar.h"
 
-/* Constructor */
+//Constructor
 GateToolBar::GateToolBar(ApplicationManager* pAppMan) : Action(pAppMan) {
 
 }
 
-/* Reads parameters required for action to execute */
+//Required parameters for action execution
 void GateToolBar::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
@@ -16,14 +16,14 @@ void GateToolBar::ReadActionParameters()
 	pOut->PrintMsg("View add gate toolbar");
 
 	//Wait for User Input
-	pIn->GetPointClicked(Cx, Cy);
+	//pIn->GetPointClicked(Cx, Cy);
 
 	//Clear Status Bar
-	pOut->ClearStatusBar();
+	//pOut->ClearStatusBar();
 
 }
 
-/* Executes action */
+//Action to be executed
 void GateToolBar::Execute() {
 	ReadActionParameters();
 
@@ -33,17 +33,14 @@ void GateToolBar::Execute() {
 
 }
 
-/* Undo action */
 void GateToolBar::Undo() {
 	return;
 }
 
-/* Redo action */
 void GateToolBar::Redo() {
 	return;
 }
 
-/* Destructor */
 GateToolBar::~GateToolBar() {
 
 }

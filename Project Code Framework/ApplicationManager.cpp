@@ -18,6 +18,7 @@
 #include "Actions\DesignToolBar.h"
 #include "Actions\GateToolBar.h"
 #include "Actions\ExitProgram.h"
+#include "Actions\Delete.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -122,6 +123,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case GATE_MODE:
 			pAct = new GateToolBar(this);
 			break;
+		case DEL:
+			pAct = new Delete(this);
+			break;
 		case EXIT:
 			pAct = new ExitProgram(this);
 			break;
@@ -137,8 +141,11 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 void ApplicationManager::UpdateInterface()
 {
+	GetOutput()->ClearDrawingArea(); //Clears The drawing area before each update
+
 	for (int i = 0; i < CompCount; i++)
 	{
+		if (CompList[i]!= NULL) // checks if element is not nullified first
 		CompList[i]->Draw(OutputInterface);
 		
 	}
@@ -166,10 +173,14 @@ OutputPin* ApplicationManager::GetOutputPin(int& x, int& y)
 
 	for (int i = 0; i < CompCount; i++)
 	{
-		pin = CompList[i]->GetOutputpinCoordinates(x, y);
-		if (pin != NULL)
+		if (CompList[i] != NULL)
 		{
-			return pin;
+			pin = CompList[i]->GetOutputpinCoordinates(x, y);
+			if (pin != NULL)
+			{
+				return pin;
+			}
+
 		}
 
 	}
@@ -182,10 +193,14 @@ InputPin* ApplicationManager::GetInputPin(int& x, int& y)
 	InputPin* pin = NULL;
 	for (int i = 0; i < CompCount; i++)
 	{
-		pin = CompList[i]->GetInputpinCoordinates(x, y, index);
-		if (pin != NULL)
+		if (CompList[i] != NULL)
 		{
-			return pin;
+			pin = CompList[i]->GetInputpinCoordinates(x, y, index);
+			if (pin != NULL)
+			{
+				return pin;
+			}
+
 		}
 	}
 	return NULL;

@@ -1,24 +1,23 @@
-#pragma once
 #include "Action.h"
 #include "..\ApplicationManager.h"
+#include "..\Components\Component.h"
 
-class GateToolBar : public Action
+class Delete : public Action
 {
 private:
 	int Cx, Cy;		// Point selected
+	Component* Comp;
 public:
-	GateToolBar(ApplicationManager* pAppMan);
+	Delete(ApplicationManager* pAppMan);
 
-	//Reads parameters required for action to execute
+	//Reads required parameters for action to execute
 	virtual void ReadActionParameters();
-
-	//The action being executed
+	//Action execution
 	virtual void  Execute();
 
 	virtual void Undo();
 
 	virtual void Redo();
 
-	virtual ~GateToolBar();
+	virtual ~Delete();
 };
-

@@ -34,11 +34,13 @@ void Component::SelectComponent(bool s)
 	Selected = s;
 }
 //////////////////////////////////////////////////////////////////
-bool Component::GetSelectedComponent()
+bool Component::GetSelectedComponent() //Checks if selected or not
 {
 	return Selected;
 }
 //////////////////////////////////////////////////////////////////
 Component::~Component()
-{}
+{
+	
+}
 

@@ -1,11 +1,10 @@
 #include "SimulateToolBar.h"
 
-/* Constructor */
 SimulateToolBar::SimulateToolBar(ApplicationManager* pAppMan) : Action(pAppMan) {
 
 }
 
-/* Reads parameters required for action to execute */
+//Required parameters to start execution
 void SimulateToolBar::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
@@ -16,14 +15,14 @@ void SimulateToolBar::ReadActionParameters()
 	pOut->PrintMsg("View simulation toolbar");
 
 	//Wait for User Input
-	pIn->GetPointClicked(Cx, Cy);
+	//pIn->GetPointClicked(Cx, Cy);
 
 	//Clear Status Bar
-	pOut->ClearStatusBar();
+	//pOut->ClearStatusBar();
 
 }
 
-/* Executes action */
+//Action execution
 void SimulateToolBar::Execute() {
 	ReadActionParameters();
 
@@ -33,17 +32,14 @@ void SimulateToolBar::Execute() {
 	
 }
 
-/* Undo action */
 void SimulateToolBar::Undo() {
 	return;
 }
 
-/* Redo action */
 void SimulateToolBar::Redo() {
 	return;
 }
 
-/* Destructor */
 SimulateToolBar::~SimulateToolBar() {
 
 }
