@@ -32,6 +32,13 @@ void AND2::Draw(Output* pOut)
 {
 	//Call output class and pass gate drawing info to it.
 	pOut->DrawAND2(m_GfxInfo,Selected);
+
+
+	GraphicsInfo GInfo = GetCompInfo();
+	GraphicsInfo LInfo;
+	LInfo.x1 = GInfo.x1;
+	LInfo.y1 = GInfo.y1 - 20;
+	pOut->DrawString(LInfo, m_Label);
 }
 
 //returns status of outputpin

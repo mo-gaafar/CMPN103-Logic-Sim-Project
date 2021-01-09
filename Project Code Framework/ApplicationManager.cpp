@@ -19,6 +19,8 @@
 #include "Actions\GateToolBar.h"
 #include "Actions\ExitProgram.h"
 #include "Actions\Delete.h"
+#include "Actions\AddLabel.h"
+#include "Actions\Edit.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -148,6 +150,12 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case DEL:
 			pAct = new Delete(this);
+			break;
+		case ADD_Label:
+			pAct = new AddLabel(this);
+			break;
+		case EDIT_Label:
+			pAct = new Edit(this);
 			break;
 		case EXIT:
 			pAct = new ExitProgram(this);

@@ -54,17 +54,6 @@ void AddXNORgate2::Execute()
 	else {
 		XNOR2* pA = new XNOR2(GInfo, XNOR2_FANOUT);
 		pManager->AddComponent(pA);
-
-
-		pOut->PrintMsg("Enter component label: ");
-		GraphicsInfo LInfo;
-		LInfo.x1 = GInfo.x1;
-		LInfo.y1 = GInfo.y1 - 20;
-		//string tempst = "Label";
-		//pOut->DrawString(LInfo, tempst);
-
-		string tempst = pIn->GetSrting(pOut);
-		pOut->DrawString(LInfo, tempst);
 		pOut->ClearStatusBar();
 
 	}

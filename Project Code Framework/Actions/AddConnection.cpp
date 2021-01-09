@@ -67,17 +67,7 @@ void AddConnection::Execute()
 		m_Connection->setSourcePin(pSrcPin);
 		m_Connection->setDestPin(pDstPin);
 		pManager->AddComponent(m_Connection);
-
-		pOut->PrintMsg("Enter component label: ");
-		GraphicsInfo LInfo;
-		LInfo.x1 = m_GfxInfo.x1;
-		LInfo.y1 = m_GfxInfo.y1 - 20;
-		string tempst = pIn->GetSrting(pOut);
-		pOut->DrawString(LInfo, tempst);
 		pOut->ClearStatusBar();
-		//string tempst = "Label";
-		//pOut->DrawString(LInfo, tempst);
-
 
 	}
 }

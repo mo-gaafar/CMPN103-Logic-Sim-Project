@@ -17,27 +17,35 @@ void AddLabel::ReadActionParameters()
 
 void AddLabel::Execute()
 {
-	Output* pOut = pManager->GetOutput();
-	Input* pIn = pManager->GetInput();
-	pOut->PrintMsg("Enter component label: ");
+    Output* pOut = pManager->GetOutput();
+    Input* pIn = pManager->GetInput();
+    pOut->PrintMsg("Select component");
 
-	//ReadActionParameters();
+    GraphicsInfo GInfo;
+    Component** CompList = pManager->GetCompList();
+    GraphicsInfo LInfo;
+    string tempst;
 
-	int Len = UI.AND2_Width;
-	int Wdth = UI.AND2_Height;
+    for (int i = 0; i < pManager->GetCompCount(); i++)
+    {
+        if (CompList[i] != NULL)
+            if (CompList[i]->GetSelectedComponent() == true)
+            {
+                CompList[i]->SelectComponent(false);
+                GInfo = CompList[i]->GetCompInfo();
+                LInfo.x1 = GInfo.x1;
+                LInfo.y1 = GInfo.y1 - 20;
 
-	GraphicsInfo GInfo;
-	GInfo.x1 = Cx - Len / 2;
-	GInfo.y1 = Cy - Wdth / 2;
+                pOut->PrintMsg("Enter component label: ");
+                tempst = pIn->GetSrting(pOut);
+                CompList[i]->SetLabel(tempst);
+            }
+
+    }
+
+    pOut->ClearStatusBar();
 
 
-	GraphicsInfo LInfo;
-	LInfo.x1 = GInfo.x1;
-	LInfo.y1 = GInfo.y1 - 20;
-
-	string tempst = pIn->GetSrting(pOut);
-	pOut->DrawString(LInfo, tempst);
-	//Missing SetLabel?
 }
 
 void AddLabel::Undo()
@@ -45,4 +53,3 @@ void AddLabel::Undo()
 
 void AddLabel::Redo()
 {}
-
