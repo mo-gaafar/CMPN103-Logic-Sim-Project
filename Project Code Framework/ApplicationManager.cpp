@@ -66,7 +66,7 @@ void ApplicationManager::ReSortCompList()
 		}
 	}
 	//Makes sure the remaining array elements are nullified
-	for (int i = NotDeletedCount+1; i < MaxCompCount; i++) 
+	for (int i = NotDeletedCount; i < MaxCompCount; i++) 
 		rCompList[i] = NULL;
 
 	CompCount = NotDeletedCount; //changes component counter
