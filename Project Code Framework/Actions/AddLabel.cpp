@@ -37,6 +37,7 @@ void AddLabel::Execute()
 
 	string tempst = pIn->GetSrting(pOut);
 	pOut->DrawString(LInfo, tempst);
+	//Missing SetLabel?
 }
 
 void AddLabel::Undo()

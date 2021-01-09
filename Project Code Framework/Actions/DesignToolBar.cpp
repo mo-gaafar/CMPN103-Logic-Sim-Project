@@ -1,11 +1,10 @@
 #include "DesignToolBar.h"
 
-/* Constructor */
 DesignToolBar::DesignToolBar(ApplicationManager* pAppMan) : Action(pAppMan) {
 
 }
 
-/* Reads parameters required for action to execute */
+//Required parameters to start execution
 void DesignToolBar::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
@@ -16,14 +15,14 @@ void DesignToolBar::ReadActionParameters()
 	pOut->PrintMsg("View design toolbar");
 
 	//Wait for User Input
-	pIn->GetPointClicked(Cx, Cy);
+	//pIn->GetPointClicked(Cx, Cy);
 
 	//Clear Status Bar
-	pOut->ClearStatusBar();
+	//pOut->ClearStatusBar();
 
 }
 
-/* Executes action */
+//Action execution
 void DesignToolBar::Execute() {
 	ReadActionParameters();
 
@@ -33,17 +32,14 @@ void DesignToolBar::Execute() {
 
 }
 
-/* Undo action */
 void DesignToolBar::Undo() {
 	return;
 }
 
-/* Redo action */
 void DesignToolBar::Redo() {
 	return;
 }
 
-/* Destructor */
 DesignToolBar::~DesignToolBar() {
 
 }

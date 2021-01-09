@@ -18,6 +18,7 @@
 #include "Actions\DesignToolBar.h"
 #include "Actions\GateToolBar.h"
 #include "Actions\ExitProgram.h"
+#include "Actions\Delete.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -47,6 +48,29 @@ void ApplicationManager::SetCompList(Component** l)
 Component** ApplicationManager::GetCompList()
 {
 	return CompList;
+}
+
+//puts nullified components out of the way and decrements componentcount value
+void ApplicationManager::ReSortCompList()
+{
+	Component* rCompList[MaxCompCount];
+	for (int i = 0; i < MaxCompCount; i++)
+		rCompList[i] = NULL;
+
+	int NotDeletedCount = 0;
+	for (int i = 0; i < MaxCompCount; i++)
+	{
+		if (CompList[i] != NULL)//checks if element is not nullified
+		{
+			rCompList[NotDeletedCount++]=CompList[i];
+		}
+	}
+	//Makes sure the remaining array elements are nullified
+	for (int i = NotDeletedCount; i < MaxCompCount; i++) 
+		rCompList[i] = NULL;
+
+	CompCount = NotDeletedCount; //changes component counter
+	*CompList = *rCompList; //updated array
 }
 
 ActionType ApplicationManager::GetUserAction()
@@ -122,6 +146,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case GATE_MODE:
 			pAct = new GateToolBar(this);
 			break;
+		case DEL:
+			pAct = new Delete(this);
+			break;
 		case EXIT:
 			pAct = new ExitProgram(this);
 			break;
@@ -137,8 +164,11 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 void ApplicationManager::UpdateInterface()
 {
+	GetOutput()->ClearDrawingArea(); //Clears The drawing area before each update
+
 	for (int i = 0; i < CompCount; i++)
 	{
+		if (CompList[i]!= NULL) // checks if element is not nullified first
 		CompList[i]->Draw(OutputInterface);
 		
 	}
@@ -166,10 +196,14 @@ OutputPin* ApplicationManager::GetOutputPin(int& x, int& y)
 
 	for (int i = 0; i < CompCount; i++)
 	{
-		pin = CompList[i]->GetOutputpinCoordinates(x, y);
-		if (pin != NULL)
+		if (CompList[i] != NULL)
 		{
-			return pin;
+			pin = CompList[i]->GetOutputpinCoordinates(x, y);
+			if (pin != NULL)
+			{
+				return pin;
+			}
+
 		}
 
 	}
@@ -182,10 +216,14 @@ InputPin* ApplicationManager::GetInputPin(int& x, int& y)
 	InputPin* pin = NULL;
 	for (int i = 0; i < CompCount; i++)
 	{
-		pin = CompList[i]->GetInputpinCoordinates(x, y, index);
-		if (pin != NULL)
+		if (CompList[i] != NULL)
 		{
-			return pin;
+			pin = CompList[i]->GetInputpinCoordinates(x, y, index);
+			if (pin != NULL)
+			{
+				return pin;
+			}
+
 		}
 	}
 	return NULL;

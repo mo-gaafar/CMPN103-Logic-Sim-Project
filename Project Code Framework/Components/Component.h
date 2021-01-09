@@ -38,6 +38,7 @@ public:
 	GraphicsInfo GetCompInfo();
 	//Sets the selection of the component 
 	virtual void SelectComponent(bool s);
+	//Checks if component is selected or not
 	bool GetSelectedComponent();
 	//Destructor must be virtual
 	virtual ~Component();

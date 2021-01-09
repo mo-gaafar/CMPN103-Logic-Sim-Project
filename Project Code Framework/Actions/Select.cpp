@@ -33,14 +33,18 @@ void Select::Execute() {
 
 	for (int i = 0; i < c; i++)
 	{
-		GInfo = CompList[i]->GetCompInfo();
-		if ((CompList[i]->GetSelectedComponent() == false) && (Cx >= GInfo.x1 && Cx <= GInfo.x2) && (Cy >= GInfo.y1 && Cy <= GInfo.y2))
+		if (CompList[i] != NULL)
 		{
-			CompList[i]->SelectComponent(true);
-			//pOut->PrintMsg(" Label: " + Comp->GetLabel());
+			GInfo = CompList[i]->GetCompInfo();
+			if ((CompList[i]->GetSelectedComponent() == false) && (Cx >= GInfo.x1 && Cx <= GInfo.x2) && (Cy >= GInfo.y1 && Cy <= GInfo.y2))
+			{
+				CompList[i]->SelectComponent(true);
+				//pOut->PrintMsg(" Label: " + Comp->GetLabel());
+			}
+			else
+				CompList[i]->SelectComponent(false);
 		}
-		else
-			CompList[i]->SelectComponent(false);
+		
 	}
 	/*if (c == 1)
 	{

@@ -34,6 +34,7 @@ void AddANDgate2::Execute()
 	//Get Center point of the Gate
 	ReadActionParameters();
 	
+	
 	//Calculate the rectangle Corners
 	int Len = UI.AND2_Width;
 	int Wdth = UI.AND2_Height;
@@ -53,8 +54,7 @@ void AddANDgate2::Execute()
 		pOut->PrintMsg("Error, you have to draw within the drawing area");
 	}
 	else {
-		AND2* pA = new AND2(GInfo, AND2_FANOUT);
-		pManager->AddComponent(pA);
+		
 
 
 		pOut->PrintMsg("Enter component label: ");
@@ -65,8 +65,13 @@ void AddANDgate2::Execute()
 		//pOut->DrawString(LInfo, tempst);
 
 		string tempst = pIn->GetSrting(pOut);
-		pOut->DrawString(LInfo, tempst);
+		pOut->DrawString(LInfo, tempst); // this should be in the constructor instead?
 		pOut->ClearStatusBar();
+
+		pOut->ClearStatusBar();
+		//Adds the component to the complist
+		AND2* pA = new AND2(GInfo, AND2_FANOUT);
+		pManager->AddComponent(pA);
 
 	}
 
