@@ -42,6 +42,7 @@ public:
 	void AddComponent(Component* pComp);
 	int GetCompCount();
 	void SetCompList(Component** s);
+	void ReSortCompList();
 	Component** GetCompList();
 
 	//destructor

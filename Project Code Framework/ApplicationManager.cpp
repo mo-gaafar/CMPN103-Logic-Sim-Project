@@ -50,6 +50,29 @@ Component** ApplicationManager::GetCompList()
 	return CompList;
 }
 
+//puts nullified components out of the way and decrements componentcount value
+void ApplicationManager::ReSortCompList()
+{
+	Component* rCompList[MaxCompCount];
+	for (int i = 0; i < MaxCompCount; i++)
+		rCompList[i] = NULL;
+
+	int NotDeletedCount = 0;
+	for (int i = 0; i < MaxCompCount; i++)
+	{
+		if (CompList[i] != NULL)//checks if element is not nullified
+		{
+			rCompList[NotDeletedCount++]=CompList[i];
+		}
+	}
+	//Makes sure the remaining array elements are nullified
+	for (int i = NotDeletedCount+1; i < MaxCompCount; i++) 
+		rCompList[i] = NULL;
+
+	CompCount = NotDeletedCount; //changes component counter
+	*CompList = *rCompList; //updated array
+}
+
 ActionType ApplicationManager::GetUserAction()
 {
 	//Call input to get what action is reuired from the user

@@ -27,7 +27,7 @@ void Delete::ReadActionParameters()
 void Delete::Execute() {
 	ReadActionParameters();
 
-	Output* pOut = pManager->GetOutput(); //gets pointer 
+	Output* pOut = pManager->GetOutput(); //gets pointer from appmanager
 	Component** CompList = pManager->GetCompList(); //Gets pointer to main array of components
 
 	for (int i = 0; i < pManager->GetCompCount(); i++)
@@ -42,8 +42,8 @@ void Delete::Execute() {
 		}
 		
 	}
-	pOut->PrintMsg("Deleted");
-
+	pOut->PrintMsg("Delete Action Executed");
+	pManager->ReSortCompList(); //Fixes the list of components
 }
 
 void Delete::Undo() {
