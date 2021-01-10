@@ -1,6 +1,6 @@
 #include "Connection.h"
 
-Connection::Connection(const GraphicsInfo &r_GfxInfo, OutputPin *pSrcPin,InputPin *pDstPin):Component(r_GfxInfo)	
+Connection::Connection(GraphicsInfo &r_GfxInfo, OutputPin *pSrcPin,InputPin *pDstPin):Component(r_GfxInfo)	
 {
 	SrcPin = pSrcPin;
 	DstPin = pDstPin;
@@ -22,12 +22,19 @@ InputPin* Connection::getDestPin()
 void Connection::Operate()
 {
 	//Status of connection destination pin = status of connection source pin
-	DstPin->setStatus((STATUS)SrcPin->getStatus());
+	DstPin->setStatus(SrcPin->getStatus());
 }
 
 void Connection::Draw(Output* pOut)
 {
 	pOut->DrawConnection(m_GfxInfo, Selected);
+
+
+	GraphicsInfo GInfo = GetCompInfo();
+	GraphicsInfo LInfo;
+	LInfo.x1 = ((GInfo.x2 + GInfo.x1) / 2);
+	LInfo.y1 = ((GInfo.y1 + GInfo.y2) / 2) - 20;
+	pOut->DrawString(LInfo, m_Label);
 }
 
 int Connection::GetOutPinStatus()	//returns status of outputpin if LED, return -1
@@ -53,4 +60,16 @@ InputPin* Connection::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index) {
 }
 OutputPin* Connection::GetOutputpinCoordinates(int& X_in, int& Y_in) {
 	return NULL;
+}
+Component* Connection::MakeCopy(Component* c)
+{
+	/*GraphicsInfo temp;
+	temp.x1 = (c->GetGraphicsInfo())->x1;
+	temp.x2 = (c->GetGraphicsInfo())->x2;
+	temp.y1 = (c->GetGraphicsInfo())->y1;
+	temp.y2 = (c->GetGraphicsInfo())->y2;
+	Switch* ptr = new Switch(temp, SWITCH_FANOUT);
+	ptr->setLabel(c->GetLabel());
+	return ptr; */
+	return c;
 }

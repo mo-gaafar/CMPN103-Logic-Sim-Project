@@ -336,26 +336,51 @@ void Output::DrawXOR3(GraphicsInfo r_GfxInfo, bool selected) const
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
 }
 
-void Output::DrawSwitch(GraphicsInfo r_GfxInfo, bool selected) const
+void Output::DrawSwitch(GraphicsInfo r_GfxInfo, bool selected, bool status) const
 {
 	string GateImage;
-	if (selected)	//use image in the highlighted case
-		GateImage = "Images\\Gates\\Gate_SWITCH_Hi.jpg";
+	if (selected)
+	{
+		if (status == 1)
+			GateImage = "Images\\Gates\\Gate_SWITCH_ON_Hi.jpg";
+		else
+			GateImage = "Images\\Gates\\Gate_SWITCH_Hi.jpg";
+	}
 	else
-		GateImage = "Images\\Gates\\Gate_SWITCH.jpg";
+	{
+		if (status == 1)
+			GateImage = "Images\\Gates\\Gate_SWITCH_ON.jpg";
+		else
+			GateImage = "Images\\Gates\\Gate_SWITCH.jpg";
+	}
+
+
+	
+
+	
 
 	//Draw AND2 Gate at Gfx_Info (1st corner)
 	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
 }
 
-void Output::DrawLED(GraphicsInfo r_GfxInfo, bool selected) const
+void Output::DrawLED(GraphicsInfo r_GfxInfo, bool selected, bool changed) const
 {
 	string GateImage;
-	if (selected)	//use image in the highlighted case
-		GateImage = "Images\\Gates\\Gate_LED_Hi.jpg";
+	if (selected)
+	{
+		if (changed == 1)
+			GateImage = "Images\\Gates\\Gate_LED_ON_Hi.jpg";
+		else
+			GateImage = "Images\\Gates\\Gate_LED_Hi.jpg";
+	}
 	else
-		GateImage = "Images\\Gates\\Gate_LED.jpg";
+	{
+		if (changed == 1)
+			GateImage = "Images\\Gates\\Gate_LED_ON.jpg";
+		else
+			GateImage = "Images\\Gates\\Gate_LED.jpg";
+	}
 
 	//Draw AND2 Gate at Gfx_Info (1st corner)
 	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
@@ -376,8 +401,14 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 		pWind->SetPen(BLACK, 2);
 	}
 	//Draw Connection
-	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
-	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
+	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, ((r_GfxInfo.x2 + r_GfxInfo.x1) / 2), r_GfxInfo.y1);
+	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, ((r_GfxInfo.x2 + r_GfxInfo.x1) / 2), r_GfxInfo.y1);
+
+	pWind->DrawLine(((r_GfxInfo.x2 + r_GfxInfo.x1) / 2), r_GfxInfo.y1, ((r_GfxInfo.x2 + r_GfxInfo.x1) / 2), r_GfxInfo.y2);
+	pWind->DrawLine(((r_GfxInfo.x2 + r_GfxInfo.x1) / 2), r_GfxInfo.y1, ((r_GfxInfo.x2 + r_GfxInfo.x1) / 2), r_GfxInfo.y2);
+
+	pWind->DrawLine(((r_GfxInfo.x2 + r_GfxInfo.x1) / 2), r_GfxInfo.y2, r_GfxInfo.x2, r_GfxInfo.y2);
+	pWind->DrawLine(((r_GfxInfo.x2 + r_GfxInfo.x1) / 2), r_GfxInfo.y2, r_GfxInfo.x2, r_GfxInfo.y2);
 
 
 }

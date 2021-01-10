@@ -19,6 +19,8 @@ private:
 
 	Output* OutputInterface; //pointer to the Output Clase Interface
 	Input* InputInterface; //pointer to the Input Clase Interface
+	Component* CopiedComponent=NULL;
+	Component* CutComponent=NULL;
 
 
 
@@ -44,6 +46,10 @@ public:
 	void SetCompList(Component** s);
 	void ReSortCompList();
 	Component** GetCompList();
+	Component* GetCopied();
+	void SetCopied(Component* c);
+	Component* GetCut();
+	void SetCut(Component* c);
 
 	//destructor
 	~ApplicationManager();

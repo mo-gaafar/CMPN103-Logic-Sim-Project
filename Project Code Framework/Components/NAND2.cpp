@@ -32,6 +32,13 @@ void NAND2::Draw(Output* pOut)
 {
 	//Call output class and pass gate drawing info to it.
 	pOut->DrawNAND2(m_GfxInfo, Selected);
+
+
+	GraphicsInfo GInfo = GetCompInfo();
+	GraphicsInfo LInfo;
+	LInfo.x1 = GInfo.x1;
+	LInfo.y1 = GInfo.y1 - 20;
+	pOut->DrawString(LInfo, m_Label);
 }
 
 //returns status of outputpin
@@ -71,4 +78,15 @@ InputPin* NAND2::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 
 	}
 	return NULL;
+}
+Component* NAND2::MakeCopy(Component* c)
+{
+	GraphicsInfo temp;
+	temp.x1 = (c->GetGraphicsInfo())->x1;
+	temp.x2 = (c->GetGraphicsInfo())->x2;
+	temp.y1 = (c->GetGraphicsInfo())->y1;
+	temp.y2 = (c->GetGraphicsInfo())->y2;
+	NAND2* ptr = new NAND2(temp, NAND2_FANOUT);
+	//ptr->setLabel(c->GetLabel());
+	return ptr;
 }

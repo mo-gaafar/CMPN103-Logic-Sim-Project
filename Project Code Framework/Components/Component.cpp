@@ -1,9 +1,10 @@
 #include "Component.h"
 
-Component::Component(const GraphicsInfo& r_GfxInfo)
+Component::Component(GraphicsInfo& r_GfxInfo)
 {
 	m_GfxInfo = r_GfxInfo;
 	Selected = false;
+	Changed = LOW;
 }
 
 void Component::SetLabel(const string& label)
@@ -28,15 +29,33 @@ GraphicsInfo Component::GetCompInfo()
 {
 	return m_GfxInfo;
 }
+GraphicsInfo* Component::GetGraphicsInfo()
+{
+	return &m_GfxInfo;
+}
 //////////////////////////////////////////////////////////////////
 void Component::SelectComponent(bool s)
 {
 	Selected = s;
 }
+
+void Component::ChangeGate(bool c)
+{
+	Changed = c;
+}
 //////////////////////////////////////////////////////////////////
 bool Component::GetSelectedComponent() //Checks if selected or not
 {
 	return Selected;
+}
+
+bool Component::GetChangedGate()
+{
+	return Changed;
+}
+void Component::SetCompInfo(GraphicsInfo& g)
+{
+	m_GfxInfo = g;
 }
 //////////////////////////////////////////////////////////////////
 Component::~Component()

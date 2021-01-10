@@ -5,12 +5,17 @@ LED::LED(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(1, r_FanOut)
 	m_GfxInfo.y1 = r_GfxInfo.y1;
 	m_GfxInfo.x2 = r_GfxInfo.x2;
 	m_GfxInfo.y2 = r_GfxInfo.y2;
+	Changed = LOW;
 }
 
 
 void LED::Operate()
 {
-	return;
+	if (GetInputPinStatus(1) == HIGH)
+		Changed = HIGH;
+	else
+		Changed = LOW;
+	//return;
 }
 
 
@@ -18,7 +23,14 @@ void LED::Operate()
 void LED::Draw(Output* pOut)
 {
 	//Call output class and pass gate drawing info to it.
-	pOut->DrawLED(m_GfxInfo, Selected);
+	pOut->DrawLED(m_GfxInfo, Selected, Changed);
+
+
+	GraphicsInfo GInfo = GetCompInfo();
+	GraphicsInfo LInfo;
+	LInfo.x1 = GInfo.x1;
+	LInfo.y1 = GInfo.y1 - 20;
+	pOut->DrawString(LInfo, m_Label);
 }
 
 //returns status of outputpin
@@ -53,4 +65,15 @@ InputPin* LED::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 		return &this->m_InputPins[Index];
 	}
 	return NULL;
+}
+Component* LED::MakeCopy(Component* c)
+{
+	GraphicsInfo temp;
+	temp.x1 = (c->GetGraphicsInfo())->x1;
+	temp.x2 = (c->GetGraphicsInfo())->x2;
+	temp.y1 = (c->GetGraphicsInfo())->y1;
+	temp.y2 = (c->GetGraphicsInfo())->y2;
+	LED* ptr = new LED(temp, LED_FANOUT);
+	//ptr->setLabel(c->GetLabel());
+	return ptr;
 }

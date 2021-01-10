@@ -30,6 +30,13 @@ void XOR3::Draw(Output* pOut)
 {
 	//Call output class and pass gate drawing info to it.
 	pOut->DrawXOR3(m_GfxInfo, Selected);
+
+
+	GraphicsInfo GInfo = GetCompInfo();
+	GraphicsInfo LInfo;
+	LInfo.x1 = GInfo.x1;
+	LInfo.y1 = GInfo.y1 - 20;
+	pOut->DrawString(LInfo, m_Label);
 }
 
 //returns status of outputpin
@@ -84,4 +91,15 @@ InputPin* XOR3::GetInputpinCoordinates(int & X_in ,int & Y_in, int &Index)
 
 	}
 	return NULL;
+}
+Component* XOR3::MakeCopy(Component* c)
+{
+	GraphicsInfo temp;
+	temp.x1 = (c->GetGraphicsInfo())->x1;
+	temp.x2 = (c->GetGraphicsInfo())->x2;
+	temp.y1 = (c->GetGraphicsInfo())->y1;
+	temp.y2 = (c->GetGraphicsInfo())->y2;
+	XOR3* ptr = new XOR3(temp, XOR3_FANOUT);
+	//ptr->setLabel(c->GetLabel());
+	return ptr;
 }

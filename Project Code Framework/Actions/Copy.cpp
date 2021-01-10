@@ -1,28 +1,49 @@
-#pragma once
-#include "Action.h"
-#include "..\ApplicationManager.h"
-
-class Copy : public Action
+#include "Copy.h"
+#include "../ApplicationManager.h"
+#include "../Components/Connection.h"
+#include "..\Components\Component.h"
+#include<iostream>
+using namespace std;
+Copy::Copy(ApplicationManager* pManager) :Action(pManager)
 {
-private:
-	int Cx, Cy;		// Point selected
-public:
-	/* Constructor */
-	Copy(ApplicationManager* pAppMan);
+	Copied = NULL;
+}
+Copy:: ~Copy()
+{
+}
+void Copy::ReadActionParameters() /// SELECT IS OPERATION CANCELLED 
+{
+	Output* pOut = pManager->GetOutput();
+	Input* pIn = pManager->GetInput();
+	//Print Action Message
+	pOut->PrintMsg("Copy selected component");
 
-	/* Reads parameters required for action to execute */
-	virtual void ReadActionParameters();
+	//Wait for User Input
+	//pIn->GetPointClicked(Cx, Cy);
 
-	/* Executes action */
-	virtual void  Execute();
+	//Clear Status Bar
+	//pOut->ClearStatusBar();
+	
 
-	/* Undo action */
-	virtual void Undo();
+}
 
-	/* Redo action */
-	virtual void Redo();
+void Copy::Execute() {
+		ReadActionParameters();
+		Output* pOut = pManager->GetOutput(); //gets pointer from appmanager
+		Component** CompList = pManager->GetCompList(); //Gets pointer to main array of components
+		for (int i = 0; i < pManager->GetCompCount(); i++)
+		{
+			if (CompList[i] != NULL)
+				if (CompList[i]->GetSelectedComponent() == true)
+				{
+					pManager->SetCopied(CompList[i]);
+					pOut->PrintMsg("Copied Successfully");
+				}
+		}
+	}
 
-	/* Destructor */
-	virtual ~Copy();
-};
 
+void Copy::Undo()
+{}
+void Copy::Redo()
+{}

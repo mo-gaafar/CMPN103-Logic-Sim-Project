@@ -1,13 +1,13 @@
 #pragma once
-#include "action.h"
-#include "..\ApplicationManager.h"
+#include "Action.h"
 #include "..\Components\Component.h"
-class Copy :public Action
+
+class Cut :public Action
 {
-	Component* Copied;
+	Component* Copied; //Might need to edit some stuff
 public:
-	Copy(ApplicationManager* pManager);
-	virtual ~Copy();
+	Cut(ApplicationManager* pManager);
+	virtual ~Cut();
 	virtual void ReadActionParameters();
 	virtual void Execute();
 

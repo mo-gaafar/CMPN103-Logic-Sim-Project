@@ -217,7 +217,14 @@
     <ClCompile Include="Actions\DesignToolBar.cpp" />
     <ClCompile Include="Actions\GateToolBar.cpp" />
     <ClCompile Include="Actions\ExitProgram.cpp" />
+    <ClCompile Include="Actions\Copy.cpp" />
+    <ClCompile Include="Actions\Cut.cpp" />
+    <ClCompile Include="Actions\Paste.cpp" />
     <ClCompile Include="Actions\Delete.cpp" />
+    <ClCompile Include="Actions\Edit.cpp" />
+    <ClCompile Include="Actions\Move.cpp" />
+    <ClCompile Include="Actions\ChangeSwitch.cpp" />
+    <ClCompile Include="Actions\Simulate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -378,10 +385,18 @@
     <ClInclude Include="Actions\DesignToolBar.h" />
     <ClInclude Include="Actions\GateToolBar.h" />
     <ClInclude Include="Actions\ExitProgram.h" />
+    <ClInclude Include="Actions\Copy.h" />
+    <ClInclude Include="Actions\Cut.h" />
+    <ClInclude Include="Actions\Paste.h" />
     <ClInclude Include="Actions\Delete.h" />
+    <ClInclude Include="Actions\Edit.h" />
+    <ClInclude Include="Actions\Move.h" />
+    <ClInclude Include="Actions\ChangeSwitch.h" />
+    <ClInclude Include="Actions\Simulate.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Images\Menu\blank.jpg" />
@@ -419,5 +434,35 @@
     <Image Include="Images\Menu\Menu_VALIDATE.jpg" />
     <Image Include="Images\Menu\Menu_PASTE.jpg" />
     <Image Include="Images\Menu\Menu_PROBE.jpg" />
+    <Image Include="Images\Gates\Gate_AND2.jpg" />
+    <Image Include="Images\Gates\Gate_AND2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_AND3.jpg" />
+    <Image Include="Images\Gates\Gate_AND3_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_BUFFER.jpg" />
+    <Image Include="Images\Gates\Gate_BUFFER_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_LED.jpg" />
+    <Image Include="Images\Gates\Gate_LED_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_LED_ON.jpg" />
+    <Image Include="Images\Gates\Gate_LED_ON_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_NAND2.jpg" />
+    <Image Include="Images\Gates\Gate_NAND2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_NOR2.jpg" />
+    <Image Include="Images\Gates\Gate_NOR2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_NOR3.jpg" />
+    <Image Include="Images\Gates\Gate_NOR3_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_NOT.jpg" />
+    <Image Include="Images\Gates\Gate_NOT_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_OR2.jpg" />
+    <Image Include="Images\Gates\Gate_OR2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_SWITCH.jpg" />
+    <Image Include="Images\Gates\Gate_SWITCH_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_SWITCH_ON.jpg" />
+    <Image Include="Images\Gates\Gate_SWITCH_ON_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_XNOR2.jpg" />
+    <Image Include="Images\Gates\Gate_XNOR2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_XOR2.jpg" />
+    <Image Include="Images\Gates\Gate_XOR2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_XOR3.jpg" />
+    <Image Include="Images\Gates\Gate_XOR3_Hi.jpg" />
   </ItemGroup>
 </Project>

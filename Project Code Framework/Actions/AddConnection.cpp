@@ -63,21 +63,16 @@ void AddConnection::Execute()
 		pOut->PrintMsg("Error, you have to draw within the drawing area");
 	}
 	else {
-		m_Connection = new Connection(m_GfxInfo, pSrcPin, pDstPin);
-		m_Connection->setSourcePin(pSrcPin);
-		m_Connection->setDestPin(pDstPin);
-		pManager->AddComponent(m_Connection);
-
-		pOut->PrintMsg("Enter component label: ");
-		GraphicsInfo LInfo;
-		LInfo.x1 = m_GfxInfo.x1;
-		LInfo.y1 = m_GfxInfo.y1 - 20;
-		string tempst = pIn->GetSrting(pOut);
-		pOut->DrawString(LInfo, tempst);
-		pOut->ClearStatusBar();
-		//string tempst = "Label";
-		//pOut->DrawString(LInfo, tempst);
-
+		if (pSrcPin != NULL && pDstPin != NULL)
+		{
+			m_Connection = new Connection(m_GfxInfo, pSrcPin, pDstPin);
+			m_Connection->setSourcePin(pSrcPin);
+			m_Connection->setDestPin(pDstPin);
+			pManager->AddComponent(m_Connection);
+			pOut->ClearStatusBar();
+		}
+		else
+			pOut->PrintMsg("Error, pins not properly selected");
 
 	}
 }
