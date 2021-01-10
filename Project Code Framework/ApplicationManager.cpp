@@ -23,6 +23,7 @@
 #include "Actions\Paste.h"
 #include "Actions\Move.h"
 #include "Actions\ChangeSwitch.h"
+#include "Actions\Simulate.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -138,6 +139,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case MOVE:
 			pAct = new Move(this);
+			break;
+		case SIMULATE:
+			pAct = new Simulate(this);
 			break;
 		case Change_Switch:
 			pAct = new ChangeSwitch(this);

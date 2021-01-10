@@ -208,6 +208,7 @@
     <ClCompile Include="Actions\SimulateToolBar.cpp" />
     <ClCompile Include="Actions\Paste.cpp" />
     <ClCompile Include="Actions\Move.cpp" />
+    <ClCompile Include="Actions\Simulate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -279,6 +280,7 @@
     <ClInclude Include="Actions\SimulateToolBar.h" />
     <ClInclude Include="Actions\Paste.h" />
     <ClInclude Include="Actions\Move.h" />
+    <ClInclude Include="Actions\Simulate.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

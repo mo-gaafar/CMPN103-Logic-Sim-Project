@@ -51,7 +51,7 @@ void ChangeSwitch::Execute()
 
 				}
 			}
-			else
+			else if (CompList[i]->GetChangedGate() == 0)
 			{
 				if (Component* c = dynamic_cast<Switch*> (CompList[i]))
 				{
