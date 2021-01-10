@@ -16,13 +16,13 @@ void Simulate::ReadActionParameters()
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("2-Input AND Gate: Click to add the gate");
+	pOut->PrintMsg("Simulating Circuit");
 
 	//Wait for User Input
-	pIn->GetPointClicked(Cx, Cy);
+	//pIn->GetPointClicked(Cx, Cy);
 
 	//Clear Status Bar
-	pOut->ClearStatusBar();
+	//pOut->ClearStatusBar();
 
 }
 
@@ -31,9 +31,9 @@ void Simulate::Execute()
 {
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
-	
+	pManager->ReSortCompList();
 	Component** CompList = pManager->GetCompList();
-
+	
 	for (int i = 0; i < pManager->GetCompCount(); i++)
 	{
 		for (int i = 0; i < pManager->GetCompCount(); i++)
@@ -42,7 +42,12 @@ void Simulate::Execute()
 		}
 		
 	}
-
+	//Clear Status Bar
+	pOut->ClearStatusBar();
+	//Print Action Message
+	pOut->PrintMsg("Done simulating.");
+	
+	
 }
 
 void Simulate::Undo()
