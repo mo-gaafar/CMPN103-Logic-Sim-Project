@@ -1,7 +1,6 @@
 #include "Move.h"
 #include "../ApplicationManager.h"
 #include "../Components/Connection.h"
-#include "..\Components\Component.h"
 #include<iostream>
 
 Move::Move(ApplicationManager* pManager) :Action(pManager)
@@ -14,6 +13,8 @@ Move::~Move()
 
 void Move::ReadActionParameters()
 {
+	pManager->ReSortCompList(); //Fixes the list of components
+
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 	//Print Action Message
@@ -26,6 +27,7 @@ void Move::Execute()
 	Output* pOut = pManager->GetOutput(); //gets pointer from appmanager
 	Component** CompList = pManager->GetCompList(); //Gets pointer to main array of components
 	Input* pIn = pManager->GetInput();
+
 	for (int i = 0; i < pManager->GetCompCount(); i++)
 	{
 		if (CompList[i] != NULL)

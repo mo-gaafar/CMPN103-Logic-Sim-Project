@@ -42,7 +42,7 @@ bool Component::GetSelectedComponent() //Checks if selected or not
 {
 	return Selected;
 }
-void Component::SetCompInfo(GraphicsInfo g)
+void Component::SetCompInfo(GraphicsInfo& g)
 {
 	m_GfxInfo = g;
 }
