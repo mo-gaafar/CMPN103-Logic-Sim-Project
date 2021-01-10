@@ -63,11 +63,16 @@ void AddConnection::Execute()
 		pOut->PrintMsg("Error, you have to draw within the drawing area");
 	}
 	else {
-		m_Connection = new Connection(m_GfxInfo, pSrcPin, pDstPin);
-		m_Connection->setSourcePin(pSrcPin);
-		m_Connection->setDestPin(pDstPin);
-		pManager->AddComponent(m_Connection);
-		pOut->ClearStatusBar();
+		if (pSrcPin != NULL && pDstPin != NULL)
+		{
+			m_Connection = new Connection(m_GfxInfo, pSrcPin, pDstPin);
+			m_Connection->setSourcePin(pSrcPin);
+			m_Connection->setDestPin(pDstPin);
+			pManager->AddComponent(m_Connection);
+			pOut->ClearStatusBar();
+		}
+		else
+			pOut->PrintMsg("Error, pins not properly selected");
 
 	}
 }
