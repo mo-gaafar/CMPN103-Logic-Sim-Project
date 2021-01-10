@@ -39,14 +39,7 @@ void Copy::Execute() {
 					pManager->SetCopied(CompList[i]);
 					pOut->PrintMsg("Copied Successfully");
 				}
-			/*Input* pIn = pManager->GetInput();
-			Output* pOut = pManager->GetOutput();
-			ReadActionParameters();
-
-			pManager->SetCopied(Copied);
-			pOut->PrintMsg("Copied Successfully");*/
 		}
-		pManager->AddComponent(pManager->GetCopied);
 	}
 
 
