@@ -19,8 +19,8 @@ private:
 
 	Output* OutputInterface; //pointer to the Output Clase Interface
 	Input* InputInterface; //pointer to the Input Clase Interface
-	Component* CopiedComponent;
-	Component* CutComponent;
+	Component* CopiedComponent=NULL;
+	Component* CutComponent=NULL;
 
 
 
