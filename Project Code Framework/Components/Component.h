@@ -36,7 +36,7 @@ public:
 	virtual InputPin* GetInputpinCoordinates(int& X_In, int& Y_In, int& n_Input)=0;//gets rectangular range of input pin (changes depending on gate location) returns Index and InputPin array pointer
 
 	GraphicsInfo GetCompInfo();
-	void SetCompInfo(GraphicsInfo g);
+	void SetCompInfo(GraphicsInfo& g);
 	//Sets the selection of the component 
 	virtual void SelectComponent(bool s);
 	//Checks if component is selected or not

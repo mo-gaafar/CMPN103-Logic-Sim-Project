@@ -171,7 +171,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new Paste(this);
 			break;
 		case MOVE:
-			pAct = new Paste(this);
+			pAct = new Move(this);
 			break;
 		case EXIT:
 			pAct = new ExitProgram(this);
