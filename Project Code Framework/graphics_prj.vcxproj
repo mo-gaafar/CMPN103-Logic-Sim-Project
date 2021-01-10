@@ -290,6 +290,36 @@
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Images\Gates\Gate_AND2.jpg" />
+    <Image Include="Images\Gates\Gate_AND2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_AND3.jpg" />
+    <Image Include="Images\Gates\Gate_AND3_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_BUFFER.jpg" />
+    <Image Include="Images\Gates\Gate_BUFFER_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_LED.jpg" />
+    <Image Include="Images\Gates\Gate_LED_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_LED_ON.jpg" />
+    <Image Include="Images\Gates\Gate_LED_ON_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_NAND2.jpg" />
+    <Image Include="Images\Gates\Gate_NAND2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_NOR2.jpg" />
+    <Image Include="Images\Gates\Gate_NOR2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_NOR3.jpg" />
+    <Image Include="Images\Gates\Gate_NOR3_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_NOT.jpg" />
+    <Image Include="Images\Gates\Gate_NOT_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_OR2.jpg" />
+    <Image Include="Images\Gates\Gate_OR2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_SWITCH.jpg" />
+    <Image Include="Images\Gates\Gate_SWITCH_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_SWITCH_ON.jpg" />
+    <Image Include="Images\Gates\Gate_SWITCH_ON_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_XNOR2.jpg" />
+    <Image Include="Images\Gates\Gate_XNOR2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_XOR2.jpg" />
+    <Image Include="Images\Gates\Gate_XOR2_Hi.jpg" />
+    <Image Include="Images\Gates\Gate_XOR3.jpg" />
+    <Image Include="Images\Gates\Gate_XOR3_Hi.jpg" />
     <Image Include="Images\Menu\blank.jpg" />
     <Image Include="Images\Menu\Menu_ADDCONNECTION.jpg" />
     <Image Include="Images\Menu\Menu_ADDGATE.jpg" />
