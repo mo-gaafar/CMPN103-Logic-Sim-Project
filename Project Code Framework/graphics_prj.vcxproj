@@ -132,6 +132,7 @@
     <ClCompile Include="Actions\AddNORgate3.cpp" />
     <ClCompile Include="Actions\AddXORgate3.cpp" />
     <ClCompile Include="Actions\AddLabel.cpp" />
+    <ClCompile Include="Actions\ChangeSwitch.cpp" />
     <ClCompile Include="Actions\Copy.cpp" />
     <ClCompile Include="Components\AND3.cpp" />
     <ClCompile Include="Actions\AddNANDgate2.cpp" />
@@ -191,6 +192,8 @@
     <ClCompile Include="Actions\GateToolBar.cpp" />
     <ClCompile Include="Actions\ExitProgram.cpp" />
     <ClCompile Include="Actions\Cut.cpp" />
+    <ClCompile Include="Actions\Delete.cpp" />
+    <ClCompile Include="Actions\Edit.cpp" />
     <ClCompile Include="GUI\Input.cpp" />
     <ClCompile Include="GUI\Output.cpp" />
     <ClCompile Include="Components\INV.cpp" />
@@ -219,6 +222,7 @@
     <ClInclude Include="Actions\AddXORgate3.h" />
     <ClInclude Include="Actions\AddLabel.h" />
     <ClInclude Include="Actions\Copy.h" />
+    <ClInclude Include="Actions\ChangeSwitch.h" />
     <ClInclude Include="Components\AND3.h" />
     <ClInclude Include="Actions\AddNANDgate2.h" />
     <ClInclude Include="Actions\AddNORgate2.h" />
@@ -263,6 +267,8 @@
     <ClInclude Include="Actions\DesignToolBar.h" />
     <ClInclude Include="Actions\GateToolBar.h" />
     <ClInclude Include="Actions\ExitProgram.h" />
+    <ClInclude Include="Actions\Delete.h" />
+    <ClInclude Include="Actions\Edit.h" />
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />
