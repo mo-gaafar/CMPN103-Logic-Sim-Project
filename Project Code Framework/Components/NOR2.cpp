@@ -79,3 +79,14 @@ InputPin* NOR2::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	}
 	return NULL;
 }
+Component* NOR2::MakeCopy(Component* c)
+{
+	GraphicsInfo temp;
+	temp.x1 = (c->GetGraphicsInfo())->x1;
+	temp.x2 = (c->GetGraphicsInfo())->x2;
+	temp.y1 = (c->GetGraphicsInfo())->y1;
+	temp.y2 = (c->GetGraphicsInfo())->y2;
+	NOR2* ptr = new NOR2(temp, NOR2_FANOUT);
+	//ptr->setLabel(c->GetLabel());
+	return ptr;
+}

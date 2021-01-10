@@ -28,6 +28,10 @@ GraphicsInfo Component::GetCompInfo()
 {
 	return m_GfxInfo;
 }
+GraphicsInfo* Component::GetGraphicsInfo()
+{
+	return &m_GfxInfo;
+}
 //////////////////////////////////////////////////////////////////
 void Component::SelectComponent(bool s)
 {
