@@ -19,6 +19,8 @@
 #include "Actions\GateToolBar.h"
 #include "Actions\ExitProgram.h"
 #include "Actions\Copy.h"
+#include "Actions\Cut.h"
+#include "Actions\Paste.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -126,6 +128,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case COPY:
 			pAct = new Copy(this);
 			break;
+		case CUT:
+			pAct = new Cut(this);
+		case PASTE:
+			pAct = new Paste(this);
 		case EXIT:
 			pAct = new ExitProgram(this);
 			break;

@@ -1,12 +1,13 @@
 #pragma once
-#include "action.h"
+#include "Action.h"
 #include "..\Components\Component.h"
-class Copy :public Action
+
+class Paste :public Action
 {
 	Component* Copied;
 public:
-	Copy(ApplicationManager* pManager);
-	virtual ~Copy();
+	Paste(ApplicationManager* pManager);
+	virtual ~Paste();
 	virtual void ReadActionParameters();
 	virtual void Execute();
 
@@ -14,3 +15,4 @@ public:
 	virtual void Redo();
 
 };
+
