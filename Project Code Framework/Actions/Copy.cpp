@@ -1,6 +1,7 @@
 #include "Copy.h"
 #include "../ApplicationManager.h"
 #include "../Components/Connection.h"
+#include "..\Components\Component.h"
 #include<iostream>
 using namespace std;
 Copy::Copy(ApplicationManager* pManager) :Action(pManager)
@@ -26,16 +27,28 @@ void Copy::ReadActionParameters() /// SELECT IS OPERATION CANCELLED
 
 }
 
-void Copy::Execute()
-{
-	Input* pIn = pManager->GetInput();
-	Output* pOut = pManager->GetOutput();
-	ReadActionParameters();
+void Copy::Execute() {
+		ReadActionParameters();
+		Output* pOut = pManager->GetOutput(); //gets pointer from appmanager
+		Component** CompList = pManager->GetCompList(); //Gets pointer to main array of components
+		for (int i = 0; i < pManager->GetCompCount(); i++)
+		{
+			if (CompList[i] != NULL)
+				if (CompList[i]->GetSelectedComponent() == true)
+				{
+					pManager->SetCopied(CompList[i]);
+					pOut->PrintMsg("Copied Successfully");
+				}
+			/*Input* pIn = pManager->GetInput();
+			Output* pOut = pManager->GetOutput();
+			ReadActionParameters();
 
-	pManager->SetCopied(Copied);
-	pOut->PrintMsg("Copied Successfully");
+			pManager->SetCopied(Copied);
+			pOut->PrintMsg("Copied Successfully");*/
+		}
+		pManager->AddComponent(pManager->GetCopied);
+	}
 
-}
 
 void Copy::Undo()
 {}
