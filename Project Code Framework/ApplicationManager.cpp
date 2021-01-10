@@ -18,6 +18,9 @@
 #include "Actions\DesignToolBar.h"
 #include "Actions\GateToolBar.h"
 #include "Actions\ExitProgram.h"
+#include "SAVE.h"
+#include<fstream>
+#include<iostream>
 
 ApplicationManager::ApplicationManager()
 {
@@ -47,6 +50,27 @@ void ApplicationManager::SetCompList(Component** l)
 Component** ApplicationManager::GetCompList()
 {
 	return CompList;
+}
+void ApplicationManager::SaveComponent(ofstream& FILE)
+{
+	for (int i = 0; i < CompCount; i++)
+		if (!dynamic_cast<Connection*>(CompList[i]))
+			CompList[i]->SAVE(FILE);
+}
+void ApplicationManager::SaveConnection(ofstream& FILE)
+{
+	for (int i = 0; i < CompCount; i++)
+		if (dynamic_cast<Connection*>(CompList[i]))
+			CompList[i]->SAVE(FILE);
+}
+
+int ApplicationManager::connectionNumber()
+{
+	int count = 0;
+	for (int i = 0; i < CompCount; i++)
+		if (!dynamic_cast<Connection*>(CompList[i]))
+			count++;
+	return count;
 }
 
 ActionType ApplicationManager::GetUserAction()

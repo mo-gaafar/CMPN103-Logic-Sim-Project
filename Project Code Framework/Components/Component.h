@@ -1,5 +1,10 @@
 #ifndef _COMPONENT_H
 #define _COMPONENT_H
+class ApplicationManager;
+#include<iostream>
+#include<ostream>
+#include<istream>
+#include<fstream>
 
 #include "..\Defs.h"
 #include "..\GUI\Output.h"
@@ -13,7 +18,9 @@ class Component
 protected:
 	bool Selected;
 	GraphicsInfo m_GfxInfo;	//The parameters required to draw a component
-	string m_Label; //text in label
+	string m_Label; //text in labe
+	static int COUNT;
+	int ID;
 public:
 	Component(const GraphicsInfo& r_GfxInfo);
 	Component();
@@ -26,10 +33,10 @@ public:
 	// Returns the label of the component
 	string GetLabel() const;
 
-
+	void setID(int i);
 	virtual int GetOutPinStatus() = 0;	//returns status of outputpin if LED, return -1
 	virtual int GetInputPinStatus(int n) = 0;	//returns status of Inputpin # n if SWITCH, return -1
-
+	virtual string getLabel();
 	virtual void setInputPinStatus(int n, STATUS s) = 0;	//set status of Inputpin # n, to be used by connection class.
 
 	virtual OutputPin* GetOutputpinCoordinates(int& X_Out, int& Y_Out) = 0; //gets rectangular range of output pin given click coordinates, returns pointer to the selected gate's output pin element
@@ -39,6 +46,7 @@ public:
 	//Sets the selection of the component 
 	virtual void SelectComponent(bool s);
 	bool GetSelectedComponent();
+	virtual void SAVE(ofstream& FILE) = 0;
 	//Destructor must be virtual
 	virtual ~Component();
 };

@@ -17,6 +17,10 @@ string Component::GetLabel() const
 {
 	return m_Label;
 }
+void Component::setID(int i)
+{
+	ID = i;
+}
 
 //////////////////////////////////////////////////////////////////
 Component::Component()
@@ -41,4 +45,4 @@ bool Component::GetSelectedComponent()
 //////////////////////////////////////////////////////////////////
 Component::~Component()
 {}
-
+int Component::COUNT = 0;

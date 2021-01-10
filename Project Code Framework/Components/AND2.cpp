@@ -6,7 +6,10 @@ AND2::AND2(const GraphicsInfo &r_GfxInfo, int r_FanOut):Gate(2, r_FanOut)
 	m_GfxInfo.y1 = r_GfxInfo.y1;
 	m_GfxInfo.x2 = r_GfxInfo.x2;
 	m_GfxInfo.y2 = r_GfxInfo.y2;
+	//ID = COUNT;
+	//COUNT++;
 }
+
 
 
 void AND2::Operate()
@@ -72,3 +75,8 @@ InputPin* AND2::GetInputpinCoordinates(int & X_in ,int & Y_in, int &Index)
 	return NULL;
 }
 
+
+/*void AND2::SAVE(ofstream& FILE)
+{
+	FILE<< "AND2\t" << ID << "\t" << getLabel() << "\t" << m_GfxInfo.x1 + UI.AND2_Width / 2 << "\t" << m_GfxInfo.y1 + UI.AND2_Height / 2 << endl;
+}*/

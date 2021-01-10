@@ -32,6 +32,10 @@ public:
 	void ExecuteAction(ActionType);
 	
 	void UpdateInterface();	//Redraws all the drawing window
+	void SaveComponent(ofstream& PRINT);
+	void SaveConnection(ofstream& PRINT);
+	int connectionNumber();
+
 
 	//Gets a pointer to Input / Output Object
 	Output* GetOutput();

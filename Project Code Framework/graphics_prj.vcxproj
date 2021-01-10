@@ -204,6 +204,7 @@
     <ClCompile Include="Components\Switch.cpp" />
     <ClCompile Include="Actions\Select.cpp" />
     <ClCompile Include="Actions\SimulateToolBar.cpp" />
+    <ClCompile Include="SAVE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -271,6 +272,7 @@
     <ClInclude Include="Components\Switch.h" />
     <ClInclude Include="Actions\Select.h" />
     <ClInclude Include="Actions\SimulateToolBar.h" />
+    <ClInclude Include="SAVE.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
