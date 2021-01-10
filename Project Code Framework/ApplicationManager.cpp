@@ -130,8 +130,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case CUT:
 			pAct = new Cut(this);
+			break;
 		case PASTE:
 			pAct = new Paste(this);
+			break;
 		case EXIT:
 			pAct = new ExitProgram(this);
 			break;
