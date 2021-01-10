@@ -18,7 +18,7 @@
 #include "Actions\DesignToolBar.h"
 #include "Actions\GateToolBar.h"
 #include "Actions\ExitProgram.h"
-#include "SAVE.h"
+#include "Actions\SAVE.h"
 #include<fstream>
 #include<iostream>
 
@@ -145,6 +145,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case GATE_MODE:
 			pAct = new GateToolBar(this);
+			break;
+		case SAVE:
+			pAct = new Save(this);
 			break;
 		case EXIT:
 			pAct = new ExitProgram(this);

@@ -85,3 +85,7 @@ InputPin* AND3::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	}
 	return NULL;
 }
+
+void AND3::SAVE(ofstream& print)
+{
+}

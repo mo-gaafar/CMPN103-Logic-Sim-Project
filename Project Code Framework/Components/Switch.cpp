@@ -46,3 +46,7 @@ void Switch::setInputPinStatus(int n, STATUS s)
 InputPin* Switch::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index) {
 	return NULL;
 }
+
+void Switch::SAVE(ofstream& print)
+{
+}

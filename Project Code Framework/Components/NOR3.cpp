@@ -85,3 +85,7 @@ InputPin* NOR3::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	}
 	return NULL;
 }
+
+void NOR3::SAVE(ofstream& print)
+{
+}

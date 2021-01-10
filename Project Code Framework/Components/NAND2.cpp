@@ -72,3 +72,7 @@ InputPin* NAND2::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	}
 	return NULL;
 }
+
+void NAND2::SAVE(ofstream& print)
+{
+}

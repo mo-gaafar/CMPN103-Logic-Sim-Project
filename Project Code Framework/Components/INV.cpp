@@ -59,3 +59,7 @@ InputPin* INV::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	}
 	return NULL;
 }
+
+void INV::SAVE(ofstream& print)
+{
+}

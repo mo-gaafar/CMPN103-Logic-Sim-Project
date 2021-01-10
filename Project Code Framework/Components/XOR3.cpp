@@ -85,3 +85,7 @@ InputPin* XOR3::GetInputpinCoordinates(int & X_in ,int & Y_in, int &Index)
 	}
 	return NULL;
 }
+
+void XOR3::SAVE(ofstream& print)
+{
+}

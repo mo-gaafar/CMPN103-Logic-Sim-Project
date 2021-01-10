@@ -46,6 +46,11 @@ void Connection::setInputPinStatus(int n, STATUS s)
 	SrcPin->setStatus(s);
 }
 
+void Connection::SAVE(ofstream& print)
+{
+
+}
+
 
 //PLACEHOLDER FOR NOW
 InputPin* Connection::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index) {

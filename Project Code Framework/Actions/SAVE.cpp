@@ -1,5 +1,5 @@
-#include "Save.h"
-#include "ApplicationManager.h"
+#include "../Actions/SAVE.h"
+#include "../ApplicationManager.h"
 #include<iostream>
 #include<ostream>
 #include<fstream>
@@ -21,6 +21,7 @@ void Save::ReadActionParameters()
 
 void Save::Execute()
 {
+
 	string fileName = "data.txt";
 	ofstream print(fileName);
 	print << pManager->connectionNumber() << endl;
