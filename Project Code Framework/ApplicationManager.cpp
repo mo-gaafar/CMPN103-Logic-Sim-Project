@@ -24,6 +24,7 @@
 #include "Actions\Copy.h"
 #include "Actions\Cut.h"
 #include "Actions\Paste.h"
+#include "Actions\Move.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -167,6 +168,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new Cut(this);
 			break;
 		case PASTE:
+			pAct = new Paste(this);
+			break;
+		case MOVE:
 			pAct = new Paste(this);
 			break;
 		case EXIT:

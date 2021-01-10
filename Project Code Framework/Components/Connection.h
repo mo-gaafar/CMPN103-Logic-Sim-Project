@@ -12,7 +12,7 @@ class Connection :	public Component
 	InputPin* DstPin;	//The Destination pin of this connection (an input pin of certain Component)
 public:
 	//Connection(const GraphicsInfo &r_GfxInfo, Component *pS=NULL,Component *pD=NULL, int Pin=0);
-	Connection(const GraphicsInfo &r_GfxInfo, OutputPin *pSrcPin,InputPin *pDstPin);
+	Connection(GraphicsInfo &r_GfxInfo, OutputPin *pSrcPin,InputPin *pDstPin);
 
 	virtual void Operate() ;	//Calculates the output according to the inputs
 	virtual void Draw(Output* pOut);	//for each component to Draw itself

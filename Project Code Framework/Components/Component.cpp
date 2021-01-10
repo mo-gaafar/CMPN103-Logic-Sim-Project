@@ -1,6 +1,6 @@
 #include "Component.h"
 
-Component::Component(const GraphicsInfo& r_GfxInfo)
+Component::Component(GraphicsInfo& r_GfxInfo)
 {
 	m_GfxInfo = r_GfxInfo;
 	Selected = false;
@@ -41,6 +41,10 @@ void Component::SelectComponent(bool s)
 bool Component::GetSelectedComponent() //Checks if selected or not
 {
 	return Selected;
+}
+void Component::SetCompInfo(GraphicsInfo g)
+{
+	m_GfxInfo = g;
 }
 //////////////////////////////////////////////////////////////////
 Component::~Component()
