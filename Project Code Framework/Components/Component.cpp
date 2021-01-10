@@ -4,6 +4,7 @@ Component::Component(GraphicsInfo& r_GfxInfo)
 {
 	m_GfxInfo = r_GfxInfo;
 	Selected = false;
+	Changed = LOW;
 }
 
 void Component::SetLabel(const string& label)
@@ -37,10 +38,20 @@ void Component::SelectComponent(bool s)
 {
 	Selected = s;
 }
+
+void Component::ChangeGate(bool c)
+{
+	Changed = c;
+}
 //////////////////////////////////////////////////////////////////
 bool Component::GetSelectedComponent() //Checks if selected or not
 {
 	return Selected;
+}
+
+bool Component::GetChangedGate()
+{
+	return Changed;
 }
 void Component::SetCompInfo(GraphicsInfo& g)
 {
