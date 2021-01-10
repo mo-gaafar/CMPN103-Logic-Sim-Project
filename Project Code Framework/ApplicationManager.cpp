@@ -31,7 +31,6 @@
 ApplicationManager::ApplicationManager()
 {
 	CompCount = 0;
-
 	for(int i=0; i<MaxCompCount; i++)
 		CompList[i] = NULL;
 
@@ -140,9 +139,6 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case EDIT_Label:
 			pAct = new Edit(this);
 			break;
-		case COPY:
-			pAct = new Copy(this);
-			break;
 		case CUT:
 			pAct = new Cut(this);
 			break;
@@ -154,6 +150,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case SIMULATE:
 			pAct = new Simulate(this);
+			break;
+		case DEL:
+			pAct = new Delete(this);
 			break;
 		case Change_Switch:
 			pAct = new ChangeSwitch(this);
@@ -173,10 +172,13 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 void ApplicationManager::UpdateInterface()
 {
+	GetOutput()->ClearDrawingArea(); //Clears The drawing area before each update
+
 	for (int i = 0; i < CompCount; i++)
 	{
-		CompList[i]->Draw(OutputInterface);
-		
+		if (CompList[i] != NULL) // checks if element is not nullified first
+			CompList[i]->Draw(OutputInterface);
+
 	}
 
 }
@@ -249,6 +251,7 @@ Component* ApplicationManager::GetCut()
 {
 	return CutComponent;
 }
+
 void ApplicationManager::SetCut(Component* c)
 {
 	if (c == NULL) // If paste calls this fn to indicate that the cut-paste operation has been performed 
@@ -268,51 +271,34 @@ void ApplicationManager::SetCut(Component* c)
 	}
 	CutComponent = c->MakeCopy(c);
 }
-Component* ApplicationManager::GetCopied()
-{
-	return CopiedComponent;
-}
-void ApplicationManager::SetCopied(Component* c)
-{
-	// I only have one component to be copied or cut ...If I set copied Object then any other objects in the clipboard should be automatically deleted 
-	if (CutComponent != NULL)
-	{
-		CutComponent = NULL;
-	}
-	if (CopiedComponent != NULL) // so as not to delete an object then assign copied component to it 
-	{
-		CopiedComponent = NULL;
-	}
 
-	CopiedComponent = c->MakeCopy(c);
-
-}
-Component* ApplicationManager::GetCut()
+//puts nullified components out of the way and decrements componentcount value
+void ApplicationManager::ReSortCompList()
 {
-	return CutComponent;
-}
-void ApplicationManager::SetCut(Component* c)
-{
-	if (c == NULL) // If paste calls this fn to indicate that the cut-paste operation has been performed 
-	{
-		CutComponent = NULL;
-		return;
-	} // I only have one component to be copied or cut ...If I set Cut Object then any other objects in the clipboard should be automatically deleted 
-	if (CopiedComponent != NULL)
-	{
+	Component* rCompList[MaxCompCount];
+	for (int i = 0; i < MaxCompCount; i++)
+		rCompList[i] = NULL;
 
-		CopiedComponent = NULL;
-	}
-	if (CutComponent != NULL)
+	int NotDeletedCount = 0;
+	for (int i = 0; i < MaxCompCount; i++)
 	{
-
-		CutComponent = NULL;
+		if (CompList[i] != NULL)//checks if element is not nullified
+		{
+			rCompList[NotDeletedCount++] = CompList[i];
+		}
 	}
-	CutComponent = c->MakeCopy(c);
+	//Makes sure the remaining array elements are nullified
+	for (int i = NotDeletedCount; i < MaxCompCount; i++)
+		rCompList[i] = NULL;
+
+	CompCount = NotDeletedCount; //changes component counter
+	*CompList = *rCompList; //updated array
 }
+
 
 ApplicationManager::~ApplicationManager()
 {
+	ReSortCompList();
 	for(int i=0; i<CompCount; i++)
 		delete CompList[i];
 	delete OutputInterface;
