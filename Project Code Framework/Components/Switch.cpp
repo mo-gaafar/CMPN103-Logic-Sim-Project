@@ -10,7 +10,17 @@ Switch::Switch(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(0, r_FanOut)
 
 void Switch::Operate()
 {
-	
+	//caclulate the output status as the ANDing of the two input pins
+	int x1 = GetInputPinStatus(1);
+	if (x1 == HIGH)
+	{
+		m_OutputPin.setStatus(HIGH);
+	}
+	else
+	{
+		m_OutputPin.setStatus(LOW);
+	}
+	//Add you code here
 	//Add you code here
 }
 

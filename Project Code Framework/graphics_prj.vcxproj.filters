@@ -219,6 +219,7 @@
     <ClCompile Include="Actions\ExitProgram.cpp" />
     <ClCompile Include="Actions\Delete.cpp" />
     <ClCompile Include="Actions\Edit.cpp" />
+    <ClCompile Include="Actions\ChangeSwitch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -381,6 +382,7 @@
     <ClInclude Include="Actions\ExitProgram.h" />
     <ClInclude Include="Actions\Delete.h" />
     <ClInclude Include="Actions\Edit.h" />
+    <ClInclude Include="Actions\ChangeSwitch.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
