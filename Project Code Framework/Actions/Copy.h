@@ -1,5 +1,6 @@
 #pragma once
 #include "action.h"
+#include "..\ApplicationManager.h"
 #include "..\Components\Component.h"
 class Copy :public Action
 {
