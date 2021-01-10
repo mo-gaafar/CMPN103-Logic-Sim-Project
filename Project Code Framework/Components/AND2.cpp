@@ -78,4 +78,15 @@ InputPin* AND2::GetInputpinCoordinates(int & X_in ,int & Y_in, int &Index)
 	}
 	return NULL;
 }
+Component* AND2::MakeCopy(Component* c)
+{
+	GraphicsInfo temp;
+	temp.x1 = (c->GetGraphicsInfo())->x1+20;
+	temp.x2 = (c->GetGraphicsInfo())->x2+20;
+	temp.y1 = (c->GetGraphicsInfo())->y1+20;
+	temp.y2 = (c->GetGraphicsInfo())->y2+20;
+	AND2* ptr = new AND2(temp, AND2_FANOUT);
+	//ptr->setLabel(c->GetLabel());
+	return ptr;
+}
 

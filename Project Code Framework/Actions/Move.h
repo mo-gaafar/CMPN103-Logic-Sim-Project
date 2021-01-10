@@ -2,12 +2,15 @@
 #include "action.h"
 #include "..\ApplicationManager.h"
 #include "..\Components\Component.h"
-class Copy :public Action
+class Move :public Action
 {
-	Component* Copied;
+	int Cx, Cy;	//Center point of the gate
+	int x1, y1, x2, y2;	//Two corners of the rectangluar area
+	Component* Comp;
+
 public:
-	Copy(ApplicationManager* pManager);
-	virtual ~Copy();
+	Move(ApplicationManager* pManager);
+	virtual ~Move();
 	virtual void ReadActionParameters();
 	virtual void Execute();
 

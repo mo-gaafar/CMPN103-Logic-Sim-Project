@@ -4,6 +4,9 @@
 
 Edit::Edit(ApplicationManager* pApp) :Action(pApp)
 {
+    pSrcPin = NULL;
+    pDstPin = NULL;
+    m_Connection = NULL;
 }
 
 Edit::~Edit(void)
@@ -34,7 +37,7 @@ void Edit::Execute()
             {
                 CompList[i]->SelectComponent(false);
 
-                if (Component* c = dynamic_cast<Gate*> (CompList[i]))
+                if (Component* c = dynamic_cast<Gate*> (CompList[i]))//checks if gate or connection
                 {
                     pManager->ExecuteAction(ADD_Label); //Edits label
                 }
@@ -49,12 +52,37 @@ void Edit::Execute()
                         pManager->ExecuteAction(ADD_Label); //Edits connection label
                     }
 
-                    else if (tempst == "2")
+                    else if (tempst == "2") //Edits the connecition itself
                     {
+                        //Print Action Message
+                        pOut->PrintMsg("Edit connection: Select source pin");
+
+                        //Wait for user input
+                        pIn->GetPointClicked(m_GfxInfo.x1, m_GfxInfo.y1);
+                        pSrcPin = pManager->GetOutputPin(m_GfxInfo.x1, m_GfxInfo.y1);
+
+                        //Clear Status Bar
+                        pOut->ClearStatusBar();
+
+                        //Print Action Message
+                        pOut->PrintMsg("Edit connection: Select destination pin");
+
+                        //Wait for User Input
+                        pIn->GetPointClicked(m_GfxInfo.x2, m_GfxInfo.y2);
+                        pDstPin = pManager->GetInputPin(m_GfxInfo.x2, m_GfxInfo.y2);
                         
+                        
+                        //Set Source and DstPin
+                        Connection* m_Connection = (Connection*)CompList[i];
+                        m_Connection->setSourcePin(pSrcPin);
+                        m_Connection->setDestPin(pDstPin);
+
+
+                        //Clear Status Bar
+                        pOut->ClearStatusBar();
                     }
 
-                    else break;
+                    else { pOut->PrintMsg("Wrong Input"); break; }
                 }
 
 
