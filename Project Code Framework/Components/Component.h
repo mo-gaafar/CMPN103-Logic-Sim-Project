@@ -14,6 +14,7 @@ protected:
 	bool Selected;
 	GraphicsInfo m_GfxInfo;	//The parameters required to draw a component
 	string m_Label; //text in label
+	bool Changed;
 public:
 	Component(GraphicsInfo& r_GfxInfo);
 	Component();
@@ -39,8 +40,10 @@ public:
 	void SetCompInfo(GraphicsInfo& g);
 	//Sets the selection of the component 
 	virtual void SelectComponent(bool s);
+	virtual void ChangeGate(bool c);
 	//Checks if component is selected or not
 	bool GetSelectedComponent();
+	bool GetChangedGate();
 	virtual Component* MakeCopy(Component*) = 0;
 	GraphicsInfo* GetGraphicsInfo();
 	//Destructor must be virtual

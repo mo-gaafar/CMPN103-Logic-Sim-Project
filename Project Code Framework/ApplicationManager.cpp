@@ -22,6 +22,7 @@
 #include "Actions\Cut.h"
 #include "Actions\Paste.h"
 #include "Actions\Move.h"
+#include "Actions\ChangeSwitch.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -137,6 +138,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case MOVE:
 			pAct = new Move(this);
+			break;
+		case Change_Switch:
+			pAct = new ChangeSwitch(this);
 			break;
 		case EXIT:
 			pAct = new ExitProgram(this);

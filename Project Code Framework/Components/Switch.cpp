@@ -1,4 +1,6 @@
 #include "Switch.h"
+#include "..\Actions\ChangeSwitch.h"
+
 Switch::Switch(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(0, r_FanOut)
 {
 	m_GfxInfo.x1 = r_GfxInfo.x1;
@@ -11,8 +13,8 @@ Switch::Switch(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(0, r_FanOut)
 void Switch::Operate()
 {
 	//caclulate the output status as the ANDing of the two input pins
-	int x1 = GetInputPinStatus(1);
-	if (x1 == HIGH)
+	//int x1 = GetInputPinStatus(1);
+	if (Changed == 1)
 	{
 		m_OutputPin.setStatus(HIGH);
 	}
@@ -30,7 +32,7 @@ void Switch::Operate()
 void Switch::Draw(Output* pOut)
 {
 	//Call output class and pass gate drawing info to it.
-	pOut->DrawSwitch(m_GfxInfo, Selected);
+	pOut->DrawSwitch(m_GfxInfo, Selected, Changed);
 
 
 

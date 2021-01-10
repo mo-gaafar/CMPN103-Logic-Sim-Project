@@ -35,20 +35,33 @@ void ChangeSwitch::Execute()
 
     GraphicsInfo GInfo;
     Component** CompList = pManager->GetCompList();
-    GraphicsInfo LInfo;
-    string tempst;
 
     for (int i = 0; i < pManager->GetCompCount(); i++)
     {
         if (CompList[i] != NULL && (CompList[i]->GetSelectedComponent() == true))
+			if (CompList[i]->GetChangedGate() == 1)
+			{
 
-            if (Component* c = dynamic_cast<Switch*> (CompList[i]))
-            {
-                CompList[i]->SelectComponent(false);
-                GInfo = CompList[i]->GetCompInfo();
-				c->setInputPinStatus(1, HIGH);
+				if (Component* c = dynamic_cast<Switch*> (CompList[i]))
+				{
+					CompList[i]->SelectComponent(false);
+					//GInfo = CompList[i]->GetCompInfo();
+					CompList[i]->ChangeGate(0);
+					//CompList[i]->setInputPinStatus(1, HIGH);
 
-            }
+				}
+			}
+			else
+			{
+				if (Component* c = dynamic_cast<Switch*> (CompList[i]))
+				{
+					CompList[i]->SelectComponent(false);
+					//GInfo = CompList[i]->GetCompInfo();
+					CompList[i]->ChangeGate(1);
+					//CompList[i]->setInputPinStatus(1, HIGH);
+
+				}
+			}
 
     }
 
