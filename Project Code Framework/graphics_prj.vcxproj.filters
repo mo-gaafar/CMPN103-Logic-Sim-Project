@@ -224,6 +224,7 @@
     <ClCompile Include="Actions\Edit.cpp" />
     <ClCompile Include="Actions\Move.cpp" />
     <ClCompile Include="Actions\ChangeSwitch.cpp" />
+    <ClCompile Include="Actions\Simulate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -391,6 +392,7 @@
     <ClInclude Include="Actions\Edit.h" />
     <ClInclude Include="Actions\Move.h" />
     <ClInclude Include="Actions\ChangeSwitch.h" />
+    <ClInclude Include="Actions\Simulate.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
