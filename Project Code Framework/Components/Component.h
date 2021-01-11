@@ -1,5 +1,10 @@
 #ifndef _COMPONENT_H
 #define _COMPONENT_H
+class ApplicationManager;
+#include<iostream>
+#include<ostream>
+#include<istream>
+#include<fstream>
 
 #include "..\Defs.h"
 #include "..\GUI\Output.h"
@@ -15,6 +20,9 @@ protected:
 	GraphicsInfo m_GfxInfo;	//The parameters required to draw a component
 	string m_Label; //text in label
 	bool Changed;
+	string m_Label; //text in labe
+	static int COUNT;
+	int ID; //Unique id of component
 public:
 	Component(GraphicsInfo& r_GfxInfo);
 	Component();
@@ -26,15 +34,17 @@ public:
 
 	// Returns the label of the component
 	string GetLabel() const;
-
-
+	void SetID(int i);
+	int GetID();
 	virtual int GetOutPinStatus() = 0;	//returns status of outputpin if LED, return -1
 	virtual int GetInputPinStatus(int n) = 0;	//returns status of Inputpin # n if SWITCH, return -1
-
+	
 	virtual void setInputPinStatus(int n, STATUS s) = 0;	//set status of Inputpin # n, to be used by connection class.
 
 	virtual OutputPin* GetOutputpinCoordinates(int& X_Out, int& Y_Out) = 0; //gets rectangular range of output pin given click coordinates, returns pointer to the selected gate's output pin element
 	virtual InputPin* GetInputpinCoordinates(int& X_In, int& Y_In, int& n_Input)=0;//gets rectangular range of input pin (changes depending on gate location) returns Index and InputPin array pointer
+
+	Component();
 
 	GraphicsInfo GetCompInfo();
 	void SetCompInfo(GraphicsInfo& g);
@@ -46,6 +56,7 @@ public:
 	bool GetChangedGate();
 	virtual Component* MakeCopy(Component*) = 0;
 	GraphicsInfo* GetGraphicsInfo();
+	virtual void Save(ofstream& print) = 0;
 	//Destructor must be virtual
 	virtual ~Component();
 };

@@ -67,6 +67,14 @@ void Switch::setInputPinStatus(int n, STATUS s)
 InputPin* Switch::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index) {
 	return NULL;
 }
+
+void Switch::Save(ofstream& print)
+{
+	print << "Switch\t" << ID << "\t" << GetLabel() << "\t" << GetCompInfo().x1
+		<< "\t" << GetCompInfo().x2 << "\t" << GetCompInfo().y1 << "\t" << GetCompInfo().y2 << endl;
+
+}
+}
 Component* Switch::MakeCopy(Component* c)
 {
 	GraphicsInfo temp;

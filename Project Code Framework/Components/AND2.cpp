@@ -6,7 +6,10 @@ AND2::AND2(const GraphicsInfo &r_GfxInfo, int r_FanOut):Gate(2, r_FanOut)
 	m_GfxInfo.y1 = r_GfxInfo.y1;
 	m_GfxInfo.x2 = r_GfxInfo.x2;
 	m_GfxInfo.y2 = r_GfxInfo.y2;
+	//ID = COUNT;
+	//COUNT++;
 }
+
 
 
 void AND2::Operate()
@@ -88,5 +91,11 @@ Component* AND2::MakeCopy(Component* c)
 	AND2* ptr = new AND2(temp, AND2_FANOUT);
 	//ptr->setLabel(c->GetLabel());
 	return ptr;
+}
+
+void AND2::Save(ofstream& print)
+{
+	print << "AND2\t" << ID << "\t" << GetLabel() << "\t" << GetCompInfo().x1
+	<< "\t"<< GetCompInfo().x2 << "\t"<<GetCompInfo().y1 << "\t"<<GetCompInfo().y2 << endl;
 }
 

@@ -17,6 +17,8 @@ public:
 	virtual void Operate() ;	//Calculates the output according to the inputs
 	virtual void Draw(Output* pOut);	//for each component to Draw itself
 
+	//Component* GetSrcComponent(); //returns pointer to source component
+	//Component* GetDstComponent(); //returns pointer to destination component
 	
 	void setSourcePin(OutputPin *pSrcPin);
 	void setDestPin(InputPin *pDstPin);
@@ -32,6 +34,7 @@ public:
 
 	virtual void setInputPinStatus(int n, STATUS s);	//set status of Inputpin # n, to be used by connection class.
 	virtual Component* MakeCopy(Component*);
+	virtual void Save(ofstream& print);
 
 
 };

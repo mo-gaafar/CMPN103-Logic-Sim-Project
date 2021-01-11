@@ -23,6 +23,8 @@ public:
 	Gate(int r_Inputs, int r_FanOut);
 	 OutputPin* GetOutputpinCoordinates(int& X_Out, int& Y_Out); //checks rectangular range of output pin given click coordinates, returns pointer to the selected gate's output pin element
 	virtual InputPin* GetInputpinCoordinates(int& X_In, int& Y_In, int& n_Input)=0;//checks rectangular range of input pin, returns x,y of pin and pointer to outputpin object (changes depending on gate location and type)
+	virtual void Save(ofstream& print)=0;
+
 }; 
 
 

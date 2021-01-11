@@ -78,3 +78,10 @@ Component* Buff::MakeCopy(Component* c)
 	//ptr->setLabel(c->GetLabel());
 	return ptr;
 }
+}
+
+void Buff::Save(ofstream& print)
+{
+	print << "Buff\t" << ID << "\t" << GetLabel() << "\t" << GetCompInfo().x1
+		<< "\t" << GetCompInfo().x2 << "\t" << GetCompInfo().y1 << "\t" << GetCompInfo().y2 << endl;
+}

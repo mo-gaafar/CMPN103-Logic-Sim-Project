@@ -93,6 +93,14 @@ InputPin* NOR3::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	}
 	return NULL;
 }
+
+void NOR3::Save(ofstream& print)
+{
+	print << "NOR3\t" << ID << "\t" << GetLabel() << "\t" << GetCompInfo().x1
+		<< "\t" << GetCompInfo().x2 << "\t" << GetCompInfo().y1 << "\t" << GetCompInfo().y2 << endl;
+
+}
+}
 Component* NOR3::MakeCopy(Component* c)
 {
 	GraphicsInfo temp;

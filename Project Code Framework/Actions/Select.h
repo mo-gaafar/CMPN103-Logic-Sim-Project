@@ -9,10 +9,12 @@ private:
 	int Cx, Cy;		// Point selected
 	Component* Comp;
 public:
+	//Constructor
 	Select(ApplicationManager* pAppMan);
 
-	//Reads required parameters for action to execute
+	//Required parameters for the action to execute
 	virtual void ReadActionParameters();
+
 	//Action execution
 	virtual void  Execute();
 

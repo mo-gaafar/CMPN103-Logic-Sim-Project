@@ -1,10 +1,10 @@
 #include "Select.h"
-//constructor
+//Constructor
 Select::Select(ApplicationManager* pAppMan) : Action(pAppMan) {
 
 }
 
-//reads required parameters for action execution
+//Reads parameters required for execution
 void Select::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
@@ -19,7 +19,7 @@ void Select::ReadActionParameters()
 
 }
 
-//executes the action
+//Executes the action
 void Select::Execute() {
 	//Get Center point of the Component
 	ReadActionParameters();
@@ -33,35 +33,29 @@ void Select::Execute() {
 
 	for (int i = 0; i < c; i++)
 	{
-		if (CompList[i] != NULL)
+		GInfo = CompList[i]->GetCompInfo();
+		if ((CompList[i]->GetSelectedComponent() == false) && (Cx >= GInfo.x1 && Cx <= GInfo.x2) && (Cy >= GInfo.y1 && Cy <= GInfo.y2))
 		{
-			GInfo = CompList[i]->GetCompInfo();
-			if ((CompList[i]->GetSelectedComponent() == false) && (Cx >= GInfo.x1 && Cx <= GInfo.x2) && (Cy >= GInfo.y1 && Cy <= GInfo.y2))
-			{
-				CompList[i]->SelectComponent(true);
-				//pOut->PrintMsg(" Label: " + Comp->GetLabel());
-			}
-			else
-				CompList[i]->SelectComponent(false);
+			CompList[i]->SelectComponent(true);
+			//pOut->PrintMsg(" Label: " + Comp->GetLabel());
 		}
-		
+		else
+			CompList[i]->SelectComponent(false);
 	}
-	/*if (c == 1)
-	{
-		GInfo = Comp->GetCompInfo();
-		pOut->DrawLabel(GInfo ," Label: " + Comp->GetLabel());
-	}*/
+	
 }
+
 
 void Select::Undo() {
 	return;
 }
 
+
 void Select::Redo() {
 	return;
 }
 
-//destructor
+
 Select::~Select() {
 
 }

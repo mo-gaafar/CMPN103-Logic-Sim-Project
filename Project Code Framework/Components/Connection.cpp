@@ -53,6 +53,15 @@ void Connection::setInputPinStatus(int n, STATUS s)
 	SrcPin->setStatus(s);
 }
 
+void Connection::Save(ofstream& print)
+{
+	//Needs a source/dst comp id getter
+	//Consider making a nondefault constructor that takes dst and source pin and deduces gfxinfo instead?
+
+	//print << ID << "\t" <<SrcID << "\t" << DstID << "\t" << GetCompInfo().x1 
+	//<< "\t"<< GetCompInfo().x2 << "\t"<<GetCompInfo().y1 << "\t"<<GetCompInfo().y2 <<endl;
+}
+
 
 //PLACEHOLDER FOR NOW
 InputPin* Connection::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index) {

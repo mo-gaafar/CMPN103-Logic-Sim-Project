@@ -209,6 +209,8 @@
     <ClCompile Include="Components\Switch.cpp" />
     <ClCompile Include="Actions\Select.cpp" />
     <ClCompile Include="Actions\SimulateToolBar.cpp" />
+    <ClCompile Include="Actions\Save.cpp" />
+    <ClCompile Include="SaveAction.cpp" />
     <ClCompile Include="Actions\Paste.cpp" />
     <ClCompile Include="Actions\Move.cpp" />
     <ClCompile Include="Actions\Simulate.cpp" />
@@ -221,6 +223,7 @@
     <ClInclude Include="Actions\AddNORgate3.h" />
     <ClInclude Include="Actions\AddXORgate3.h" />
     <ClInclude Include="Actions\AddLabel.h" />
+    <ClInclude Include="Actions\Save.h" />
     <ClInclude Include="Actions\Copy.h" />
     <ClInclude Include="Actions\ChangeSwitch.h" />
     <ClInclude Include="Components\AND3.h" />
@@ -284,6 +287,7 @@
     <ClInclude Include="Components\Switch.h" />
     <ClInclude Include="Actions\Select.h" />
     <ClInclude Include="Actions\SimulateToolBar.h" />
+    <ClInclude Include="SaveAction.h" />
     <ClInclude Include="Actions\Paste.h" />
     <ClInclude Include="Actions\Move.h" />
     <ClInclude Include="Actions\Simulate.h" />

@@ -92,6 +92,14 @@ InputPin* XOR3::GetInputpinCoordinates(int & X_in ,int & Y_in, int &Index)
 	}
 	return NULL;
 }
+
+void XOR3::Save(ofstream& print)
+{
+	print << "XOR3\t" << ID << "\t" << GetLabel() << "\t" << GetCompInfo().x1
+		<< "\t" << GetCompInfo().x2 << "\t" << GetCompInfo().y1 << "\t" << GetCompInfo().y2 << endl;
+
+}
+}
 Component* XOR3::MakeCopy(Component* c)
 {
 	GraphicsInfo temp;

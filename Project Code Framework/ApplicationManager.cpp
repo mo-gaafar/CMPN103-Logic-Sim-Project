@@ -18,6 +18,9 @@
 #include "Actions\DesignToolBar.h"
 #include "Actions\GateToolBar.h"
 #include "Actions\ExitProgram.h"
+#include "Actions\SAVE.h"
+#include<fstream>
+#include<iostream>
 #include "Actions\Delete.h"
 #include "Actions\AddLabel.h"
 #include "Actions\Edit.h"
@@ -55,6 +58,27 @@ void ApplicationManager::SetCompList(Component** l)
 Component** ApplicationManager::GetCompList()
 {
 	return CompList;
+}
+void ApplicationManager::SaveComponent(ofstream& FILE)
+{
+	for (int i = 0; i < CompCount; i++)
+		if (!dynamic_cast<Connection*>(CompList[i]))
+			CompList[i]->Save(FILE);
+}
+void ApplicationManager::SaveConnection(ofstream& FILE)
+{
+	for (int i = 0; i < CompCount; i++)
+		if (dynamic_cast<Connection*>(CompList[i]))
+			CompList[i]->Save(FILE);
+}
+
+int ApplicationManager::GetConnCount()
+{
+	int count = 0;
+	for (int i = 0; i < CompCount; i++)
+		if (!dynamic_cast<Connection*>(CompList[i]))
+			count++;
+	return count;
 }
 
 ActionType ApplicationManager::GetUserAction()
@@ -156,6 +180,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case Change_Switch:
 			pAct = new ChangeSwitch(this);
+			break;
+		case SAVE:
+			pAct = new Save(this);
 			break;
 		case EXIT:
 			pAct = new ExitProgram(this);

@@ -12,3 +12,7 @@ Component* InputPin::getComponent()
 {
 	return pComp;
 }
+
+//InputPin::~InputPin()
+//{
+//}

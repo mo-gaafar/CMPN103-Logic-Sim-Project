@@ -79,6 +79,13 @@ InputPin* NAND2::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	}
 	return NULL;
 }
+
+void NAND2::Save(ofstream& print)
+{
+	print << "NAND2\t" << ID << "\t" << GetLabel() << "\t" << GetCompInfo().x1
+		<< "\t" << GetCompInfo().x2 << "\t" << GetCompInfo().y1 << "\t" << GetCompInfo().y2 << endl;
+
+}
 Component* NAND2::MakeCopy(Component* c)
 {
 	GraphicsInfo temp;

@@ -16,6 +16,7 @@ public:
 	InputPin* GetInputpinCoordinates(int& X_in, int& Y_in, int& Index);
 	virtual Component* MakeCopy(Component*);
 
+	virtual void Save(ofstream& print);
 };
 
 

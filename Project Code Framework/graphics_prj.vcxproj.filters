@@ -217,6 +217,8 @@
     <ClCompile Include="Actions\DesignToolBar.cpp" />
     <ClCompile Include="Actions\GateToolBar.cpp" />
     <ClCompile Include="Actions\ExitProgram.cpp" />
+    <ClCompile Include="SaveAction.cpp" />
+    <ClCompile Include="Actions\Save.cpp" />
     <ClCompile Include="Actions\Copy.cpp" />
     <ClCompile Include="Actions\Cut.cpp" />
     <ClCompile Include="Actions\Paste.cpp" />
@@ -385,6 +387,8 @@
     <ClInclude Include="Actions\DesignToolBar.h" />
     <ClInclude Include="Actions\GateToolBar.h" />
     <ClInclude Include="Actions\ExitProgram.h" />
+    <ClInclude Include="SaveAction.h" />
+    <ClInclude Include="Actions\Save.h" />
     <ClInclude Include="Actions\Copy.h" />
     <ClInclude Include="Actions\Cut.h" />
     <ClInclude Include="Actions\Paste.h" />

@@ -80,6 +80,14 @@ InputPin* XOR2::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	}
 	return NULL;
 }
+
+void XOR2::Save(ofstream& print)
+{
+	print << "XOR2\t" << ID << "\t" << GetLabel() << "\t" << GetCompInfo().x1
+		<< "\t" << GetCompInfo().x2 << "\t" << GetCompInfo().y1 << "\t" << GetCompInfo().y2 << endl;
+
+}
+}
 Component* XOR2::MakeCopy(Component* c)
 {
 	GraphicsInfo temp;
