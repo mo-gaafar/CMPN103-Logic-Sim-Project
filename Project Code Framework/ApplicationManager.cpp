@@ -55,16 +55,16 @@ void ApplicationManager::SaveComponent(ofstream& FILE)
 {
 	for (int i = 0; i < CompCount; i++)
 		if (!dynamic_cast<Connection*>(CompList[i]))
-			CompList[i]->SAVE(FILE);
+			CompList[i]->Save(FILE);
 }
 void ApplicationManager::SaveConnection(ofstream& FILE)
 {
 	for (int i = 0; i < CompCount; i++)
 		if (dynamic_cast<Connection*>(CompList[i]))
-			CompList[i]->SAVE(FILE);
+			CompList[i]->Save(FILE);
 }
 
-int ApplicationManager::connectionNumber()
+int ApplicationManager::GetConnCount()
 {
 	int count = 0;
 	for (int i = 0; i < CompCount; i++)
@@ -162,7 +162,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 }
 ////////////////////////////////////////////////////////////////////
 
-void ApplicationManager::UpdateInterface()
+void ApplicationManager::UpdateInterface()//outdated
 {
 	for (int i = 0; i < CompCount; i++)
 	{
@@ -218,7 +218,7 @@ InputPin* ApplicationManager::GetInputPin(int& x, int& y)
 	return NULL;
 }
 
-ApplicationManager::~ApplicationManager()
+ApplicationManager::~ApplicationManager()//outdated
 {
 	for(int i=0; i<CompCount; i++)
 		delete CompList[i];

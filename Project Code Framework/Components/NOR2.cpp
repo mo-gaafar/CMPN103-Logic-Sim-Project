@@ -73,6 +73,9 @@ InputPin* NOR2::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	return NULL;
 }
 
-void NOR2::SAVE(ofstream& print)
+void NOR2::Save(ofstream& print)
 {
+	print << "NOR2\t" << ID << "\t" << GetLabel() << "\t" << GetCompInfo().x1
+		<< "\t" << GetCompInfo().x2 << "\t" << GetCompInfo().y1 << "\t" << GetCompInfo().y2 << endl;
+
 }

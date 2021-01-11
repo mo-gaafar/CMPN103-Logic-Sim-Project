@@ -34,7 +34,7 @@ public:
 	void UpdateInterface();	//Redraws all the drawing window
 	void SaveComponent(ofstream& PRINT);
 	void SaveConnection(ofstream& PRINT);
-	int connectionNumber();
+
 
 
 	//Gets a pointer to Input / Output Object
@@ -44,7 +44,8 @@ public:
 	InputPin* GetInputPin(int& x, int& y);
 	//Adds a new component to the list of components
 	void AddComponent(Component* pComp);
-	int GetCompCount();
+	int GetCompCount(); //Gets number of total components 
+	int GetConnCount(); //Gets number of connections
 	void SetCompList(Component** s);
 	Component** GetCompList();
 

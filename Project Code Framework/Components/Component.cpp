@@ -4,6 +4,7 @@ Component::Component(const GraphicsInfo& r_GfxInfo)
 {
 	m_GfxInfo = r_GfxInfo;
 	Selected = false;
+	ID = rand()% 99999; //Generates Random integer from 0 to 99999
 }
 
 void Component::SetLabel(const string& label)
@@ -17,15 +18,20 @@ string Component::GetLabel() const
 {
 	return m_Label;
 }
-void Component::setID(int i)
+void Component::SetID(int i)
 {
 	ID = i;
+}
+int Component::GetID()
+{
+	return ID;
 }
 
 //////////////////////////////////////////////////////////////////
 Component::Component()
 {
 	Selected = false;
+	ID = rand() % 99999; //Generates Random integer from 0 to 99999
 }
 //////////////////////////////////////////////////////////////////
 GraphicsInfo Component::GetCompInfo()
@@ -44,5 +50,6 @@ bool Component::GetSelectedComponent()
 }
 //////////////////////////////////////////////////////////////////
 Component::~Component()
-{}
-int Component::COUNT = 0;
+{
+}
+//int Component::COUNT = 0;//?????

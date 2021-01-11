@@ -75,12 +75,9 @@ InputPin* AND2::GetInputpinCoordinates(int & X_in ,int & Y_in, int &Index)
 	return NULL;
 }
 
-void AND2::SAVE(ofstream& print)
+void AND2::Save(ofstream& print)
 {
+	print << "AND2\t" << ID << "\t" << GetLabel() << "\t" << GetCompInfo().x1
+	<< "\t"<< GetCompInfo().x2 << "\t"<<GetCompInfo().y1 << "\t"<<GetCompInfo().y2 << endl;
 }
 
-
-/*void AND2::SAVE(ofstream& FILE)
-{
-	FILE<< "AND2\t" << ID << "\t" << getLabel() << "\t" << m_GfxInfo.x1 + UI.AND2_Width / 2 << "\t" << m_GfxInfo.y1 + UI.AND2_Height / 2 << endl;
-}*/

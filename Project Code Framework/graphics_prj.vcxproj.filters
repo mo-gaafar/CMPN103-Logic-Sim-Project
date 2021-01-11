@@ -217,7 +217,8 @@
     <ClCompile Include="Actions\DesignToolBar.cpp" />
     <ClCompile Include="Actions\GateToolBar.cpp" />
     <ClCompile Include="Actions\ExitProgram.cpp" />
-    <ClCompile Include="Actions\SAVE.cpp" />
+    <ClCompile Include="SaveAction.cpp" />
+    <ClCompile Include="Actions\Save.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -378,7 +379,8 @@
     <ClInclude Include="Actions\DesignToolBar.h" />
     <ClInclude Include="Actions\GateToolBar.h" />
     <ClInclude Include="Actions\ExitProgram.h" />
-    <ClInclude Include="Actions\SAVE.h" />
+    <ClInclude Include="SaveAction.h" />
+    <ClInclude Include="Actions\Save.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

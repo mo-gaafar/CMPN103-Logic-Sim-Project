@@ -55,6 +55,8 @@ InputPin* LED::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 	return NULL;
 }
 
-void LED::SAVE(ofstream& print)
+void LED::Save(ofstream& print)
 {
+	print << "LED\t" << ID << "\t" << GetLabel() << "\t" << GetCompInfo().x1
+		<< "\t" << GetCompInfo().x2 << "\t" << GetCompInfo().y1 << "\t" << GetCompInfo().y2 << endl;
 }

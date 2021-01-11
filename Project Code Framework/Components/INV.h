@@ -14,7 +14,7 @@ public:
 	virtual void setInputPinStatus(int n, STATUS s);	//set status of Inputpin # n, to be used by connection class.
 
 	InputPin* GetInputpinCoordinates(int& X_in, int& Y_in, int& Index);
-	virtual void SAVE(ofstream& print);
+	virtual void Save(ofstream& print);
 };
 
 
