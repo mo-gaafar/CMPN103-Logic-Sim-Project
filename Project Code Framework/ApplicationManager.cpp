@@ -358,7 +358,7 @@ void ApplicationManager::ReSortCompList()
 
 	CompCount = NotDeletedCount; //changes component counter
 	SetCompList(rCompList); //updated arra
-
+}
 	ApplicationManager::~ApplicationManager()
 	{
 		ReSortCompList();
