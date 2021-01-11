@@ -32,13 +32,13 @@ void Delete::Execute() {
 
 	for (int i = 0; i < pManager->GetCompCount(); i++)
 	{
-		if (CompList[i]!=NULL)
+		if (CompList[i])
 		if (CompList[i]->GetSelectedComponent() == true)
 		{
 			CompList[i]->SelectComponent(false);
-			//CompList[i]->~Component();//Calls the component destructor
-
-			CompList[i]= NULL;//Connections part still to be implemented
+			//CompList[i]->~Component();
+			delete CompList[i];//Calls the component destructor//Connections part still to be implemented
+			CompList[i]= nullptr;//Sets the pointer element to null
 		}
 		
 	}

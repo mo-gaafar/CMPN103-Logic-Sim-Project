@@ -35,7 +35,7 @@ ApplicationManager::ApplicationManager()
 {
 	CompCount = 0;
 	for(int i=0; i<MaxCompCount; i++)
-		CompList[i] = NULL;
+		CompList[i] = nullptr;
 
 	//Creates the Input / Output Objects & Initialize the GUI
 	OutputInterface = new Output();
@@ -51,9 +51,9 @@ int ApplicationManager::GetCompCount()
 {
 	return CompCount;
 }
-void ApplicationManager::SetCompList(Component** l)
+void ApplicationManager::SetCompList(Component** rComponent)
 {
-	*CompList = *l;
+	*CompList = *rComponent;
 }
 Component** ApplicationManager::GetCompList()
 {
@@ -61,19 +61,26 @@ Component** ApplicationManager::GetCompList()
 }
 void ApplicationManager::SaveComponent(ofstream& FILE)
 {
+	ReSortCompList();
 	for (int i = 0; i < CompCount; i++)
+		if(CompList[i])
 		if (!dynamic_cast<Connection*>(CompList[i]))
 			CompList[i]->Save(FILE);
 }
 void ApplicationManager::SaveConnection(ofstream& FILE)
 {
+	ReSortCompList();
+
 	for (int i = 0; i < CompCount; i++)
+		if(CompList[i])
 		if (dynamic_cast<Connection*>(CompList[i]))
 			CompList[i]->Save(FILE);
 }
 
 int ApplicationManager::GetConnCount()
 {
+	ReSortCompList();
+
 	int count = 0;
 	for (int i = 0; i < CompCount; i++)
 		if (!dynamic_cast<Connection*>(CompList[i]))
@@ -204,7 +211,7 @@ void ApplicationManager::UpdateInterface()
 
 	for (int i = 0; i < CompCount; i++)
 	{
-		if (CompList[i] != NULL) // checks if element is not nullified first
+		if (CompList[i]) // checks if element is not nullified first
 			CompList[i]->Draw(OutputInterface);
 
 	}
@@ -232,10 +239,14 @@ OutputPin* ApplicationManager::GetOutputPin(int& x, int& y)
 
 	for (int i = 0; i < CompCount; i++)
 	{
-		pin = CompList[i]->GetOutputpinCoordinates(x, y);
-		if (pin != NULL)
+		if (CompList[i] != nullptr)
 		{
-			return pin;
+			pin = CompList[i]->GetOutputpinCoordinates(x, y);
+			if (pin != NULL)
+			{
+				return pin;
+			}
+
 		}
 
 	}
@@ -248,11 +259,15 @@ InputPin* ApplicationManager::GetInputPin(int& x, int& y)
 	InputPin* pin = NULL;
 	for (int i = 0; i < CompCount; i++)
 	{
-		pin = CompList[i]->GetInputpinCoordinates(x, y, index);
-		if (pin != NULL)
+		if (CompList[i] != nullptr)
 		{
-			return pin;
+			pin = CompList[i]->GetInputpinCoordinates(x, y, index);
+			if (pin != NULL)
+			{
+				return pin;
+			}
 		}
+		
 	}
 	return NULL;
 }
@@ -275,6 +290,7 @@ void ApplicationManager::SetCopied(Component* c)
 	CopiedComponent = c->MakeCopy(c);
 
 }
+
 Component* ApplicationManager::GetCut()
 {
 	return CutComponent;
@@ -305,24 +321,25 @@ void ApplicationManager::ReSortCompList()
 {
 	Component* rCompList[MaxCompCount];
 	for (int i = 0; i < MaxCompCount; i++)
-		rCompList[i] = NULL;
+		rCompList[i] = nullptr;
 
 	int NotDeletedCount = 0;
 	for (int i = 0; i < MaxCompCount; i++)
 	{
-		if (CompList[i] != NULL)//checks if element is not nullified
+		if (CompList[i])//checks if element is not nullified
 		{
-			rCompList[NotDeletedCount++] = CompList[i];
+			rCompList[NotDeletedCount] = CompList[i]; //fills the complist with not nullified elements
+			NotDeletedCount++;
 		}
 	}
 	//Makes sure the remaining array elements are nullified
 	for (int i = NotDeletedCount; i < MaxCompCount; i++)
 	{
-		rCompList[i] = NULL;
+		rCompList[i] = nullptr;
 	}
-
+	
 	CompCount = NotDeletedCount; //changes component counter
-	*CompList = *rCompList; //updated array
+	SetCompList(rCompList); //updated array
 }
 
 
@@ -330,7 +347,11 @@ ApplicationManager::~ApplicationManager()
 {
 	ReSortCompList();
 	for(int i=0; i<CompCount; i++)
-		delete CompList[i];
+		if (CompList[i])
+		{
+			//delete CompList[i];
+			CompList[i] = nullptr;
+		}
 	delete OutputInterface;
 	delete InputInterface;
 	
