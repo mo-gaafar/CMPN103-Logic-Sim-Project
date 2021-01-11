@@ -11,7 +11,14 @@ void Connection::setSourcePin(OutputPin *pSrcPin)
 OutputPin* Connection::getSourcePin()
 {	return SrcPin;	}
 
-
+void Connection::setDestPinIndex(int Index)
+{
+	DstPinIndex = Index;
+}
+int Connection::getDestPinIndex()
+{
+	return DstPinIndex;
+}
 void Connection::setDestPin(InputPin *pDstPin)
 {	DstPin = pDstPin;	}
 
@@ -52,6 +59,10 @@ int Connection::GetOutPinStatus()	//returns status of outputpin if LED, return -
 	return DstPin->getStatus();
 }
 
+/*void Connection::SetEndPoints(int &x2, int&y2);
+{
+	GfxInfo
+}*/
 
 int Connection::GetInputPinStatus(int n)	//returns status of Inputpin # n if SWITCH, return -1
 {
@@ -68,13 +79,12 @@ void Connection::Save(ofstream& print)
 	//Needs a source/dst comp id getter
 	//Consider making a nondefault constructor that takes dst and source pin and deduces gfxinfo instead?
 
-	print << ID << "\t" <<GetSrcComponent()->GetID() << "\t" << GetDstComponent()->GetID() << "\t" << GetCompInfo().x1
-	<< "\t"<< GetCompInfo().x2 << "\t"<<GetCompInfo().y1 << "\t"<<GetCompInfo().y2 <<endl;
+	print << ID << "\t" <<GetSrcComponent()->GetID() << "\t" << GetDstComponent()->GetID() << "\t" << this->getDestPinIndex() <<endl;
 }
-
 
 //PLACEHOLDER FOR NOW
 InputPin* Connection::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index) {
+	setDestPinIndex(Index);
 	return NULL;
 }
 OutputPin* Connection::GetOutputpinCoordinates(int& X_in, int& Y_in) {

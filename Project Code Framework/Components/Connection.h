@@ -7,7 +7,7 @@ class Connection :	public Component
 {
 	Component*	SrcCmpnt;	//Connection source component
 	Component*	DstCmpnt;	//Connection Destination component
-	//int		DstPin;		//The Input pin to which this connection is linked
+	int		DstPinIndex;		//The Input pin to which this connection is linked
 	OutputPin* SrcPin;	//The Source pin of this connection (an output pin of certain Component)
 	InputPin* DstPin;	//The Destination pin of this connection (an input pin of certain Component)
 public:
@@ -23,6 +23,8 @@ public:
 	void setSourcePin(OutputPin *pSrcPin);
 	void setDestPin(InputPin *pDstPin);
 	OutputPin* getSourcePin();
+	void setDestPinIndex(int Index);
+	int getDestPinIndex();
 	InputPin* getDestPin();
 
 	InputPin* GetInputpinCoordinates(int& X_in, int& Y_in, int& Index);
@@ -35,6 +37,8 @@ public:
 	virtual void setInputPinStatus(int n, STATUS s);	//set status of Inputpin # n, to be used by connection class.
 	virtual Component* MakeCopy(Component*);
 	virtual void Save(ofstream& print);
+
+	int GetDestPinIndex();
 
 
 };

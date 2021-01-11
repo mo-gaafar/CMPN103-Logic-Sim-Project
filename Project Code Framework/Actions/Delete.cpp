@@ -43,6 +43,7 @@ void Delete::Execute() {
 		
 	}
 	pOut->PrintMsg("Delete Action Executed");
+	pManager->SetCompList(CompList);
 	pManager->ReSortCompList(); //Fixes the list of components
 }
 

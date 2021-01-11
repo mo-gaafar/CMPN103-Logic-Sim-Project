@@ -68,6 +68,7 @@ void AddConnection::Execute()
 			m_Connection = new Connection(m_GfxInfo, pSrcPin, pDstPin);
 			m_Connection->setSourcePin(pSrcPin);
 			m_Connection->setDestPin(pDstPin);
+			m_Connection->setDestPinIndex(pDstPin->getIndex());
 			pManager->AddComponent(m_Connection);
 			pOut->ClearStatusBar();
 		}
