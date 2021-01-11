@@ -14,6 +14,8 @@ Gate::Gate(int r_Inputs, int r_FanOut):m_OutputPin(r_FanOut)
 		//Associate all input pins to this gate
 		for (int i = 0; i < m_Inputs; i++)
 			m_InputPins[i].setComponent(this);
+		//Associates output pin to this gate
+		m_OutputPin.setComponent(this);
 	}
 }
 OutputPin* Gate:: GetOutputpinCoordinates(int& X_Out, int& Y_Out)

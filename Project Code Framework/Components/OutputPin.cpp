@@ -20,3 +20,12 @@ bool OutputPin::ConnectTo(Connection *r_Conn)
 	
 	return false;	//can't connect to any more connections
 }
+Component* OutputPin::getComponent()
+{
+	return pComp;
+}
+
+void OutputPin::setComponent(Component* rComp)
+{
+	pComp = rComp;
+}
