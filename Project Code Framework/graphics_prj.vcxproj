@@ -198,6 +198,7 @@
     <ClCompile Include="GUI\Output.cpp" />
     <ClCompile Include="Components\INV.cpp" />
     <ClCompile Include="Components\LED.cpp" />
+    <ClCompile Include="LOAD.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Components\NOR3.cpp" />
     <ClCompile Include="Components\XOR3.cpp" />
@@ -287,6 +288,7 @@
     <ClInclude Include="Components\Switch.h" />
     <ClInclude Include="Actions\Select.h" />
     <ClInclude Include="Actions\SimulateToolBar.h" />
+    <ClInclude Include="LOAD.h" />
     <ClInclude Include="SaveAction.h" />
     <ClInclude Include="Actions\Paste.h" />
     <ClInclude Include="Actions\Move.h" />

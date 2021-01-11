@@ -36,7 +36,7 @@ public:
 	void UpdateInterface();	//Redraws all the drawing window
 	void SaveComponent(ofstream& PRINT);
 	void SaveConnection(ofstream& PRINT);
-
+	void getCompGraphicsLoad(int ID, GraphicsInfo& G1);
 
 
 	//Gets a pointer to Input / Output Object
@@ -55,6 +55,9 @@ public:
 	void SetCopied(Component* c);
 	Component* GetCut();
 	void SetCut(Component* c);
+	InputPin* SearchIDINN(int ID);
+	OutputPin* SearchIDOUT(int ID);
+	void EmptyComplist();
 
 	//destructor
 	~ApplicationManager();
