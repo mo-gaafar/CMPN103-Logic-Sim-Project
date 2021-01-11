@@ -102,3 +102,10 @@ Component* Connection::MakeCopy(Component* c)
 	return ptr; */
 	return c;
 }
+
+Connection::~Connection()
+{
+	//GetDstComponent()->;
+	this->setDestPin(nullptr);
+	this->setSourcePin(nullptr);
+}

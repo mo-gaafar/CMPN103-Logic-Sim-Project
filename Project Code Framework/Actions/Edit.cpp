@@ -54,6 +54,9 @@ void Edit::Execute()
 
                     else if (tempst == "2") //Edits the connecition itself
                     {
+                        //Delete connection
+                        pManager->ExecuteAction(DEL);
+
                         //Print Action Message
                         pOut->PrintMsg("Edit connection: Select source pin");
 
@@ -71,15 +74,20 @@ void Edit::Execute()
                         pIn->GetPointClicked(m_GfxInfo.x2, m_GfxInfo.y2);
                         pDstPin = pManager->GetInputPin(m_GfxInfo.x2, m_GfxInfo.y2);
                         
-                        
-                        //Set Source and DstPin
-                        Connection* m_Connection = (Connection*)CompList[i];
-                        m_Connection->setSourcePin(pSrcPin);
-                        m_Connection->setDestPin(pDstPin);
+                        if (pSrcPin != NULL && pDstPin != NULL)
+                        {
+                            m_Connection = new Connection(m_GfxInfo, pSrcPin, pDstPin);
+                            m_Connection->setSourcePin(pSrcPin);
+                            m_Connection->setDestPin(pDstPin);
+                            m_Connection->setDestPinIndex(pDstPin->getIndex());
+                            pManager->AddComponent(m_Connection);
+                            pOut->ClearStatusBar();
+                        }
+                        else
+                            pOut->PrintMsg("Error, pins not properly selected");
 
 
                         //Clear Status Bar
-                        pOut->ClearStatusBar();
                     }
 
                     else { pOut->PrintMsg("Wrong Input"); break; }
