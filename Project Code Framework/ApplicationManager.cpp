@@ -312,7 +312,7 @@ void ApplicationManager::ReSortCompList()
 	{
 		if (CompList[i] != NULL)//checks if element is not nullified
 		{
-			rCompList[++NotDeletedCount] = CompList[i];
+			rCompList[NotDeletedCount++] = CompList[i];
 		}
 	}
 	//Makes sure the remaining array elements are nullified
