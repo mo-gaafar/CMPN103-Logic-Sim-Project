@@ -72,7 +72,7 @@ void INV::Save(ofstream& print)
 	print << "INV\t" << ID << "\t" << GetLabel() << "\t" << GetCompInfo().x1
 		<< "\t" << GetCompInfo().x2 << "\t" << GetCompInfo().y1 << "\t" << GetCompInfo().y2 << endl;
 }
-}
+
 Component* INV::MakeCopy(Component* c)
 {
 	GraphicsInfo temp;

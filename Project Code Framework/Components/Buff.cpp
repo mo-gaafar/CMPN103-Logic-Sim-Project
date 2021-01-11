@@ -78,7 +78,6 @@ Component* Buff::MakeCopy(Component* c)
 	//ptr->setLabel(c->GetLabel());
 	return ptr;
 }
-}
 
 void Buff::Save(ofstream& print)
 {

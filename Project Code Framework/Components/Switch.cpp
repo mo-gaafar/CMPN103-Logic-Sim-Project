@@ -74,7 +74,7 @@ void Switch::Save(ofstream& print)
 		<< "\t" << GetCompInfo().x2 << "\t" << GetCompInfo().y1 << "\t" << GetCompInfo().y2 << endl;
 
 }
-}
+
 Component* Switch::MakeCopy(Component* c)
 {
 	GraphicsInfo temp;

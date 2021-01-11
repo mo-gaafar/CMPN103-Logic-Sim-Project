@@ -103,7 +103,7 @@ Component* AND3::MakeCopy(Component* c)
 	//ptr->setLabel(c->GetLabel());
 	return ptr;
 }
-}
+
 
 void AND3::Save(ofstream& print)
 {
