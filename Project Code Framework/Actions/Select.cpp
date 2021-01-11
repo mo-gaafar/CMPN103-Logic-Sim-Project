@@ -23,10 +23,11 @@ void Select::ReadActionParameters()
 void Select::Execute() {
 	//Get Center point of the Component
 	ReadActionParameters();
-
+	pManager->ReSortCompList();//Refreshes the counters and removes gaps in array
 	GraphicsInfo GInfo; //Gfx info to be used to construct the AND2 gate
 	int c;
 	Component** CompList = pManager->GetCompList();
+
 	c = pManager->GetCompCount();
 	//Output* pOut = pManager->GetOutput();
 	//Component* Comp = pManager->GetCompList();

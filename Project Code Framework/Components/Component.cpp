@@ -31,6 +31,7 @@ int Component::GetID()
 //////////////////////////////////////////////////////////////////
 Component::Component()
 {
+
 	Changed = LOW;
 	Selected = false;
 	ID = rand() % 99999; //Generates Random integer from 0 to 99999

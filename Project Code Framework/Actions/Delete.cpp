@@ -36,7 +36,7 @@ void Delete::Execute() {
 		if (CompList[i]->GetSelectedComponent() == true)
 		{
 			CompList[i]->SelectComponent(false);
-			CompList[i]->~Component();
+			//CompList[i]->~Component();//Calls the component destructor
 
 			CompList[i]= NULL;//Connections part still to be implemented
 		}

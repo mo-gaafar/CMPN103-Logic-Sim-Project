@@ -13,7 +13,6 @@ Move::~Move()
 
 void Move::ReadActionParameters()
 {
-	pManager->ReSortCompList(); //Fixes the list of components
 
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
@@ -22,7 +21,9 @@ void Move::ReadActionParameters()
 }
 
 void Move::Execute()
-{
+{	
+	pManager->ReSortCompList(); //Fixes the list of components
+
 	ReadActionParameters();
 	Output* pOut = pManager->GetOutput(); //gets pointer from appmanager
 	Component** CompList = pManager->GetCompList(); //Gets pointer to main array of components

@@ -42,7 +42,7 @@ public:
 	virtual OutputPin* GetOutputpinCoordinates(int& X_Out, int& Y_Out) = 0; //gets rectangular range of output pin given click coordinates, returns pointer to the selected gate's output pin element
 	virtual InputPin* GetInputpinCoordinates(int& X_In, int& Y_In, int& n_Input)=0;//gets rectangular range of input pin (changes depending on gate location) returns Index and InputPin array pointer
 
-	GraphicsInfo GetCompInfo();
+	
 	void SetCompInfo(GraphicsInfo& g);
 	//Sets the selection of the component 
 	virtual void SelectComponent(bool s);
@@ -51,7 +51,8 @@ public:
 	bool GetSelectedComponent();
 	bool GetChangedGate();
 	virtual Component* MakeCopy(Component*) = 0;
-	GraphicsInfo* GetGraphicsInfo();
+	GraphicsInfo* GetGraphicsInfo();//Returns gfxinfo struct
+	GraphicsInfo GetCompInfo();
 	virtual void Save(ofstream& print) = 0;
 	//Destructor must be virtual
 	virtual ~Component();
