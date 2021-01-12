@@ -30,6 +30,8 @@
 #include "Actions\Move.h"
 #include "Actions\ChangeSwitch.h"
 #include "Actions\Simulate.h"
+#include "Actions\LOAD.h"
+
 
 ApplicationManager::ApplicationManager()
 {
@@ -77,6 +79,14 @@ void ApplicationManager::SaveConnection(ofstream& FILE)
 		if (dynamic_cast<Connection*>(CompList[i]))
 			CompList[i]->Save(FILE);
 }
+void ApplicationManager::getCompGraphicsLoad(int I, GraphicsInfo& G1)
+{
+	for (int i = 0; i < CompCount; i++)
+	{
+		if (CompList[i]->IsID(I))
+			G1 = CompList[i]->GetgraphInfo();
+	}
+}
 
 int ApplicationManager::GetConnCount()
 {
@@ -87,6 +97,16 @@ int ApplicationManager::GetConnCount()
 		if (!dynamic_cast<Connection*>(CompList[i]))
 			count++;
 	return count;
+}
+void ApplicationManager::EmptyComplist()
+{
+	for (int i = 0; i < CompCount; i++)
+	{
+		delete CompList[i];
+		CompList[i] = NULL;
+	}
+	CompCount = 0;
+	
 }
 
 ActionType ApplicationManager::GetUserAction()
@@ -191,6 +211,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case SAVE:
 			pAct = new Save(this);
+			break;
+		case LOAD:
+			pAct = new Load(this);
 			break;
 		case EXIT:
 			pAct = new ExitProgram(this);
@@ -338,22 +361,20 @@ void ApplicationManager::ReSortCompList()
 	{
 		rCompList[i] = nullptr;
 	}
-	
+
 	CompCount = NotDeletedCount; //changes component counter
-	SetCompList(rCompList); //updated array
+	SetCompList(rCompList); //updated arra
 }
+	ApplicationManager::~ApplicationManager()
+	{
+		ReSortCompList();
+		for (int i = 0; i < CompCount; i++)
+			if (CompList[i])
+			{
+				//delete CompList[i];
+				CompList[i] = nullptr;
+			}
+		delete OutputInterface;
+		delete InputInterface;
 
-
-ApplicationManager::~ApplicationManager()
-{
-	ReSortCompList();
-	for(int i=0; i<CompCount; i++)
-		if (CompList[i])
-		{
-			//delete CompList[i];
-			CompList[i] = nullptr;
-		}
-	delete OutputInterface;
-	delete InputInterface;
-	
-}
+	}

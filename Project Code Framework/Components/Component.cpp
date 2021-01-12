@@ -27,6 +27,18 @@ int Component::GetID()
 {
 	return ID;
 }
+bool Component::IsID(int i)
+{
+	if (i == ID)
+		return true;
+	else
+		return false;
+}
+GraphicsInfo& Component::GetgraphInfo()
+{
+	return m_GfxInfo;
+}
+
 
 //////////////////////////////////////////////////////////////////
 Component::Component()
