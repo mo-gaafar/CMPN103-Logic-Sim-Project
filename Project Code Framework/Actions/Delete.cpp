@@ -26,7 +26,7 @@ void Delete::ReadActionParameters()
 //Action execution
 void Delete::Execute() {
 	ReadActionParameters();
-
+	int isSelectedCount=0;
 	Output* pOut = pManager->GetOutput(); //gets pointer from appmanager
 	Component** CompList = pManager->GetCompList(); //Gets pointer to main array of components
 
@@ -35,13 +35,20 @@ void Delete::Execute() {
 		if (CompList[i])
 		if (CompList[i]->GetSelectedComponent() == true)
 		{
-			CompList[i]->SelectComponent(false);
+			
+			//CompList[i]->SelectComponent(false);
+			//Placeholder since individual delete wont operate correctly, im deleting all if nothing is selected
+			isSelectedCount++;
+			
 			//CompList[i]->~Component();
-			delete CompList[i];//Calls the component destructor//Connections part still to be implemented
-			CompList[i]= nullptr;//Sets the pointer element to null
+			//delete CompList[i];//Calls the component destructor//Connections part still to be implemented
+			//CompList[i]= nullptr;//Sets the pointer element to null
 		}
+		if (isSelectedCount == 0)
+			pManager->EmptyComplist();
 		
 	}
+
 	pOut->PrintMsg("Delete Action Executed");
 	pManager->SetCompList(CompList);
 	pManager->ReSortCompList(); //Fixes the list of components
