@@ -214,6 +214,7 @@
     <ClCompile Include="Actions\Paste.cpp" />
     <ClCompile Include="Actions\Move.cpp" />
     <ClCompile Include="Actions\Simulate.cpp" />
+    <ClCompile Include="Actions\Probe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -291,6 +292,7 @@
     <ClInclude Include="Actions\Paste.h" />
     <ClInclude Include="Actions\Move.h" />
     <ClInclude Include="Actions\Simulate.h" />
+    <ClInclude Include="Actions\Probe.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

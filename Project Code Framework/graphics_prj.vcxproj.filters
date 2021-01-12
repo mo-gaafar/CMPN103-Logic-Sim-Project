@@ -227,6 +227,7 @@
     <ClCompile Include="Actions\ChangeSwitch.cpp" />
     <ClCompile Include="Actions\Simulate.cpp" />
     <ClCompile Include="Actions\LOAD.cpp" />
+    <ClCompile Include="Actions\Probe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -397,6 +398,7 @@
     <ClInclude Include="Actions\ChangeSwitch.h" />
     <ClInclude Include="Actions\Simulate.h" />
     <ClInclude Include="Actions\LOAD.h" />
+    <ClInclude Include="Actions\Probe.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
