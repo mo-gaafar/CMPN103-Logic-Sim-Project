@@ -79,7 +79,7 @@ void Connection::Save(ofstream& print)
 	//Needs a source/dst comp id getter
 	//Consider making a nondefault constructor that takes dst and source pin and deduces gfxinfo instead?
 
-	print << "\t" <<GetSrcComponent()->GetID() << "\t" << GetDstComponent()->GetID() << "\t" << this->getDestPinIndex() <<endl;
+	print  <<GetSrcComponent()->GetID() << "\t" << GetDstComponent()->GetID() << "\t" << this->getDestPinIndex() <<endl;
 }
 
 //PLACEHOLDER FOR NOW
