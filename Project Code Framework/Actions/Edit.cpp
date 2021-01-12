@@ -55,7 +55,8 @@ void Edit::Execute()
                     else if (tempst == "2") //Edits the connecition itself
                     {
                         //Delete connection
-                        pManager->ExecuteAction(DEL);
+                        //pManager->ExecuteAction(DEL);
+                        //Disabled until delete is fixed, which is probably never :(
 
                         //Print Action Message
                         pOut->PrintMsg("Edit connection: Select source pin");
