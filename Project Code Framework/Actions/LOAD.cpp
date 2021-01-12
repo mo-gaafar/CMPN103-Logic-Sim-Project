@@ -1,20 +1,20 @@
 #include "Load.h"
-#include "ApplicationManager.h"
-#include"Actions\Action.h"
-#include"Components/AND2.h"
-#include"Components/AND3.h"
-#include"Components/Buff.h"
-#include"Components/NAND2.h"
-#include"Components/SWITCH.h"
-#include"Components/LED.h"
-#include"Components/INV.h"
-#include"Components/OR2.h"
-#include"Components/XNOR2.h"
-#include"Components/XOR3.h"
-#include"Components/NOR3.h"
-#include"Components/XOR2.h"
-#include"Components/NOR2.h"
-#include"Components/Connection.h"
+#include "../ApplicationManager.h"
+#include"Action.h"
+#include"../Components/AND2.h"
+#include"../Components/AND3.h"
+#include"../Components/Buff.h"
+#include"../Components/NAND2.h"
+#include"../Components/SWITCH.h"
+#include"../Components/LED.h"
+#include"../Components/INV.h"
+#include"../Components/OR2.h"
+#include"../Components/XNOR2.h"
+#include"../Components/XOR3.h"
+#include"../Components/NOR3.h"
+#include"../Components/XOR2.h"
+#include"../Components/NOR2.h"
+#include"../Components/Connection.h"
 #include<iostream>
 #include<ostream>
 #include<fstream>
@@ -35,13 +35,13 @@ void Load::ReadActionParameters()
 }
 void Load::Execute()
 {
-	 
-
-	
-		
+	Output* pOut = pManager->GetOutput();
+	Input* pIn = pManager->GetInput();
 
 	pIn = pManager->GetInput();
 	pOut = pManager->GetOutput();
+
+	pOut->PrintMsg("Enter File Name");
 
 	fileName = pIn->GetSrting(pOut);
 	int compcountBeforeEmpty = pManager->GetCompCount();
@@ -68,7 +68,7 @@ void Load::Execute()
 			CreateComp(Name, ID, Label, xcord, ycord);
 		}
 		read >> Name;
-		while (true)
+		/*while (true)
 		{
 			//cout << "Done for now" << endl;
 			int FirstID, SecondID, Pinnumber;
@@ -76,9 +76,10 @@ void Load::Execute()
 			if (FirstID == -1)
 				break;
 
-			ReadConnection(FirstID, SecondID, Pinnumber);
-		}
-
+			//Hassan: ReadConnection needs to be done
+			//ReadConnection(FirstID, SecondID, Pinnumber);
+		}*/
+		pOut->PrintMsg("Done Loading");
 	}
 	read.close();
 }

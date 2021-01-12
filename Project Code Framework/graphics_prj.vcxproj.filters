@@ -227,7 +227,7 @@
     <ClCompile Include="Actions\Move.cpp" />
     <ClCompile Include="Actions\ChangeSwitch.cpp" />
     <ClCompile Include="Actions\Simulate.cpp" />
-    <ClCompile Include="LOAD.cpp" />
+    <ClCompile Include="Actions\LOAD.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -398,7 +398,7 @@
     <ClInclude Include="Actions\Move.h" />
     <ClInclude Include="Actions\ChangeSwitch.h" />
     <ClInclude Include="Actions\Simulate.h" />
-    <ClInclude Include="LOAD.h" />
+    <ClInclude Include="Actions\LOAD.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
