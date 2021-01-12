@@ -82,7 +82,7 @@ InputPin* XOR3::GetInputpinCoordinates(int & X_in ,int & Y_in, int &Index)
 		return &this->m_InputPins[Index];
 
 	}
-	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in < Pin3 +  UI.AND2_Height / 10) && (Y_in > Y_in < Pin3 - UI.AND2_Height / 10))
+	if ((X_in <= m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in >= m_GfxInfo.x1) && (Y_in <= Pin3 +  UI.AND2_Height / 10) && (Y_in >= Y_in < Pin3 - UI.AND2_Height / 10))
 	{
 		X_in = m_GfxInfo.x1;
 		Y_in = Pin3;
@@ -108,6 +108,6 @@ Component* XOR3::MakeCopy(Component* c)
 	temp.y1 = (c->GetGraphicsInfo())->y1;
 	temp.y2 = (c->GetGraphicsInfo())->y2;
 	XOR3* ptr = new XOR3(temp, XOR3_FANOUT);
-	//ptr->setLabel(c->GetLabel());
+	ptr->SetLabel(c->GetLabel());
 	return ptr;
 }

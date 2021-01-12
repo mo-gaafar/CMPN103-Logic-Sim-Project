@@ -100,7 +100,7 @@ Component* AND3::MakeCopy(Component* c)
 	temp.y1 = (c->GetGraphicsInfo())->y1;
 	temp.y2 = (c->GetGraphicsInfo())->y2;
 	AND3* ptr = new AND3(temp, AND3_FANOUT);
-	//ptr->setLabel(c->GetLabel());
+	ptr->SetLabel(c->GetLabel());
 	return ptr;
 }
 

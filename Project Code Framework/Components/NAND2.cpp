@@ -96,6 +96,6 @@ Component* NAND2::MakeCopy(Component* c)
 	temp.y1 = (c->GetGraphicsInfo())->y1;
 	temp.y2 = (c->GetGraphicsInfo())->y2;
 	NAND2* ptr = new NAND2(temp, NAND2_FANOUT);
-	//ptr->setLabel(c->GetLabel());
+	ptr->SetLabel(c->GetLabel());
 	return ptr;
 }

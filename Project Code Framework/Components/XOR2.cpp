@@ -98,6 +98,6 @@ Component* XOR2::MakeCopy(Component* c)
 	temp.y1 = (c->GetGraphicsInfo())->y1;
 	temp.y2 = (c->GetGraphicsInfo())->y2;
 	XOR2* ptr = new XOR2(temp, XOR2_FANOUT);
-	//ptr->setLabel(c->GetLabel());
+	ptr->SetLabel(c->GetLabel());
 	return ptr;
 }

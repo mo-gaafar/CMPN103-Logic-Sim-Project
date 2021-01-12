@@ -109,6 +109,6 @@ Component* NOR3::MakeCopy(Component* c)
 	temp.y1 = (c->GetGraphicsInfo())->y1;
 	temp.y2 = (c->GetGraphicsInfo())->y2;
 	NOR3* ptr = new NOR3(temp, NOR3_FANOUT);
-	//ptr->setLabel(c->GetLabel());
+	ptr->SetLabel(c->GetLabel());
 	return ptr;
 }
