@@ -44,10 +44,11 @@ void Delete::Execute() {
 			//delete CompList[i];//Calls the component destructor//Connections part still to be implemented
 			//CompList[i]= nullptr;//Sets the pointer element to null
 		}
-		if (isSelectedCount == 0)
-			pManager->EmptyComplist();
+		
 		
 	}
+	if (isSelectedCount == 0)
+		pManager->EmptyComplist();
 
 	pOut->PrintMsg("Delete Action Executed");
 	pManager->SetCompList(CompList);
