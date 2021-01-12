@@ -211,7 +211,6 @@
     <ClCompile Include="Actions\Select.cpp" />
     <ClCompile Include="Actions\SimulateToolBar.cpp" />
     <ClCompile Include="Actions\Save.cpp" />
-    <ClCompile Include="SaveAction.cpp" />
     <ClCompile Include="Actions\Paste.cpp" />
     <ClCompile Include="Actions\Move.cpp" />
     <ClCompile Include="Actions\Simulate.cpp" />
@@ -289,7 +288,6 @@
     <ClInclude Include="Actions\Select.h" />
     <ClInclude Include="Actions\SimulateToolBar.h" />
     <ClInclude Include="Actions\LOAD.h" />
-    <ClInclude Include="SaveAction.h" />
     <ClInclude Include="Actions\Paste.h" />
     <ClInclude Include="Actions\Move.h" />
     <ClInclude Include="Actions\Simulate.h" />

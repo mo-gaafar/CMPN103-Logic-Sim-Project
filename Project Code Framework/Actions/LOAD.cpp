@@ -76,7 +76,7 @@ void Load::Execute()
 			if (FirstID == -1)
 				break;
 
-			//Hassan: ReadConnection needs to be done
+			//Hassan: ReadConnection needs to be finished
 			//ReadConnection(FirstID, SecondID, Pinnumber);
 		}*/
 		pOut->PrintMsg("Done Loading");
