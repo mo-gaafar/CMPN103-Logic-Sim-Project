@@ -31,7 +31,7 @@ void Move::Execute()
 
 	for (int i = 0; i < pManager->GetCompCount(); i++)
 	{
-		if (CompList[i] != NULL)
+		if (CompList[i])
 			if (CompList[i]->GetSelectedComponent() == true)
 			{
 				pIn->GetPointClicked(Cx, Cy);
@@ -41,9 +41,12 @@ void Move::Execute()
 				GInfo.y1 = Cy - UI.AND2_Height / 2;
 				GInfo.y2 = Cy + UI.AND2_Height / 2;
 				CompList[i]->SetCompInfo(GInfo);
-				pOut->PrintMsg("Move successfully");
+				pOut->PrintMsg("Moved successfully");
+
+
 			}
 	}
+	pManager->SetCompList(CompList);
 }
 
 void Move::Undo()

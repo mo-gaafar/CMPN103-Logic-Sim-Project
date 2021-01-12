@@ -62,14 +62,16 @@ void NAND2::setInputPinStatus(int n, STATUS s)
 
 InputPin* NAND2::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 {
-	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in < (m_GfxInfo.y1 + UI.AND2_Height / 2)))
+	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) 
+		&& (Y_in < (m_GfxInfo.y1 + UI.AND2_Height / 2))&& (Y_in > m_GfxInfo.y1))
 	{
 		X_in = m_GfxInfo.x1;
 		Y_in = m_GfxInfo.y1 + UI.AND2_Height / 3;
 		Index = 0;
 		return &this->m_InputPins[Index];
 	}
-	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in > (m_GfxInfo.y1 + UI.AND2_Height / 2)))
+	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) 
+		&& (Y_in > (m_GfxInfo.y1 + UI.AND2_Height / 2)) && (Y_in < m_GfxInfo.y2))
 	{
 		X_in = m_GfxInfo.x1;
 		Y_in = m_GfxInfo.y1 + UI.AND2_Height * 2 / 3;
@@ -94,6 +96,6 @@ Component* NAND2::MakeCopy(Component* c)
 	temp.y1 = (c->GetGraphicsInfo())->y1;
 	temp.y2 = (c->GetGraphicsInfo())->y2;
 	NAND2* ptr = new NAND2(temp, NAND2_FANOUT);
-	//ptr->setLabel(c->GetLabel());
+	ptr->SetLabel(c->GetLabel());
 	return ptr;
 }

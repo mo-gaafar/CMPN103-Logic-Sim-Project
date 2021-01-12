@@ -35,8 +35,6 @@ void Switch::Draw(Output* pOut)
 	//Call output class and pass gate drawing info to it.
 	pOut->DrawSwitch(m_GfxInfo, Selected, Changed);
 
-
-
 	GraphicsInfo GInfo = GetCompInfo();
 	GraphicsInfo LInfo;
 	LInfo.x1 = GInfo.x1;
@@ -83,6 +81,6 @@ Component* Switch::MakeCopy(Component* c)
 	temp.y1 = (c->GetGraphicsInfo())->y1;
 	temp.y2 = (c->GetGraphicsInfo())->y2;
 	Switch* ptr = new Switch(temp, Switch_FANOUT);
-	//ptr->setLabel(c->GetLabel());
+	ptr->SetLabel(c->GetLabel());
 	return ptr;
 }

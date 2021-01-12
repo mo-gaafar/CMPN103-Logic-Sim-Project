@@ -6,11 +6,14 @@ class Component; //Forward class declaration
 
 class InputPin: public Pin	//inherited from class Pin
 {
+	int Index; //Index of pin relative to parent gate
 	Component* pComp; //Component at which this pin is associated
 public:
 	InputPin();
 	void setComponent(Component* pCmp);	//sets the component of this input pin
 	Component* getComponent();	//returns the component of this input pin
+	void setIndex(int rIndex);
+	int getIndex();
 };
 
 #endif

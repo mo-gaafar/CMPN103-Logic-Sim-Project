@@ -16,7 +16,7 @@ void AddXORgate3::ReadActionParameters()
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("2-Input XOR Gate: Click to add the gate");
+	pOut->PrintMsg("3-Input XOR Gate: Click to add the gate");
 
 	//Wait for User Input
 	pIn->GetPointClicked(Cx, Cy);

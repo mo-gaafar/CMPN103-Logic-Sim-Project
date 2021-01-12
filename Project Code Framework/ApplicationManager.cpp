@@ -46,6 +46,7 @@ ApplicationManager::ApplicationManager()
 ////////////////////////////////////////////////////////////////////
 void ApplicationManager::AddComponent(Component* pComp)
 {
+	ReSortCompList();
 	CompList[CompCount++] = pComp;		
 }
 ////////////////////////////////////////////////////////////////////
@@ -229,7 +230,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 void ApplicationManager::UpdateInterface()
 {
-	ReSortCompList();
+	//ReSortCompList();
 	GetOutput()->ClearDrawingArea(); //Clears The drawing area before each update
 
 	for (int i = 0; i < CompCount; i++)
