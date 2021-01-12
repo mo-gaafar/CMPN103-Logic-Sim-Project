@@ -63,14 +63,16 @@ void XOR2::setInputPinStatus(int n, STATUS s)
 
 InputPin* XOR2::GetInputpinCoordinates(int& X_in, int& Y_in, int& Index)
 {
-	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in < (m_GfxInfo.y1 + UI.AND2_Height / 2)))
+	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) 
+		&& (Y_in < (m_GfxInfo.y1 + UI.AND2_Height / 2))&& (Y_in > m_GfxInfo.y1))
 	{
 		X_in = m_GfxInfo.x1;
 		Y_in = m_GfxInfo.y1 + UI.AND2_Height / 3;
 		Index = 0;
 		return &this->m_InputPins[Index];
 	}
-	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) && (Y_in > (m_GfxInfo.y1 + UI.AND2_Height / 2)))
+	if ((X_in < m_GfxInfo.x1 + 2 * UI.AND2_Height / 10) && (X_in > m_GfxInfo.x1) 
+		&& (Y_in > (m_GfxInfo.y1 + UI.AND2_Height / 2))&& (Y_in < m_GfxInfo.y2))
 	{
 		X_in = m_GfxInfo.x1;
 		Y_in = m_GfxInfo.y1 + UI.AND2_Height * 2 / 3;
