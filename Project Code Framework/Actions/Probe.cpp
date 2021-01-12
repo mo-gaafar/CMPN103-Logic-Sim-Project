@@ -32,12 +32,9 @@ void Probe::Execute()
 {
     Output* pOut = pManager->GetOutput();
     Input* pIn = pManager->GetInput();
-    pOut->PrintMsg("Select component");
+    pOut->PrintMsg("Select connection to probe");
 
-    GraphicsInfo GInfo;
     Component** CompList = pManager->GetCompList();
-    GraphicsInfo LInfo;
-    string tempst;
 
     for (int i = 0; i < pManager->GetCompCount(); i++)
     {
@@ -49,12 +46,19 @@ void Probe::Execute()
                 if (Component* c = dynamic_cast<Connection*> (CompList[i]))//checks if gate or connection
                 {
                     
+                    if(CompList[i]->getSourcePin()->getStatus() ==1)
+                        pOut->PrintMsg("Selected Connection State is HIGH");
+                    if(CompList[i]->getSourcePin()->getStatus() ==0)
+                        pOut->PrintMsg("Selected Connection State is LOW");
+
                 }
+                else
+                    pOut->PrintMsg("You cant probe a gate");
 
             }
     }
 
-    pOut->ClearStatusBar();
+    //pOut->ClearStatusBar();
 
 }
 

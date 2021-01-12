@@ -56,6 +56,8 @@ public:
 	virtual void Save(ofstream& print) = 0;
 	virtual GraphicsInfo& GetgraphInfo();
 
+	virtual OutputPin* getSourcePin();//polymorphic function to get source pin from array element
+
 
 	//Destructor must be virtual
 	virtual ~Component();

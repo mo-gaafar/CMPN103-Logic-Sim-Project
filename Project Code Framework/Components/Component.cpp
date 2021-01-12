@@ -39,6 +39,11 @@ GraphicsInfo& Component::GetgraphInfo()
 	return m_GfxInfo;
 }
 
+OutputPin* Component::getSourcePin()
+{
+	return nullptr;
+}
+
 
 //////////////////////////////////////////////////////////////////
 Component::Component()

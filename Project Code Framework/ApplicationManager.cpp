@@ -31,6 +31,7 @@
 #include "Actions\ChangeSwitch.h"
 #include "Actions\Simulate.h"
 #include "Actions\LOAD.h"
+#include "Actions\Probe.h"
 
 
 ApplicationManager::ApplicationManager()
@@ -214,6 +215,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case LOAD:
 			pAct = new Load(this);
+			break;
+		case PROBE:
+			pAct = new Probe(this);
 			break;
 		case EXIT:
 			pAct = new ExitProgram(this);
